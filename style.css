@@ -1,0 +1,160 @@
+body {
+    text-align: -webkit-center;
+    background-color: #0a1403;
+}
+
+/* ----------------- top bar ----------------- */
+
+nav {
+    display: flex;
+    background-color: #122508;
+    border-bottom: 4px solid #fcb529;
+    padding: 0px;
+    transform-origin: top-left;
+    box-sizing: border-box;
+    height: 40px;
+}
+
+nav * {
+    border: 3px solid #dcdcdc;
+    display: inline-block;
+    height: auto;
+    flex-shrink: 1;
+    flex-basis: 200px;
+    background-color: rgb(230,230,230);
+    align-content: space-evenly;
+
+}
+
+nav a {
+    text-align: center;
+    background-color: gray;
+}
+
+nav a:last-of-type {
+    border-bottom-right-radius: 20px;
+    background-color: white;
+}
+
+nav a:hover {
+    animation: 600ms ease-in-out 0s infinite alternate both running navButton;
+    animation-composition: add;
+    text-decoration-line: none;
+    font-weight: bolder;
+}
+
+@keyframes navButton {
+    from {
+    }
+    to {
+        transform: translate(0px, 8px);
+    }
+}
+
+nav form {
+    display: inline-flex;
+    flex-shrink: 0.5;
+    flex-basis: 400px;
+    align-items: stretch;
+    margin-left: auto;
+    border-bottom-left-radius: 10px;
+}
+
+nav form:hover {
+    animation: 600ms ease-in-out 0s 1 alternate both running navSearch;
+}
+
+@keyframes navSearch {
+    from {
+    }
+    to {
+        transform-origin: top right;
+        transform: scale(1.2);
+    }
+}
+
+nav form input[type="search"] {
+    flex: 8 0.4 280px;
+    margin-top: 2px;
+}
+
+/* end of top bar */
+/* ----------------- body layers ----------------- */
+
+main {
+    margin-top: 10px;
+    display: block;
+    /* display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 445px 1fr;
+    grid-template-areas:
+        "timer sched calen"; */
+}
+
+main * {
+    flex: auto;
+}
+
+/* end of body layers */
+/* ----------------- main schedule ----------------- */
+
+table {
+    /* transform: translate(0px, 50px); */
+    border: 2px solid rgb(140 140 140);
+    padding: 10px;
+    font:
+        32px Trebuchet MS,
+        sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    width: 470px;
+}
+
+table * {
+    padding: 2px;
+}
+
+th {
+    border: 1px solid rgb(160 160 160);
+    text-align: center;
+}
+
+td {
+    border: 1px solid rgb(160 160 160);
+    font-size: 16px;
+    color: #000000;
+}
+
+thead > tr {
+    background-color: #274e13;
+}
+tfoot > tr {
+    background-color: #274e13;
+}
+
+.progressCell {
+    width: 158px;
+}
+
+progress {
+    border-radius: 0;
+    color: rgb(0,0,0);
+    background-color: #274e13;
+    color: #ffffff;
+    height: 20px;
+}
+
+#tableSubtitle {
+    margin: 0px;
+    font-size: 16px;
+}
+
+#tableTitle {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* end of main schedule */
+/* ----------------- etc ----------------- */
+
+
