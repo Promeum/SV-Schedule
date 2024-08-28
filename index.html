@@ -1,72 +1,79 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base target="_top" />
-    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css" />
-    <link rel="stylesheet" href="style.css" />
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base target="_top" />
+        <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css" />
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="style.css" />
 
-    <script src="data.js"></script>
-    <script src="animation.js" type="text/javascript"></script>
-    <script src="script.js" type="text/javascript"></script>
-    <script>window.addEventListener('load', function () {
-            initialize();
-            console.log("init");
-        });
-    </script>
-    
-    <title>Ultra Super-Premium SV Schedule</title>
-</head>
+        <script src="scripts/data.js"></script>
+        <script src="scripts/animation.js" type="text/javascript"></script>
+        <script src="scripts/script.js" type="text/javascript"></script>
+        <script>window.addEventListener('load', function () {
+                initialize();
+                console.log("init");
+            });
+        </script>
+        
+        <title>Ultra Super-Premium SV Schedule</title>
+    </head>
 
-<body>
-    <nav>
-        <a tabindex="0">Today's Schedule</a>
-        <a tabindex="0">Future Schedules</a>
-        <!-- <a tabindex="0">Menu3</a> -->
-        <!-- <a tabindex="0">Menu4</a> -->
+    <body>
 
-        <form>
-            <input type="search" name="searchQuery" placeholder="Search" />
-            <input type="submit" value="Search" />
-        </form>
-    </nav>
+        <nav id="topNav">Unofficial Seneca Valley School Schedule</nav>
 
-    <main>
+        <nav>
+            <a tabindex="0" id="currentPage">Today's Schedule</a>
+            <a tabindex="0" href="future-schedules.html">Future Schedules</a>
+            <!-- <a tabindex="0">Menu3</a> -->
+            <!-- <a tabindex="0">Menu4</a> -->
 
-        <noscript>You need to enable JavaScript to view the full site.</noscript>
+            <form>
+                <input type="search" name="searchQuery" placeholder="Search" />
+                <input type="submit" value="Search" />
+            </form>
+        </nav>
 
-        <!-- TODO: make a live updating circle displaying the time until next pd -->
-        <!-- <div id="circleTimer"></div> -->
+        <main>
 
-        <table>
-            <thead>
-                <th colspan="3">
-                    <p id="tableTitle" style="margin-top: 10px; margin-bottom: 2px;">____ Schedule</p>
-                    <p id="flavorContainer" style="margin-top: 0px; margin-bottom: 10px; font-size: 16px;">This is a dynamic schedule!</p>
-                </th>
-            </thead>
-            <tr>
-                <td>Period 1</td>
-                <td>Time</td>
-                <td class="progressCell"><progress id="p1" value="0.5" max="1" /></td>
-            </tr>
-        </table>
+            <noscript>You need to enable JavaScript to view the full site.</noscript>
 
-        <!-- TODO: make a section that displays all the upcoming schedules for 10 school days -->
-        <!-- <div id="TenDayScheduleForecast"></div> -->
+            <!-- TODO: make a live updating circle displaying the time until next pd -->
+            <!-- <div id="circleTimer"></div> -->
 
-    </main>
+            <table>
+                <thead>
+                    <th colspan="3">
+                        <p id="tableTitle" style="margin-top: 10px; margin-bottom: 2px;">____ Schedule</p>
+                        <p id="flavorContainer" style="margin-top: 0px; margin-bottom: 10px; font-size: 16px;">This is a dynamic schedule!</p>
+                    </th>
+                </thead>
+                <tr>
+                    <td>Period 1</td>
+                    <td>Time</td>
+                    <td class="progressCell"><progress id="p1" value="0.5" max="1" /></td>
+                </tr>
+            </table>
 
-    <!-- etc. -->
-    <p id="jsAnimTest" style="display:inline-block;border:2px dashed red">testing!</p>
-    <button onclick="animTest1();">Butttton</button>
-</body>
-<!-- <script src="data.js"></script>
-<script src="animation.js"></script>
-<script src="script.js" type="text/javascript">window.addEventListener('load',function(){alert("It's loaded!");});initialize();alert("init");</script> -->
+            <!-- TODO: make a section that displays all the upcoming schedules for 10 school days -->
+            <!-- <div id="TenDayScheduleForecast"></div> -->
 
-<!-- <script>window.addEventListener('load',function(){alert("It's loaded!");});initialize();alert("init");</script> -->
+            <footer>
+                <p id="copyright">©️ 2024 Jakob R.</p>
+                <p id="svhs">Seneca Valley High School</p>
+            </footer>
+
+        </main>
+
+        <!-- <p id="jsAnimTest" style="display:inline-block;border:2px dashed red">testing!</p>
+        <button onclick="animTest1();">Butttton</button> -->
+    </body>
 </html>

@@ -5,14 +5,24 @@ body {
 
 /* ----------------- top bar ----------------- */
 
+#topNav {
+    display: block;
+    align-content: center;
+    background-color: #122508;
+    border-bottom: 3px solid #fcb529;
+    font-size: 23px;
+    font-weight: 350;
+    color: #fcb529;
+    text-align: center;
+}
+
 nav {
     display: flex;
-    background-color: #122508;
-    border-bottom: 4px solid #fcb529;
     padding: 0px;
-    transform-origin: top-left;
     box-sizing: border-box;
     height: 40px;
+    font-family: 'Oswald', sans-serif;
+    text-wrap: nowrap;
 }
 
 nav * {
@@ -23,24 +33,33 @@ nav * {
     flex-basis: 200px;
     background-color: rgb(230,230,230);
     align-content: space-evenly;
-
+    font-family: 'Oswald', sans-serif;
+    color: #fcb529;
+    text-wrap: nowrap;
 }
 
 nav a {
     text-align: center;
-    background-color: gray;
+    background-color: white;
+    font: 17px 'Oswald', sans-serif;
+    font-weight: 400;
+    color: #000000;
+}
+
+#currentPage {
+    background-color: #dcdcdc;
 }
 
 nav a:last-of-type {
     border-bottom-right-radius: 20px;
-    background-color: white;
 }
 
 nav a:hover {
     animation: 600ms ease-in-out 0s infinite alternate both running navButton;
     animation-composition: add;
     text-decoration-line: none;
-    font-weight: bolder;
+    background-color: #dcdcdc;
+    font-weight: 450;
 }
 
 @keyframes navButton {
@@ -84,6 +103,7 @@ nav form input[type="search"] {
 main {
     margin-top: 10px;
     display: block;
+    overflow-x: hidden;
     /* display: grid;
     gap: 10px;
     grid-template-columns: 1fr 445px 1fr;
@@ -125,6 +145,10 @@ td {
     color: #000000;
 }
 
+table td:nth-child(-n+2) {
+    padding: 4px;
+}
+
 thead > tr {
     background-color: #274e13;
 }
@@ -157,4 +181,33 @@ progress {
 /* end of main schedule */
 /* ----------------- etc ----------------- */
 
+h1 {
+    color: white;
+    background-color: saddlebrown;
+    padding-block: 20px;
+    font-size: 50px;
+}
 
+/* end of etc */
+/* ----------------- footer ----------------- */
+
+footer {
+    display: inline-flex;
+    height: 25px;
+    background-color: #122508;
+    align-items: center;
+    padding-inline: 10px;
+    justify-content: space-between;
+    width: calc(100% - 20px);
+    position: fixed;
+    transform: translateX(-50%);
+    bottom: 0px;
+    border-bottom: 3px solid #fcb529;
+    color: #dcdcdc;
+}
+
+footer p {
+    font-family: 'Trebuchet MS', sans-serif;
+    text-wrap: nowrap;
+    flex: none;
+}
