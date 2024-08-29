@@ -52,7 +52,7 @@ function updateSchedule() {
   var timetable = Object.values(todaysSchedule.periods);
   var currentPeriodReached = false;
   var currentTime = (now.getHours() * 60) + now.getMinutes() + (now.getSeconds()/60); // in minutes
-
+  
   for (var i=1; i<rows.length; i++) {
     let row = rows[i];
     let startTime = timetable[i-1][0];
@@ -62,15 +62,19 @@ function updateSchedule() {
     
     color(row, '#ffffff', '#d9d9d9', '#d9d9d9', timetable[i-1][2]*60); // assume period has ended
     if ( currentTime < endTime && (now.getDay() != 0 && now.getDay() != 6)) {
-      if (currentTime > startTime) { // this is the current period, set background to yellow and fill in progress bar
+      if (currentTime >= startTime) { // this is the current period, set background to yellow and fill in progress bar
         color(row, '#ffd966', '#666666', '#6aa84f', (currentTime - startTime) * 60);
         this.progBarTimer = setInterval(updateProgressBar, 1000, i, endTime - startTime);
         currentPeriodReached = true;
-      } else if ((i == 1 && now.getHours() == Math.floor(startTime/100)) || (i > 1 && !currentPeriodReached)) { // either transistion between periods, or close to start of 1st pd.
+      } else if ((i == 1 && startTime - currentTime <= 30) || (i > 1 && !currentPeriodReached)) { // either transistion between periods, or close to start of 1st pd.
         color(row, '#e3e3e3', '#d9d9d9', '#d9d9d9', 0); // gray out row
+        var timeDelay = (startTime - currentTime) * 60 * 1000;
+         setTimeout(updateSchedule, timeDelay);
+        console.log((startTime - currentTime) * 60 * 1000);
         currentPeriodReached = true;
-      } else if (i != 1) { // period has not started yet
+      } else { // period has not started yet
         color(row, '#ffffff', '#d9d9d9', '#d9d9d9', 0);
+        currentPeriodReached = true;
       }
     }
   }

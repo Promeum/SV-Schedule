@@ -52,7 +52,7 @@ const scheduleDatabase = {
         "Period 3": [1058, 1127, 29],
         "Period 4": [1133, 1202, 29],
         "Lunch (Pd 5)": [1202, 1244, 42],
-        "Period 6": [1250, 119, 29],
+        "Period 6": [1250, 1319, 29],
         "Period 7": [1325, 1354, 29],
         "Period 8": [1400, 1430, 30]
         },
@@ -66,11 +66,25 @@ const scheduleDatabase = {
         "A2/Pd 3 & SVTV": [1007, 1107, 60],
         "Period 4": [1113, 1148, 35],
         "Lunch (Pd 5)": [1148, 1228, 40],
-        "Period 6": [1234, 109, 35],
+        "Period 6": [1234, 1309, 35],
         "Period 7": [1315, 1350, 35],
         "Period 8": [1356, 1430, 35]
         },
         "alias": "Assembly Schedule"
+    },
+    "PepRally": {
+        "periods": {
+        "Period 1 & PA": [745, 825, 40],
+        "Period 2": [831, 908, 37],
+        "Period 3": [914, 951, 37],
+        "Period 4": [957, 1034, 37],
+        "Lunch (Pd 5)": [1034, 1118, 40],
+        "Period 6": [1124, 1201, 37],
+        "Period 7": [1207, 1244, 37],
+        "Period 8": [1250, 1327, 37],
+        "Pep Rally": [1327, 1430, 63]
+        },
+        "alias": "Pep Rally"
     },
     "AMHomeroom": {
         "periods": {
@@ -82,8 +96,7 @@ const scheduleDatabase = {
         "Lunch (Pd 5)": [1118, 1200, 42],
         "Period 6": [1206, 1250, 44],
         "Period 7": [1256, 1340, 44],
-        "Period 8": [1346, 1430, 44],
-        "test": [1927, 1928, 1]
+        "Period 8": [1346, 1430, 44]
         },
         "alias": "AM Homeroom"
     },
@@ -128,6 +141,13 @@ const scheduleDatabase = {
             "This Day": [0, 2400, 2400]
         },
         "alias": "No School"
+    },
+    "debug": {
+        "periods": {
+        "1": [2000, 2001, 1],
+        "2": [2005, 2010, 5]
+        },
+        "alias": "debug"
     }
 }
 
@@ -138,7 +158,9 @@ const scheduleDatabase = {
  */
 const calendarDatabase = {
     '8/26/2024': ['AMHomeroom', 'First Day of School'],
-    '8/31/2024': ['None', 'No School']
+    '8/31/2024': ['None', 'No School'],
+    '9/20/2024': ['PepRally', 'Pep Rally'],
+    '9/7/2024': ['EarlyRelease', 'Early Release'],
 };
 
 /**
