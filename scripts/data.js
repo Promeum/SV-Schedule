@@ -23,7 +23,7 @@ const scheduleDatabase = {
         "Period 1": [745, 830, 45],
         "Period 2": [836, 918, 42],
         "Period 3": [924, 1006, 42],
-        "SEL/SVTV": [1006, 1036, 30],
+        "Eagle Time/SVTV": [1006, 1036, 30],
         "Period 4": [1042, 1124, 42],
         "Lunch (Pd 5)": [1124, 1206, 42],
         "Period 6": [1212, 1254, 42],
@@ -158,9 +158,33 @@ const scheduleDatabase = {
  */
 const calendarDatabase = {
     '8/26/2024': ['AMHomeroom', 'First Day of School'],
-    '8/31/2024': ['None', 'No School'],
+    '9/2/2024': ['None', 'No School'],
     '9/20/2024': ['PepRally', 'Pep Rally'],
-    '9/7/2024': ['EarlyRelease', 'Early Release'],
+    '9/27/2024': ['EarlyRelease', 'Early Release'],
+    '10/3/2024': ['None', 'No School'],
+    '10/18/2024': ['None', 'No School'],
+    '11/4/2024': ['None', 'No School'],
+    '11/5/2024': ['None', 'No School'],
+    '11/25/2024': ['EarlyRelease', 'Early Release'],
+    '11/26/2024': ['EarlyRelease', 'Early Release'],
+    '11/27/2024': ['None', 'No School'],
+    '11/28/2024': ['None', 'No School'],
+    '11/29/2024': ['None', 'No School'],
+    
+    '12/23/2024': ['None', 'Winter Break'],
+    '12/24/2024': ['None', 'Christmas Eve'],
+    '12/25/2024': ['None', 'Christmas Day'],
+    '12/26/2024': ['None', 'Winter Break'],
+    '12/27/2024': ['None', 'Winter Break'],
+    '12/30/2024': ['None', 'Winter Break'],
+    '12/31/2024': ['None', 'New Year\'s Eve'],
+
+    '1/1/2025': ['None', 'New Year\'s Day'],
+    '1/20/2025': ['None', 'No School'],
+    '1/29/2025': ['None', 'No School'],
+    '2/17/2025': ['None', 'No School'],
+    '2/28/2025': ['EarlyRelease', 'Early Release'],
+    '3/31/2025': ['None', 'No School']
 };
 
 /**

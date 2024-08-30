@@ -30,16 +30,10 @@
 
         <nav id="topNav">Unofficial Seneca Valley School Schedule</nav>
 
-        <nav>
+        <nav id="mainNav">
+            <!-- <a tabindex="0" href="this-period.html">This Period</a> -->
             <a tabindex="0" id="currentPage">Today's Schedule</a>
             <a tabindex="0" href="future-schedules.html">Future Schedules</a>
-            <!-- <a tabindex="0">Menu3</a> -->
-            <!-- <a tabindex="0">Menu4</a> -->
-
-            <form>
-                <input type="search" name="searchQuery" placeholder="Search" />
-                <input type="submit" value="Search" />
-            </form>
         </nav>
 
         <main>
@@ -50,21 +44,21 @@
 
             <!-- TODO: make a live updating circle displaying the time until next pd -->
             <!-- <div id="circleTimer"></div> -->
-
-            <table>
-                <thead>
-                    <th colspan="3">
-                        <p id="tableTitle" style="margin-top: 10px; margin-bottom: 2px;">____ Schedule</p>
-                        <p id="flavorContainer" style="margin-top: 0px; margin-bottom: 10px; font-size: 16px;">This is a dynamic schedule!</p>
-                    </th>
-                </thead>
-                <tr>
-                    <td>Period 1</td>
-                    <td>Time</td>
-                    <td class="progressCell"><progress id="p1" value="0.5" max="1" /></td>
-                </tr>
-            </table>
-            
+            <div id="tableWrapper">
+                <table>
+                    <thead>
+                        <th colspan="3">
+                            <p id="tableTitle" style="margin-top: 10px; margin-bottom: 2px;">____ Schedule</p>
+                            <p id="flavorContainer" style="margin-top: 0px; margin-bottom: 10px; font-size: 16px;">This is a dynamic schedule!</p>
+                        </th>
+                    </thead>
+                    <tr>
+                        <td>Period 1</td>
+                        <td>Time</td>
+                        <td class="progressCell"><progress id="p1" value="0.5" max="1" /></td>
+                    </tr>
+                </table>
+            </div>
             <div id="spacer" style="height:50px;"></div>
 
             <footer>

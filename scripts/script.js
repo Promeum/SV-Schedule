@@ -1,7 +1,7 @@
 // TODO: put in a 'weekly forecast' for upcoming schedules that you can click on to
 // access those schedules, add a clock showing hrs, mins, & secs, change the live
-// updating progress bar to a CSS animation instead of a JS animation, make schedule
-// auto update when in between periods, make the progress bars empty if it is the weekend
+// updating progress bar to a CSS animation instead of a JS animation, make the
+// progress bars empty if it is the weekend
 
 var todaysSchedule;
 
@@ -16,6 +16,12 @@ function initialize() {
     } else {
       updateSchedule();
     }
+  });
+
+  // scroll snap thing
+  window.addEventListener("scroll", function(e) {
+    let down = window.scrollY <= 40; // is the user below the menu?
+    document.documentElement.style.scrollSnapType = down ? "y mandatory" : "none";
   });
 
   switchSchedule();
