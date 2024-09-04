@@ -1,5 +1,5 @@
 html {
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: none;
 }
 
 body {
@@ -11,6 +11,7 @@ body {
 /* ----------------- top bar ----------------- */
 
 #topNav {
+    height: 40px;
     display: block;
     align-content: center;
     background-color: #122508;
@@ -19,18 +20,30 @@ body {
     font-weight: 350;
     color: #fcb529;
     text-align: center;
+    font-size: 1.77em;
+    overflow: hidden;
 }
 
 #mainNav {
-    display: flex;
+    height: 48px;
     position: sticky;
+    align-content: end;
+    overflow-x: auto;
+    overflow-y: hidden;
+    transform: rotate(180deg);
+}
+
+#mainNavWithin {
+    display: flex;
+    width: fit-content;
+    background: transparent;
+    border: none;
+    transform: rotate(180deg);
 }
 
 nav {
     top: 0px;
     box-sizing: border-box;
-    height: 40px;
-    width: -webkit-fill-available;
     padding: 0px;
     font-family: 'Oswald', sans-serif;
     text-wrap: nowrap;
@@ -51,6 +64,8 @@ nav * {
 }
 
 nav a {
+    height: 35.2px;
+    width: 144px;
     text-align: center;
     background-color: white;
     font: 17px 'Oswald', sans-serif;
@@ -72,7 +87,7 @@ nav a:last-of-type {
     margin-right: auto;
 }
 
-nav a:hover {
+nav a:hover, nav a:focus {
     animation: 600ms ease-in-out 0s infinite alternate both running navButton;
     animation-composition: add;
     text-decoration-line: none;
@@ -141,7 +156,7 @@ main * {
 }
 
 table {
-    /* transform: translate(0px, 50px); */
+    width: max-content;
     border: 2px solid rgb(140 140 140);
     padding: 10px;
     font:
@@ -149,7 +164,6 @@ table {
         sans-serif;
     font-weight: bold;
     color: #ffffff;
-    width: 475px;
 }
 
 table * {
@@ -212,6 +226,14 @@ h1 {
 
 #spacer {
     visibility: hidden;
+}
+
+hr {
+    background-color: #fcb529;
+    overflow: hidden;
+    height: 4px;
+    border: none;
+    margin: unset;
 }
 
 /* end of etc */

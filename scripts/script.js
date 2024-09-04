@@ -6,46 +6,124 @@
 var todaysSchedule;
 
 /**
- * Runs when page is loaded
+ * For index.html
  */
-function initialize() {
-  console.log("init");
+function initializeMainSchedule() {  
+  switchSchedule();
+  updateSchedule();
+
   document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      clearInterval(this.progBarTimer);
-    } else {
+    if (!document.hidden) {
       updateSchedule();
     }
   });
-
-  // scroll snap thing
-  window.addEventListener("scroll", function(e) {
-    let down = window.scrollY <= 40; // is the user below the menu?
-    document.documentElement.style.scrollSnapType = down ? "y mandatory" : "none";
-  });
-
-  switchSchedule();
-  updateSchedule();
 }
 
-var progBarTimer;
+/**
+ * For full-schedule-list.html
+ */
+function initializeFullScheduleList() {  
+  // first, duplicate a bunch of tables (so there is 11 in total)
+  var spacer = document.getElementsByTagName("div")[2].cloneNode(true);
+  var tableToClone = document.getElementById("tableWrapper").cloneNode(true);
+  spacer.style["height"] = "50px";
 
-function updateProgressBar(thisPd, minsInPd) {
-  var progressLevel = document.getElementsByTagName("table")[0].rows[thisPd].getElementsByTagName("progress")[0].value
-  if (progressLevel >= 1) { // stop and updateSchedule
-    clearInterval(this.progBarTimer);
-    updateSchedule();
+  document.getElementsByTagName("div")[2].after(spacer);
+  for (var i=1; i<=9; i++) {
+    spacer = document.getElementsByTagName("div")[2].cloneNode(true);
+    spacer.style["height"] = "23px";
+    document.getElementsByTagName("div")[2].after(document.createElement("hr"), spacer, tableToClone);
+    tableToClone = document.getElementById("tableWrapper").cloneNode(true);
+    spacer = document.getElementsByTagName("div")[2].cloneNode(true);
+    spacer.style["height"] = "23px";
+    if (i != 9)
+      document.getElementsByTagName("div")[2].after(spacer);
+  }
+
+  // now initialize all the created tables
+  var tableList = document.getElementsByTagName("table");
+  var scheduleDB = getScheduleDatabase();
+
+  for (var i=0; i<tableList.length; i++) {
+    var table = tableList[i];
+    var scheduleObject = scheduleDB[Object.keys(scheduleDB)[i]];
+    switchSchedule([Object.keys(scheduleDB)[i], scheduleObject.alias], table);
+    updateSchedule(scheduleObject, table);
+
+    // if (i == tableList.length-1)
+    //   document.getElementsByTagName("hr")[i].style["visible"] = "false";
+  }
+  
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) {
+      var tableList = document.getElementsByTagName("table");
+      var scheduleDB = getScheduleDatabase();
+
+      for (var i=0; i<tableList.length; i++) {
+        var table = tableList[i];
+        var scheduleObject = scheduleDB[Object.keys(scheduleDB)[i]];
+        switchSchedule([Object.keys(scheduleDB)[i], scheduleObject.alias], table);
+        updateSchedule(scheduleObject, table);
+      }
+    }
+  });
+}
+
+/**
+ * Runs when page is loaded
+ */
+function initialize() {
+  // scroll snap thing
+  window.addEventListener("resize", function(e) {
+    if (checkOverflowY(document.getElementsByTagName("html")[0])) {
+      window.addEventListener("scroll", function(e) { // scroll if user not past title bar
+        document.documentElement.style.scrollSnapType = window.scrollY < 40 ? "y mandatory" : "none";
+      });
+    } else {
+      this.window.removeEventListener("resize", function(e){});
+      document.documentElement.style.scrollSnapType = "none";
+    }
+  });
+
+  window.dispatchEvent(new Event("resize"), false, false, true);
+
+  // center the navbar
+  var nav = document.getElementById("mainNav");
+  nav.scrollTo({
+    left: ((nav.scrollWidth-nav.clientWidth)/2)
+  });
+
+  console.log("init finished");
+}
+
+var updateScheduleTimeouts = [];
+
+/**
+ * Determines if the passed element is overflowing its bounds vertically.
+ */
+function checkOverflowY(el) {
+  return el.clientHeight < el.scrollHeight;
+}
+
+function updateProgressBar(thisPd, scheduleObject, scheduleTable) {
+  var progBar = scheduleTable.rows[thisPd].getElementsByTagName("progress")[0];
+  if (progBar.value >= progBar.max) { // stop and updateSchedule
+    updateSchedule(scheduleObject, scheduleTable);
+    console.log("finished updating "+scheduleObject.alias);
   } else {
-    document.getElementsByTagName("table")[0].rows[thisPd].getElementsByTagName("progress")[0].value++;
+    progBar.value++;
+
+    updateScheduleTimeouts.forEach((value) => clearTimeout(value));
+    updateScheduleTimeouts.length = 0;
+    updateScheduleTimeouts.push(setTimeout(updateProgressBar, 1000, thisPd, scheduleObject, scheduleTable));
   }
 }
 
 /**
  * Highlights the row on the dynamic schedule correspondent with the current time
  */
-function updateSchedule() {
+function updateSchedule(scheduleObject = getSchedule(getTodaysCalendar()[0]), scheduleTable = document.getElementsByTagName("table")[0]) {
   const now = new Date();
-  let mainScheduleTable = document.getElementsByTagName("table")[0];
   function color(row, color, primary, secondary, progressLevel) {
     row.style["background-color"] = color;
     row.getElementsByTagName("progress")[0].style["background-color"] = primary;
@@ -54,8 +132,8 @@ function updateSchedule() {
   }
 
   // set highlight (background color) & progress bar status on each row
-  var rows = mainScheduleTable.rows;
-  var timetable = Object.values(todaysSchedule.periods);
+  var rows = scheduleTable.rows;
+  var timetable = Object.values(scheduleObject.periods);
   var currentPeriodReached = false;
   var currentTime = (now.getHours() * 60) + now.getMinutes() + (now.getSeconds()/60); // in minutes
   
@@ -70,12 +148,12 @@ function updateSchedule() {
     if ( currentTime < endTime && (now.getDay() != 0 && now.getDay() != 6)) {
       if (currentTime >= startTime) { // this is the current period, set background to yellow and fill in progress bar
         color(row, '#ffd966', '#666666', '#6aa84f', (currentTime - startTime) * 60);
-        this.progBarTimer = setInterval(updateProgressBar, 1000, i, endTime - startTime);
+        updateProgressBar(i, scheduleObject, scheduleTable);
         currentPeriodReached = true;
       } else if ((i == 1 && startTime - currentTime <= 30) || (i > 1 && !currentPeriodReached)) { // either transistion between periods, or close to start of 1st pd.
         color(row, '#e3e3e3', '#d9d9d9', '#d9d9d9', 0); // gray out row
         var timeDelay = (startTime - currentTime) * 60 * 1000;
-         setTimeout(updateSchedule, timeDelay);
+         updateScheduleTimeouts.push(setTimeout(updateSchedule, timeDelay));
         console.log((startTime - currentTime) * 60 * 1000);
         currentPeriodReached = true;
       } else { // period has not started yet
@@ -89,44 +167,39 @@ function updateSchedule() {
 /**
  * Switches out the schedule in the table for a different one, depending on settings within the document
  */
-function switchSchedule() {
-  var calendarResults = getTodaysCalendar();
-
-  console.log("calendar res "+calendarResults);
-
-  todaysSchedule = getSchedule(calendarResults[0]); // can be manually overriden
+function switchSchedule(calendarResults = getTodaysCalendar(), scheduleTable = document.getElementsByTagName("table")[0]) {
+  var scheduleObject = getSchedule(calendarResults[0]);
   var scheduleAlias = calendarResults[1];
 
   console.log(calendarResults[0]+" schedule:");
-  console.log(todaysSchedule);
+  console.log(scheduleObject);
   
   // change schedule header title
-  let mainScheduleTable = document.getElementsByTagName("table")[0];
   let day = new Date().getDay();
 
   if (day == 0 || day == 6) {
-    document.getElementById("tableTitle").innerHTML = "Monday's Schedule:";
-    document.getElementById("tableTitle").appendChild(document.createElement('br'));
-    document.getElementById("tableTitle").appendChild(document.createTextNode(scheduleAlias));
+    scheduleTable.querySelector("#tableTitle").innerHTML = "Monday's Schedule:";
+    scheduleTable.querySelector("#tableTitle").appendChild(document.createElement('br'));
+    scheduleTable.querySelector("#tableTitle").appendChild(document.createTextNode(scheduleAlias));
   } else {
-    document.getElementById("tableTitle").innerHTML = scheduleAlias;
+    scheduleTable.querySelector("#tableTitle").innerHTML = scheduleAlias;
   }
 
   // add/remove rows if necessary
-  let diff = Object.keys(todaysSchedule.periods).length - (mainScheduleTable.rows.length-1);
+  let diff = Object.keys(scheduleObject.periods).length - (scheduleTable.rows.length-1);
   switch (Math.sign(diff)) {
-    case 1: {for (var i=0; i<diff; i++) {mainScheduleTable.appendChild(mainScheduleTable.rows[1].cloneNode(true));} break;}
+    case 1: {for (var i=0; i<diff; i++) {scheduleTable.appendChild(scheduleTable.rows[1].cloneNode(true));} break;}
     case -1: {table.removeRow(table.getNumRows()+diff); break;}
     case 0: default: {break;}
   }
 
   // set the text/progress bar for all of the rows
-  Object.keys(todaysSchedule.periods).forEach(
+  Object.keys(scheduleObject.periods).forEach(
     function(key,i) {
-      mainScheduleTable.rows[i+1].cells[0].innerHTML = key;
-      mainScheduleTable.rows[i+1].cells[1].innerHTML = todaysSchedule.periods[key].reduce((p,c,i) => {c=(c>=1300)?c%1200:c; return (i<2)?p+c.toString().substring(0,c.toString().length-2)+":"+c.toString().substring(c.toString().length-2)+((i==0)?" - ":" "):((c/100)>=1)?p+"("+c.toString().substring(0,c.toString().length-2)+":"+c.toString().substring(c.toString().length-2)+")":p+"("+c+")";},"");
-      mainScheduleTable.rows[i+1].cells[2].getElementsByTagName("progress")[0].value = 0;
-      mainScheduleTable.rows[i+1].cells[2].getElementsByTagName("progress")[0].max = todaysSchedule.periods[key][2]*60;
+      scheduleTable.rows[i+1].cells[0].innerHTML = key;
+      scheduleTable.rows[i+1].cells[1].innerHTML = scheduleObject.periods[key].reduce((p,c,i) => {c=(c>=1300)?c%1200:c; return (i<2)?p+c.toString().substring(0,c.toString().length-2)+":"+c.toString().substring(c.toString().length-2)+((i==0)?" - ":" "):((c/100)>=1)?p+"("+c.toString().substring(0,c.toString().length-2)+":"+c.toString().substring(c.toString().length-2)+")":p+"("+c+")";},"");
+      scheduleTable.rows[i+1].cells[2].getElementsByTagName("progress")[0].value = 0;
+      scheduleTable.rows[i+1].cells[2].getElementsByTagName("progress")[0].max = scheduleObject.periods[key][2]*60;
       }
   );
 }

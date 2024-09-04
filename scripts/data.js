@@ -109,7 +109,7 @@ const scheduleDatabase = {
         "Period 3": [1304, 1344, 40],
         "Period 4": [1350, 1430, 40]
         },
-        "alias": "Morning Testing"
+        "alias": "Morning Testing (1-2-3-4)"
     },
     "MorningTesting_1678": {
         "periods": {
@@ -120,7 +120,7 @@ const scheduleDatabase = {
         "Period 7": [1304, 1344, 40],
         "Period 8": [1350, 1430, 40],
         },
-        "alias": "Morning Testing"
+        "alias": "Morning Testing (1-6-7-8)"
     },
     "MAPTesting": {
         "periods": {
@@ -136,6 +136,20 @@ const scheduleDatabase = {
         },
         "alias": "MAP Testing"
     },
+    "SpecialHomeroom1": {
+        "periods": {
+        "Period 1": [745, 824, 39],
+        "Period 2": [830, 909, 44],
+        "Homeroom (Or Assembly)": [915, 1003, 48],
+        "Period 3": [1009, 1048, 39],
+        "Period 4": [1054, 1133, 39],
+        "Lunch (Pd 5)": [1133, 1218, 45],
+        "Period 6": [1224, 1303, 39],
+        "Period 7": [1309, 1345, 39],
+        "Period 8": [1351, 1430, 39]
+        },
+        "alias": "Special Homeroom"
+    },
     "None": {
         "periods": {
             "This Day": [0, 2400, 2400]
@@ -144,8 +158,8 @@ const scheduleDatabase = {
     },
     "debug": {
         "periods": {
-        "1": [2000, 2001, 1],
-        "2": [2005, 2010, 5]
+        "1": [2211, 2212, 1],
+        "2": [2213, 2214, 1]
         },
         "alias": "debug"
     }
@@ -158,13 +172,22 @@ const scheduleDatabase = {
  */
 const calendarDatabase = {
     '8/26/2024': ['AMHomeroom', 'First Day of School'],
+
     '9/2/2024': ['None', 'No School'],
+    '9/3/2024': ['SpecialHomeroom1', 'Special Homeroom'],
+    '9/4/2024': ['SpecialHomeroom1', 'Special Homeroom'],
+    '9/5/2024': ['SpecialHomeroom1', 'Special Homeroom'],
+    '9/6/2024': ['SpecialHomeroom1', 'Special Homeroom'],
+
     '9/20/2024': ['PepRally', 'Pep Rally'],
     '9/27/2024': ['EarlyRelease', 'Early Release'],
+
     '10/3/2024': ['None', 'No School'],
     '10/18/2024': ['None', 'No School'],
+
     '11/4/2024': ['None', 'No School'],
     '11/5/2024': ['None', 'No School'],
+
     '11/25/2024': ['EarlyRelease', 'Early Release'],
     '11/26/2024': ['EarlyRelease', 'Early Release'],
     '11/27/2024': ['None', 'No School'],
@@ -182,8 +205,10 @@ const calendarDatabase = {
     '1/1/2025': ['None', 'New Year\'s Day'],
     '1/20/2025': ['None', 'No School'],
     '1/29/2025': ['None', 'No School'],
+
     '2/17/2025': ['None', 'No School'],
     '2/28/2025': ['EarlyRelease', 'Early Release'],
+    
     '3/31/2025': ['None', 'No School']
 };
 
@@ -281,6 +306,12 @@ function toRegEx(x) {return x.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');} // pure m
 function getSchedule(scheduleName) {return scheduleDatabase[scheduleName];}
 
 /**
+ * Gets the entire schedule database.
+ * @returns {Object} The schedule database.
+ */
+function getScheduleDatabase() {return scheduleDatabase;}
+
+/**
  * Gets today's schedule, or Monday's schedule if today is the weekend.
  * @returns {String[]} [scheduleName, scheduleAlias]
  */
@@ -306,8 +337,6 @@ function getCalendar(date) {
     searchDate.setHours(0, 0, 0, 0);
     var scheduleName;
     var scheduleAlias;
-    
-    console.log("date: "+date+" searchDate: "+searchDate);
 
     // Assume a normal week
     switch (searchDate.getDay()) {
