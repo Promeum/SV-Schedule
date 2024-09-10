@@ -166,13 +166,16 @@ table td:nth-child(-n+2) {
     padding: 4px;
 }
 
+tr {
+    background-color: rgb(255 255 255);
+}
+
 th {
     border: 1px solid rgb(160 160 160);
     text-align: center;
 }
 
 td {
-    background-color: rgb(255 255 255);
     border: 1px solid rgb(160 160 160);
     font-size: 16px;
     color: #000000;

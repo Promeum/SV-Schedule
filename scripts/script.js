@@ -17,6 +17,13 @@ function initializeMainSchedule() {
       updateSchedule();
     }
   });
+
+  // scroll the tableWrapper if it is weird
+  var wrapper = document.getElementsByClassName("tableWrapper scheduleTableWrapper")[0];
+  var table = wrapper.getElementsByTagName("table")[0];
+  wrapper.scrollTo({
+    left: ( 2+Math.min(parseInt(getComputedStyle(table).paddingLeft.replace("px",""))+parseInt(getComputedStyle(table).borderLeftWidth.replace("px","")), (wrapper.scrollWidth-wrapper.clientWidth)/2) )
+  });
 }
 
 /**
@@ -25,8 +32,9 @@ function initializeMainSchedule() {
 function initializeFullScheduleList() {
   // first, duplicate a bunch of tables (so there is 11 in total)
   var tableToClone = document.getElementsByClassName("tableWrapper")[0].cloneNode(true);
+  const SCHEDULES_DISPLAYED = 9;
 
-  for (var i=1; i<=9; i++) {
+  for (var i=1; i<=SCHEDULES_DISPLAYED; i++) {
     document.getElementsByClassName("tableWrapper")[0].after(tableToClone);
     tableToClone = document.getElementsByClassName("tableWrapper")[0].cloneNode(true);
   }
@@ -55,6 +63,16 @@ function initializeFullScheduleList() {
       }
     }
   });
+
+  // scroll the tableWrappers if it is weird
+  var wrappers = document.getElementsByClassName("tableWrapper scheduleTableWrapper");
+  for (var i=0; i<wrappers.length; i++) {
+    var wrapper = wrappers[i];
+    var table = wrapper.getElementsByTagName("table")[0];
+    wrapper.scrollTo({
+      left: ( 2+Math.min(parseInt(getComputedStyle(table).paddingLeft.replace("px",""))+parseInt(getComputedStyle(table).borderLeftWidth.replace("px","")), (wrapper.scrollWidth-wrapper.clientWidth)/2) )
+    });
+  }
 }
 
 /**
