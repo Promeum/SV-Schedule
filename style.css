@@ -16,11 +16,10 @@ body {
     align-content: center;
     background-color: #122508;
     border-bottom: 3px solid #fcb529;
-    font-size: 23px;
     font-weight: 350;
     color: #fcb529;
     text-align: center;
-    font-size: 1.77em;
+    font-size: 1.98em;
     overflow: hidden;
 }
 
@@ -135,13 +134,10 @@ nav form input[type="search"] {
 
 main {
     margin-top: 10px;
-    display: block;
     overflow-x: hidden;
-    /* display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 445px 1fr;
-    grid-template-areas:
-        "timer sched calen"; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 main * {
@@ -149,15 +145,11 @@ main * {
 }
 
 /* end of body layers */
-/* ----------------- main schedule ----------------- */
-
-#tableWrapper {
-    overflow-x: auto;
-}
+/* ----------------- tables ----------------- */
 
 table {
     width: max-content;
-    border: 2px solid rgb(140 140 140);
+    border: 3px solid #fcb529;
     padding: 10px;
     font:
         32px Trebuchet MS,
@@ -170,25 +162,42 @@ table * {
     padding: 2px;
 }
 
+table td:nth-child(-n+2) {
+    padding: 4px;
+}
+
 th {
     border: 1px solid rgb(160 160 160);
     text-align: center;
 }
 
 td {
+    background-color: rgb(255 255 255);
     border: 1px solid rgb(160 160 160);
     font-size: 16px;
     color: #000000;
 }
 
-table td:nth-child(-n+2) {
-    padding: 4px;
+/* end of tables */
+/* ----------------- schedule ----------------- */
+
+.tableWrapper {
+    overflow-x: auto;
+    margin: 15px;
 }
 
-thead > tr {
+.scheduleTableWrapper {
+    width: 472px;
+}
+
+table.scheduleTable {
+    color: #ffffff;
+}
+
+table.scheduleTable thead > tr {
     background-color: #274e13;
 }
-tfoot > tr {
+table.scheduleTable tfoot > tr {
     background-color: #274e13;
 }
 
@@ -196,7 +205,7 @@ tfoot > tr {
     width: 158px;
 }
 
-progress {
+table.scheduleTable progress {
     border-radius: 0;
     color: rgb(0,0,0);
     background-color: #274e13;
@@ -204,17 +213,38 @@ progress {
     height: 20px;
 }
 
-#tableSubtitle {
+.tableSubtitle {
     margin: 0px;
     font-size: 16px;
 }
 
-#tableTitle {
+.tableTitle {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 /* end of main schedule */
+/* ----------------- calendar ----------------- */
+
+.calendarTableWrapper {
+    width: auto;
+}
+
+table.calendarTable thead > tr {
+    background-color: #274e13;
+}
+table.calendarTable tfoot > tr {
+    background-color: #274e13;
+}
+
+table.calendarTable td {
+    width: 100px;
+    height: 100px;
+    text-align: left;
+    align-content: start;
+}
+
+/* end of calendar */
 /* ----------------- etc ----------------- */
 
 h1 {
@@ -224,7 +254,7 @@ h1 {
     font-size: 50px;
 }
 
-#spacer {
+.spacer {
     visibility: hidden;
 }
 

@@ -22,22 +22,13 @@ function initializeMainSchedule() {
 /**
  * For full-schedule-list.html
  */
-function initializeFullScheduleList() {  
+function initializeFullScheduleList() {
   // first, duplicate a bunch of tables (so there is 11 in total)
-  var spacer = document.getElementsByTagName("div")[2].cloneNode(true);
-  var tableToClone = document.getElementById("tableWrapper").cloneNode(true);
-  spacer.style["height"] = "50px";
+  var tableToClone = document.getElementsByClassName("tableWrapper")[0].cloneNode(true);
 
-  document.getElementsByTagName("div")[2].after(spacer);
   for (var i=1; i<=9; i++) {
-    spacer = document.getElementsByTagName("div")[2].cloneNode(true);
-    spacer.style["height"] = "23px";
-    document.getElementsByTagName("div")[2].after(document.createElement("hr"), spacer, tableToClone);
-    tableToClone = document.getElementById("tableWrapper").cloneNode(true);
-    spacer = document.getElementsByTagName("div")[2].cloneNode(true);
-    spacer.style["height"] = "23px";
-    if (i != 9)
-      document.getElementsByTagName("div")[2].after(spacer);
+    document.getElementsByClassName("tableWrapper")[0].after(tableToClone);
+    tableToClone = document.getElementsByClassName("tableWrapper")[0].cloneNode(true);
   }
 
   // now initialize all the created tables
@@ -49,12 +40,9 @@ function initializeFullScheduleList() {
     var scheduleObject = scheduleDB[Object.keys(scheduleDB)[i]];
     switchSchedule([Object.keys(scheduleDB)[i], scheduleObject.alias], table);
     updateSchedule(scheduleObject, table);
-
-    // if (i == tableList.length-1)
-    //   document.getElementsByTagName("hr")[i].style["visible"] = "false";
-  }
+    }
   
-  document.addEventListener("visibilitychange", () => {
+  document.addEventListener("visibilitychange", () => { // update every single schedule when page is reopened
     if (!document.hidden) {
       var tableList = document.getElementsByTagName("table");
       var scheduleDB = getScheduleDatabase();
@@ -171,18 +159,18 @@ function switchSchedule(calendarResults = getTodaysCalendar(), scheduleTable = d
   var scheduleObject = getSchedule(calendarResults[0]);
   var scheduleAlias = calendarResults[1];
 
-  console.log(calendarResults[0]+" schedule:");
-  console.log(scheduleObject);
+  // console.log(calendarResults[0]+" schedule:");
+  // console.log(scheduleObject);
   
   // change schedule header title
   let day = new Date().getDay();
 
   if (day == 0 || day == 6) {
-    scheduleTable.querySelector("#tableTitle").innerHTML = "Monday's Schedule:";
-    scheduleTable.querySelector("#tableTitle").appendChild(document.createElement('br'));
-    scheduleTable.querySelector("#tableTitle").appendChild(document.createTextNode(scheduleAlias));
+    scheduleTable.querySelector(".tableTitle").innerHTML = "Monday's Schedule:";
+    scheduleTable.querySelector(".tableTitle").appendChild(document.createElement('br'));
+    scheduleTable.querySelector(".tableTitle").appendChild(document.createTextNode(scheduleAlias));
   } else {
-    scheduleTable.querySelector("#tableTitle").innerHTML = scheduleAlias;
+    scheduleTable.querySelector(".tableTitle").innerHTML = scheduleAlias;
   }
 
   // add/remove rows if necessary
