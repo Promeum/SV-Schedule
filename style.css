@@ -162,8 +162,9 @@ table * {
     padding: 2px;
 }
 
-table td:nth-child(-n+2) {
-    padding: 4px;
+table.scheduleTable p.tableTitle, table.calendarTable p.tableTitle {
+    margin-block: 4px;
+    font-size: 35px;
 }
 
 tr {
@@ -197,6 +198,15 @@ table.scheduleTable {
     color: #ffffff;
 }
 
+table.scheduleTable td {
+    align-items: start;
+}
+
+
+table.scheduleTable td:nth-child(-n+2) {
+    padding: 4px;
+}
+
 table.scheduleTable thead > tr {
     background-color: #274e13;
 }
@@ -216,14 +226,10 @@ table.scheduleTable progress {
     height: 20px;
 }
 
-.tableSubtitle {
-    margin: 0px;
+table.scheduleTable p.flavorContainer {
+    margin-top: 0px;
+    margin-bottom: 5px;
     font-size: 16px;
-}
-
-.tableTitle {
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 /* end of main schedule */
@@ -236,15 +242,41 @@ table.scheduleTable progress {
 table.calendarTable thead > tr {
     background-color: #274e13;
 }
-table.calendarTable tfoot > tr {
+
+table.calendarTable thead > tr {
     background-color: #274e13;
+}
+
+table.calendarTable tbody tr:first-child {
+    background-color: #e3e3e3;
+}
+
+table.calendarTable tbody th {
+    font-size: 16px;
+    color: #000000;
 }
 
 table.calendarTable td {
     width: 100px;
     height: 100px;
+    padding: 4px;
     text-align: left;
     align-content: start;
+}
+
+table.calendarTable td:nth-child(6n+1) {
+    background-color: #dcdcdc;
+}
+
+table.calendarTable tBody p {
+    margin: 0px;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+table.calendarTable tBody p.dayNum {
+    font-size: 16px;
+    font-weight: bold;
 }
 
 /* end of calendar */

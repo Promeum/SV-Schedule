@@ -180,6 +180,8 @@ const calendarDatabase = {
     '9/6/2024': ['SpecialHomeroom1', 'Special Homeroom'],
 
     '9/20/2024': ['PepRally', 'Pep Rally'],
+    '9/25/2024': ['MAPTesting', 'MAP-M Testing'],
+    '9/26/2024': ['MAPTesting', 'MAP-R Testing'],
     '9/27/2024': ['EarlyRelease', 'Early Release'],
 
     '10/3/2024': ['None', 'No School'],
@@ -218,7 +220,6 @@ const calendarDatabase = {
  */
 const flavorTextDatabase = [
     "Features: Exclusive features only available to select few!",
-    "flavorText.eat() <-- Yummy",
     "Hello there!",
     "Rate my schedule!",
     "Help I am trapped in the FlavorTe",
@@ -226,19 +227,18 @@ const flavorTextDatabase = [
     "Ya like jazz?",
     "👍",
     "🍱",
-    "Added the kidnapping feature!",
-    "Press the \"Auto-update\" button to refresh this text!",
+    "Now with more features!",
+    "Refresh this page to generate new flavor text!",
     "Premium Schedule™ Est. 2024",
     "Do you are work!",
-    "Bugged frequently!",
-    "Very buggy!",
+    "Updated frequently!",
     "Aahahhahhhhh!!1!1",
     "Something",
     "🏳‍🌈",
-    "Hypoallergenic!"
+    "Hypoallergenic!",
+    "This is a dynamic schedule!",
+    "\"100% Premium Orange Juice\""
 ];
-// "flavorText.eat() <-- Yummy": index 17 - end
-// "Added the kidnapping feature!": index 0 - end
 
 // /**
 //  * Applies fancy toppings to the flavor text!
@@ -327,9 +327,10 @@ function getTodaysCalendar() {
 
 /**
  * Gets the schedule for a specific date.
- * Note: Does not work during summer!
+ * Note: Do not try during summer!
  * @param date {Date} The day to search for.
- * @returns {String[]} [scheduleName, scheduleAlias]
+ * @returns {String[]} [scheduleName, scheduleAlias, extraComments].
+ *  extraComments can be undefined or a string.
  */
 function getCalendar(date) {
     const searchDate = new Date(date);
@@ -337,30 +338,43 @@ function getCalendar(date) {
     searchDate.setHours(0, 0, 0, 0);
     var scheduleName;
     var scheduleAlias;
+    var extraComments;
 
     // Assume a normal week
     switch (searchDate.getDay()) {
       case 2: case 4: scheduleName = 'EagleTime'; break; // Eagle Time on Tuesdays and Thursdays
-      case 0: case 6: return null; // no school on the weekends
+      case 0: case 6: // no school on the weekends
+        scheduleName = null;
+        scheduleAlias = "";
+        break;
       default: scheduleName = 'Regular'; break;
     }
-    scheduleAlias = getSchedule(scheduleName).alias;
+    if (scheduleName != null)
+        scheduleAlias = getSchedule(scheduleName).alias;
+
+    // Handle summer
+    if (searchDate < new Date(2024, 7, 25) || searchDate > new Date(2025, 5, 13)) {
+        scheduleName = null;
+        scheduleAlias = "";
+    }
 
     // Check the calendar database to see if the date is a special day
     // Override normal week if today is special
     let specialSchedule = calendarDatabase[(searchDate.getMonth()+1) + "/" + searchDate.getDate() + "/" + searchDate.getFullYear()];
-    if (specialSchedule != undefined) {
-        console.log(specialSchedule[0]+", "+specialSchedule[1]+", "+((searchDate.getMonth()+1) + "/" + searchDate.getDate() + "/" + searchDate.getFullYear()));
+    if (specialSchedule != null) {
+        console.log("scheduleName: "+specialSchedule[0]+", scheduleAlias: "+specialSchedule[1]+", date to be accessed: "+((searchDate.getMonth()+1) + "/" + searchDate.getDate() + "/" + searchDate.getFullYear()));
         scheduleName = specialSchedule[0];
         scheduleAlias = specialSchedule[1];
+        if (specialSchedule.length > 2)
+            extraComments = specialSchedule[2];
     }
     
-    return [scheduleName, scheduleAlias];
+    return [scheduleName, scheduleAlias, extraComments];
 }
 
 /**
  * Gets the list of flavor text.
- * @return {Array<String>} The list of flavor text.
+ * @return {string[]} The list of flavor text.
  */
 function getFlavorText() {return flavorTextDatabase;}
 
