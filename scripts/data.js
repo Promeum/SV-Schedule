@@ -124,13 +124,13 @@ const scheduleDatabase = {
     },
     "MAPTesting": {
         "periods": {
-        "Testing": [745, 940, 155],
+        "Testing": [745, 935, 150],
         "Period 1": [945, 1017, 32],
         "Period 2": [1023, 1052, 29],
         "Period 3": [1058, 1127, 29],
         "Period 4": [1133, 1202, 29],
         "Lunch": [1202, 1244, 42],
-        "Period 6": [1250, 1219, 29],
+        "Period 6": [1250, 1319, 29],
         "Period 7": [1325, 1354, 29],
         "Period 8": [1400, 1430, 29]
         },
