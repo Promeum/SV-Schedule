@@ -134,7 +134,7 @@ function updateProgressBar(thisPd, scheduleObject, scheduleTable) {
  * Highlights the row on the dynamic schedule correspondent with the current time
  */
 function updateSchedule(scheduleObject = getSchedule(getTodaysCalendar()[0]), scheduleTable = document.getElementsByTagName("table")[0]) {
-  const now = new Date();
+  var now = new Date();
   function color(row, color, primary, secondary, progressLevel) {
     row.style["background-color"] = color;
     row.getElementsByTagName("progress")[0].style["background-color"] = primary;
@@ -155,7 +155,7 @@ function updateSchedule(scheduleObject = getSchedule(getTodaysCalendar()[0]), sc
     let endTime = timetable[i-1][1];
       endTime = (Math.floor(endTime / 100) * 60) + (endTime % 100); // in minutes
     
-    color(row, '#ffffff', '#d9d9d9', '#d9d9d9', Math.floor(timetable[i-1][2]/100)+(timetable[i-1][2]%100)*60); // assume period has ended
+    color(row, '#ffffff', '#d9d9d9', '#d9d9d9', (Math.floor(timetable[i-1][2]/100)*3600)+(timetable[i-1][2]%100)*60); // assume period has ended
     if ( currentTime < endTime && (now.getDay() != 0 && now.getDay() != 6)) {
       if (currentTime >= startTime) { // this is the current period, set background to yellow and fill in progress bar
         color(row, '#ffd966', '#666666', '#6aa84f', (currentTime - startTime) * 60);
@@ -210,7 +210,7 @@ function switchSchedule(calendarResults = getTodaysCalendar(), scheduleTable = d
       scheduleTable.rows[i+1].cells[0].innerHTML = key;
       scheduleTable.rows[i+1].cells[1].innerHTML = scheduleObject.periods[key].reduce((p,c,i) => {c=(c>=1300)?c%1200:c; return (i<2)?p+c.toString().substring(0,c.toString().length-2)+":"+c.toString().substring(c.toString().length-2)+((i==0)?" - ":" "):((c/100)>=1)?p+"("+c.toString().substring(0,c.toString().length-2)+":"+c.toString().substring(c.toString().length-2)+")":p+"("+c+")";},"");
       scheduleTable.rows[i+1].cells[2].getElementsByTagName("progress")[0].value = 0;
-      scheduleTable.rows[i+1].cells[2].getElementsByTagName("progress")[0].max = (Math.floor(scheduleObject.periods[key][2]/100)*60)+(scheduleObject.periods[key][2]%100)*60;
+      scheduleTable.rows[i+1].cells[2].getElementsByTagName("progress")[0].max = (Math.floor(scheduleObject.periods[key][2]/100)*3600)+(scheduleObject.periods[key][2]%100)*60;
       }
   );
 }
