@@ -34,14 +34,14 @@ const scheduleDatabase = {
     },
     "EarlyRelease": {
         "periods": {
-        "Period 1": [745, 813, 28],
-        "Period 2": [819, 844, 25],
-        "Period 3": [850, 915, 25],
-        "Period 4": [921, 946, 25],
-        "Period 6": [952, 1017, 25],
-        "Lunch (Pd 5)": [1017, 1057, 40],
-        "Period 7": [1103, 1128, 25],
-        "Period 8": [1134, 1200, 26]
+        "Period 1": [745, 814, 29],
+        "Period 2": [820, 846, 26],
+        "Period 3": [852, 918, 26],
+        "Period 4": [924, 950, 26],
+        "Period 6": [956, 1022, 26],
+        "Period 7": [1028, 1054, 26],
+        "Period 8": [1100, 1126, 26],
+        "Lunch (Pd 5)": [1126, 1200, 34]
         },
         "alias": "Early Release"
     },
