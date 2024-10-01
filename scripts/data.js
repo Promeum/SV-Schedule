@@ -186,6 +186,7 @@ const calendarDatabase = {
 
     '10/3/2024': ['None', 'No School'],
     '10/18/2024': ['None', 'No School'],
+    '10/31/2024': ['EagleTime', 'Eagle Time', 'Halloween!'],
 
     '11/4/2024': ['None', 'No School'],
     '11/5/2024': ['None', 'No School'],
@@ -211,7 +212,25 @@ const calendarDatabase = {
     '2/17/2025': ['None', 'No School'],
     '2/28/2025': ['EarlyRelease', 'Early Release'],
     
-    '3/31/2025': ['None', 'No School']
+    '3/31/2025': ['None', 'No School'],
+
+    '4/14/2025': ['None', 'Spring Break'],
+    '4/15/2025': ['None', 'Spring Break'],
+    '4/16/2025': ['None', 'Spring Break'],
+    '4/17/2025': ['None', 'Spring Break'],
+    '4/18/2025': ['None', 'Spring Break'],
+    '4/21/2025': ['None', 'Spring Break'],
+
+    '5/26/2025': ['None', 'Memorial Day'],
+
+    '6/6/2025': ['None', 'No School'],
+    '6/13/2025': ['Early Release', 'Last Day of School'],
+    '6/16/2025': ['None', 'No School'],
+    '6/17/2025': ['None', 'Possible Make-up Day'],
+    '6/18/2025': ['None', 'Possible Make-up Day'],
+    '6/19/2025': ['None', 'No School'],
+    '6/20/2025': ['None', 'Possible Make-up Day'],
+    '6/23/2025': ['None', 'Possible Make-up Day'],
 };
 
 /**
@@ -332,7 +351,7 @@ function getTodaysCalendar() {
  * @returns {String[]} [scheduleName, scheduleAlias, extraComments].
  *  extraComments can be undefined or a string.
  */
-function getCalendar(date) {
+function getCalendar(date) { // TODO: Output a Object (JSON) instead of a array
     const searchDate = new Date(date);
 
     searchDate.setHours(0, 0, 0, 0);
@@ -353,7 +372,7 @@ function getCalendar(date) {
         scheduleAlias = getSchedule(scheduleName).alias;
 
     // Handle summer
-    if (searchDate < new Date(2024, 7, 25) || searchDate > new Date(2025, 5, 13)) {
+    if (searchDate < new Date(2024, 7, 25) || searchDate > new Date(2025, 5, 23)) {
         scheduleName = null;
         scheduleAlias = "";
     }

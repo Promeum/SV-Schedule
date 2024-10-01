@@ -334,6 +334,10 @@ function buildCalendar(calendarTable = document.getElementsByClassName("calendar
       case "debug":
         dayRGB = [255, 0, 253];
         break;
+      case "First Day of School":
+      case "Last Day of School":
+        dayRGB = [132, 232, 180];
+        break;
       case "Pep Rally":
         dayRGB = [212, 179, 212];
         break;
@@ -357,6 +361,8 @@ function buildCalendar(calendarTable = document.getElementsByClassName("calendar
       case "Christmas Day":
       case "New Year's Eve":
       case "New Year's Day":
+      case "Spring Break":
+      case "Possible Make-up Day":
         dayRGB = [166, 194, 229];
         break;
       case "Eagle Time":
