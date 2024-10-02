@@ -150,6 +150,19 @@ const scheduleDatabase = {
         },
         "alias": "Special Homeroom"
     },
+    "ECAFair": {
+        "periods": {
+        "Period 1": [745, 834, 49],
+        "Period 2": [840, 924, 44],
+        "Period 3": [930, 1014, 44],
+        "Period 4": [1020, 1104, 44],
+        "Lunch & ECA Fair": [1104, 1158, 54],
+        "Period 6": [1204, 1248, 44],
+        "Period 7": [1254, 1338, 44],
+        "Period 8": [1344, 1430, 44]
+        },
+        "alias": "Extracuriccular Fair"
+    },
     "None": {
         "periods": {
             "This Day": [0, 2400, 2400]
@@ -184,6 +197,7 @@ const calendarDatabase = {
     '9/26/2024': ['MAPTesting', 'MAP-R Testing'],
     '9/27/2024': ['EarlyRelease', 'Early Release'],
 
+    '10/2/2024': ['ECAFair', 'Extracuriccular Fair'],
     '10/3/2024': ['None', 'No School'],
     '10/18/2024': ['None', 'No School'],
     '10/31/2024': ['EagleTime', 'Eagle Time', 'Halloween!'],
