@@ -152,7 +152,7 @@ const scheduleDatabase = {
     },
     "ECAFair": {
         "periods": {
-        "Period 1": [745, 834, 49],
+        "Period 1 & PA": [745, 834, 49],
         "Period 2": [840, 924, 44],
         "Period 3": [930, 1014, 44],
         "Period 4": [1020, 1104, 44],
@@ -161,7 +161,7 @@ const scheduleDatabase = {
         "Period 7": [1254, 1338, 44],
         "Period 8": [1344, 1430, 44]
         },
-        "alias": "Extracuriccular Fair"
+        "alias": "Extracurricular Fair"
     },
     "None": {
         "periods": {
@@ -171,8 +171,11 @@ const scheduleDatabase = {
     },
     "debug": {
         "periods": {
-        "1": [1905, 1906, 1],
-        "2": [1907, 1908, 1]
+        "1 kgyuv": [1714, 1715, 1],
+        "2 vgjhb": [1716, 1717, 1],
+        // "3 iugbh": [1701, 1702, 1],
+        // "4 oiukj": [1703, 1704, 1],
+        // "5 dyugi": [1705, 1706, 1]
         },
         "alias": "debug"
     }
@@ -197,8 +200,12 @@ const calendarDatabase = {
     '9/26/2024': ['MAPTesting', 'MAP-R Testing'],
     '9/27/2024': ['EarlyRelease', 'Early Release'],
 
-    '10/2/2024': ['ECAFair', 'Extracuriccular Fair'],
+    '10/2/2024': ['ECAFair', 'Extracurricular Fair'],
     '10/3/2024': ['None', 'No School'],
+    // '10/4/2024': ['debug', 'Debugging...'],
+    '10/8/2024': ['EagleTime', 'Eagle Time', 'IB Group 4 Project'],
+    '10/9/2024': ['Regular', 'Regular Schedule', 'IB Group 4 Project'],
+    '10/11/2024': ['PepRally', 'Pep Rally'],
     '10/18/2024': ['None', 'No School'],
     '10/31/2024': ['EagleTime', 'Eagle Time', 'Halloween!'],
 
@@ -346,7 +353,8 @@ function getScheduleDatabase() {return scheduleDatabase;}
 
 /**
  * Gets today's schedule, or Monday's schedule if today is the weekend.
- * @returns {String[]} [scheduleName, scheduleAlias]
+ * @returns {Object} scheduleName, scheduleAlias, extraComments, dayRGB.
+ *  extraComments can be undefined or a string.
  */
 function getTodaysCalendar() {
     const date = new Date();
@@ -362,13 +370,13 @@ function getTodaysCalendar() {
  * Gets the schedule for a specific date.
  * Note: Do not try during summer!
  * @param date {Date} The day to search for.
- * @returns {String[]} [scheduleName, scheduleAlias, extraComments].
+ * @returns {Object} scheduleName, scheduleAlias, extraComments, dayRGB.
  *  extraComments can be undefined or a string.
  */
-function getCalendar(date) { // TODO: Output a Object (JSON) instead of a array
+function getCalendar(date) {
     const searchDate = new Date(date);
 
-    searchDate.setHours(0, 0, 0, 0);
+    searchDate.setHours(0, 0, 0, 0); // Abuse Date to make it work. Is Temporal supported yet...
     var scheduleName;
     var scheduleAlias;
     var extraComments;
@@ -401,8 +409,16 @@ function getCalendar(date) { // TODO: Output a Object (JSON) instead of a array
         if (specialSchedule.length > 2)
             extraComments = specialSchedule[2];
     }
+
+    var dayRGB = [0,0,0] // placeholder
     
-    return [scheduleName, scheduleAlias, extraComments];
+    // return [scheduleName, scheduleAlias, extraComments];
+    return {
+        'scheduleName': scheduleName,
+        'scheduleAlias': scheduleAlias,
+        'extraComments': extraComments,
+        'dayRGB': dayRGB
+    }
 }
 
 /**

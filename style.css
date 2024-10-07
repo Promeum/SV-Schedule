@@ -162,7 +162,7 @@ table * {
     padding: 2px;
 }
 
-table.scheduleTable p.tableTitle, table.calendarTable p.tableTitle {
+table.scheduleTable p.tableTitle, table.calendarTable p.tableTitle, table.timerTable p.tableTitle {
     margin-block: 4px;
     font-size: 35px;
 }
@@ -240,11 +240,7 @@ table.scheduleTable p.flavorContainer {
 }
 
 table.calendarTable thead > tr {
-    background-color: #274e13;
-}
-
-table.calendarTable thead > tr {
-    background-color: #274e13;
+    background-color: #350d09;
 }
 
 table.calendarTable tbody tr:first-child {
@@ -280,6 +276,25 @@ table.calendarTable tBody p.dayNum {
 }
 
 /* end of calendar */
+/* ----------------- timer ----------------- */
+
+table.timerTable tr:first-of-type {
+    background: rgb(1,23,49);
+    background: linear-gradient(45deg, rgb(1,23,49) 20%, rgb(21,53,103) 100%);
+}
+
+table.timerTable svg {
+    padding: 0px;
+}
+
+table.timerTable h2 {
+    margin: 0px;
+    position: relative;
+    top: -120px;
+    left: 20%;
+}
+
+/* end of timer */
 /* ----------------- etc ----------------- */
 
 h1 {
