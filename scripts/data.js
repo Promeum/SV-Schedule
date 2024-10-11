@@ -205,7 +205,6 @@ const calendarDatabase = {
     // '10/4/2024': ['debug', 'Debugging...'],
     '10/8/2024': ['EagleTime', 'Eagle Time', 'IB Group 4 Project'],
     '10/9/2024': ['Regular', 'Regular Schedule', 'IB Group 4 Project'],
-    '10/11/2024': ['PepRally', 'Pep Rally'],
     '10/18/2024': ['None', 'No School'],
     '10/31/2024': ['EagleTime', 'Eagle Time', 'Halloween!'],
 
