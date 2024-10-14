@@ -122,6 +122,16 @@ const scheduleDatabase = {
         },
         "alias": "Morning Testing (1-6-7-8)"
     },
+    "PSAT": {
+        "periods": {
+        "Testing": [745, 1145, 400],
+        "Lunch": [1145, 1227, 42],
+        "Period 6": [1233, 1308, 35],
+        "Period 7": [1314, 1349, 35],
+        "Period 8": [1355, 1430, 35],
+        },
+        "alias": "PSAT Schedule"
+    },
     "MAPTesting": {
         "periods": {
         "Testing": [745, 935, 150],
@@ -205,6 +215,7 @@ const calendarDatabase = {
     // '10/4/2024': ['debug', 'Debugging...'],
     '10/8/2024': ['EagleTime', 'Eagle Time', 'IB Group 4 Project'],
     '10/9/2024': ['Regular', 'Regular Schedule', 'IB Group 4 Project'],
+    '10/16/2024': ['PSAT', 'PSAT Schedule'],
     '10/18/2024': ['None', 'No School'],
     '10/31/2024': ['EagleTime', 'Eagle Time', 'Halloween!'],
 
