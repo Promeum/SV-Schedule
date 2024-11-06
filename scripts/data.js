@@ -221,6 +221,7 @@ const calendarDatabase = {
 
     '11/4/2024': ['None', 'No School'],
     '11/5/2024': ['None', 'No School'],
+    '11/6/2024': ['EagleTime', 'Safety Day'],
 
     '11/25/2024': ['EarlyRelease', 'Early Release'],
     '11/26/2024': ['EarlyRelease', 'Early Release'],
