@@ -160,6 +160,20 @@ const scheduleDatabase = {
         },
         "alias": "Special Homeroom"
     },
+    "ReportCardDay": {
+        "periods": {
+        "Period 1 & PA": [745, 832, 47],
+        "Period 2": [838, 922, 42],
+        "Period 3": [928, 1012, 44],
+        "HR/Report Card": [1018, 1028, 10],
+        "Period 4": [1034, 1118, 44],
+        "Lunch (Pd 5)": [1118, 1200, 42],
+        "Period 6": [1206, 1250, 44],
+        "Period 7": [1256, 1340, 44],
+        "Period 8": [1346, 1430, 44]
+        },
+        "alias": "Eagle Time"
+    },
     "ECAFair": {
         "periods": {
         "Period 1 & PA": [745, 834, 49],
@@ -222,6 +236,7 @@ const calendarDatabase = {
     '11/4/2024': ['None', 'No School'],
     '11/5/2024': ['None', 'No School'],
     '11/6/2024': ['EagleTime', 'Safety Day'],
+    '11/13/2024': ['ReportCardDay', 'Report Card Distribution'],
 
     '11/25/2024': ['EarlyRelease', 'Early Release'],
     '11/26/2024': ['EarlyRelease', 'Early Release'],
