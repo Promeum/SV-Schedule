@@ -45,6 +45,26 @@ const scheduleDatabase = {
         },
         "alias": "Early Release"
     },
+    "EarlyReleaseAlt_1234": {
+        "periods": {
+        "Period 1": [745, 817, 32],
+        "Period 2": [823, 918, 55],
+        "Period 3": [924, 1019, 55],
+        "Period 4": [1025, 1120, 55],
+        "Lunch (Pd 5)": [1120, 1200, 40]
+        },
+        "alias": "Early Release"
+    },
+    "EarlyReleaseAlt_1678": {
+        "periods": {
+        "Period 1": [745, 817, 32],
+        "Period 6": [823, 918, 55],
+        "Period 7": [924, 1019, 55],
+        "Period 8": [1025, 1120, 55],
+        "Lunch (Pd 5)": [1120, 1200, 40]
+        },
+        "alias": "Early Release"
+    },
     "DelayedOpening": {
         "periods": {
         "Period 1": [945, 1017, 32],
@@ -238,8 +258,8 @@ const calendarDatabase = {
     '11/6/2024': ['EagleTime', 'Safety Day'],
     '11/13/2024': ['ReportCardDay', 'Report Card Distribution'],
 
-    '11/25/2024': ['EarlyRelease', 'Early Release'],
-    '11/26/2024': ['EarlyRelease', 'Early Release'],
+    '11/25/2024': ['EarlyReleaseAlt_1234', 'Early Release'],
+    '11/26/2024': ['EarlyReleaseAlt_1678', 'Early Release'],
     '11/27/2024': ['None', 'No School'],
     '11/28/2024': ['None', 'No School'],
     '11/29/2024': ['None', 'No School'],

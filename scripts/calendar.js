@@ -132,6 +132,7 @@ function buildCalendar(calendarTable = document.getElementsByClassName("calendar
         break;
       case "Assembly Schedule":
       case "AM Homeroom":
+      case "Report Card Distribution":
       case "Morning Testing":
       case "MAP Testing":
       case "MAP-M Testing":
@@ -153,7 +154,9 @@ function buildCalendar(calendarTable = document.getElementsByClassName("calendar
         break;
       case "Regular Schedule":
       case "": break;
-      default: 
+      default:
+        dayRGB = [230, 165, 228];
+        break;
     }
     
     if (i-1 < offset || i-offset > daysInMonth) // month didnt start yet or month has ended
