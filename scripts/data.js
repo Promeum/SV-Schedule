@@ -279,7 +279,7 @@ const calendarDatabase = {
     '11/28/2024': ['None', 'No School'],
     '11/29/2024': ['None', 'No School'],
     
-    '12/5/2024': ['AssemblyAdjusted', 'Assembly (Adjusted)'],
+    '12/4/2024': ['AssemblyAdjusted', 'Assembly (Adjusted)'],
     '12/23/2024': ['None', 'Winter Break'],
     '12/24/2024': ['None', 'Christmas Eve'],
     '12/25/2024': ['None', 'Christmas Day'],
