@@ -92,6 +92,21 @@ const scheduleDatabase = {
         },
         "alias": "Assembly Schedule"
     },
+    "AssemblyAdjusted": {
+        "periods": {
+        "Period 1": [745, 817, 37],
+        "Period 2": [823, 900, 37],
+        "A1/Pd 3": [906, 936, 30],
+        "A2/Pd 3": [942, 1012, 30],
+        "A3/Pd 3": [1018, 1048, 30],
+        "Period 4": [1054, 1141, 37],
+        "Lunch (Pd 5)": [1141, 1221, 40],
+        "Period 6": [1227, 1304, 37],
+        "Period 7": [1310, 1347, 37],
+        "Period 8": [1353, 1430, 37]
+        },
+        "alias": "Assembly (Adjusted)"
+    },
     "PepRally": {
         "periods": {
         "Period 1 & PA": [745, 825, 40],
@@ -264,6 +279,7 @@ const calendarDatabase = {
     '11/28/2024': ['None', 'No School'],
     '11/29/2024': ['None', 'No School'],
     
+    '12/5/2024': ['AssemblyAdjusted', 'Assembly (Adjusted)'],
     '12/23/2024': ['None', 'Winter Break'],
     '12/24/2024': ['None', 'Christmas Eve'],
     '12/25/2024': ['None', 'Christmas Day'],
