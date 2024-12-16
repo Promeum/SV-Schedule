@@ -107,6 +107,35 @@ const scheduleDatabase = {
         },
         "alias": "Assembly (Adjusted)"
     },
+    "AssemblyAdjusted2": {
+        "periods": {
+        "Period 1": [745, 820, 35],
+        "Period 2": [826, 901, 35],
+        "A1/Pd 3": [907, 1001, 54],
+        "Transition": [1001, 1016, 15],
+        "A2/Pd 3": [1016, 1106, 50],
+        "Lunch (Pd 5)": [1106, 1146, 40],
+        "Period 4": [1152, 1227, 35],
+        "Period 6": [1233, 1308, 35],
+        "Period 7": [1314, 1349, 35],
+        "Period 8": [1355, 1430, 35]
+        },
+        "alias": "Assembly (Dec. 19)"
+    },
+    "AssemblyAdjusted3": {
+        "periods": {
+        "Period 1": [745, 815, 30],
+        "Pd 2/Assembly 1": [821, 941, 120],
+        "Pd 2/Assembly 2": [947, 1107, 120],
+        "Period 3": [1113, 1139, 26],
+        "Lunch (Pd 5)": [1139, 1222, 43],
+        "Period 4": [1228, 1254, 26],
+        "Period 6": [1300, 1326, 26],
+        "Period 7": [1332, 1358, 26],
+        "Period 8": [1404, 1430, 26]
+        },
+        "alias": "Assembly (Dec. 20)"
+    },
     "PepRally": {
         "periods": {
         "Period 1 & PA": [745, 825, 40],
@@ -280,6 +309,8 @@ const calendarDatabase = {
     '11/29/2024': ['None', 'No School'],
     
     '12/4/2024': ['AssemblyAdjusted', 'Assembly (Adjusted)'],
+    '12/19/2024': ['AssemblyAdjusted2', 'Assembly (Adjusted)'],
+    '12/20/2024': ['AssemblyAdjusted3', 'Winter Concert'],
     '12/23/2024': ['None', 'Winter Break'],
     '12/24/2024': ['None', 'Christmas Eve'],
     '12/25/2024': ['None', 'Christmas Day'],
