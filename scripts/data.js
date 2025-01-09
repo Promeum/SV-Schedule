@@ -320,6 +320,10 @@ const calendarDatabase = {
     '12/31/2024': ['None', 'New Year\'s Eve'],
 
     '1/1/2025': ['None', 'New Year\'s Day'],
+    '1/6/2025': ['None', 'Snow Day'],
+    '1/7/2025': ['None', 'Snow Day'],
+    '1/8/2025': ['None', 'Snow Day'],
+    '1/9/2025': ['DelayedOpening', 'Delayed Opening'],
     '1/20/2025': ['None', 'No School'],
     '1/29/2025': ['None', 'No School'],
 
