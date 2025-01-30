@@ -328,6 +328,7 @@ const calendarDatabase = {
     '1/21/2025': ['DelayedOpening', 'Delayed Opening'],
     '1/22/2025': ['DelayedOpening', 'Delayed Opening'],
     '1/29/2025': ['None', 'No School'],
+    '1/30/2025': ['AMHomeroom', 'AM Homeroom'],
 
     '2/17/2025': ['None', 'No School'],
     '2/28/2025': ['EarlyRelease', 'Early Release'],
