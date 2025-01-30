@@ -188,6 +188,7 @@ function buildCalendar(calendarTable = document.getElementsByClassName("calendar
 
     if (comment != null) {
       var pComment = document.createElement("p");
+      pComment.className = 'dayDescription'
       pComment.appendChild(document.createTextNode(comment));
       cellHTML.appendChild(document.createElement("br"));
       cellHTML.appendChild(pComment);
@@ -195,4 +196,10 @@ function buildCalendar(calendarTable = document.getElementsByClassName("calendar
       console.log(pComment);
     }
   }
+
+  // center the calnendar
+  var calendarTableWrapper = document.getElementsByClassName("calendarTableWrapper")[0];
+  calendarTableWrapper.scrollTo({
+    left: ((calendarTableWrapper.scrollWidth - calendarTableWrapper.clientWidth) / 2)
+  });
 }

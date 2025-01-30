@@ -23,7 +23,7 @@ const scheduleDatabase = {
         "Period 1": [745, 830, 45],
         "Period 2": [836, 918, 42],
         "Period 3": [924, 1006, 42],
-        "Eagle Time/SVTV": [1006, 1036, 30],
+        "Eagle Time": [1006, 1036, 30],
         "Period 4": [1042, 1124, 42],
         "Lunch (Pd 5)": [1124, 1206, 42],
         "Period 6": [1212, 1254, 42],
@@ -107,38 +107,9 @@ const scheduleDatabase = {
         },
         "alias": "Assembly (Adjusted)"
     },
-    "AssemblyAdjusted2": {
-        "periods": {
-        "Period 1": [745, 820, 35],
-        "Period 2": [826, 901, 35],
-        "A1/Pd 3": [907, 1001, 54],
-        "Transition": [1001, 1016, 15],
-        "A2/Pd 3": [1016, 1106, 50],
-        "Lunch (Pd 5)": [1106, 1146, 40],
-        "Period 4": [1152, 1227, 35],
-        "Period 6": [1233, 1308, 35],
-        "Period 7": [1314, 1349, 35],
-        "Period 8": [1355, 1430, 35]
-        },
-        "alias": "Assembly (Dec. 19)"
-    },
-    "AssemblyAdjusted3": {
-        "periods": {
-        "Period 1": [745, 815, 30],
-        "Pd 2/Assembly 1": [821, 941, 120],
-        "Pd 2/Assembly 2": [947, 1107, 120],
-        "Period 3": [1113, 1139, 26],
-        "Lunch (Pd 5)": [1139, 1222, 43],
-        "Period 4": [1228, 1254, 26],
-        "Period 6": [1300, 1326, 26],
-        "Period 7": [1332, 1358, 26],
-        "Period 8": [1404, 1430, 26]
-        },
-        "alias": "Assembly (Dec. 20)"
-    },
     "PepRally": {
         "periods": {
-        "Period 1 & PA": [745, 825, 40],
+        "Period 1": [745, 825, 40],
         "Period 2": [831, 908, 37],
         "Period 3": [914, 951, 37],
         "Period 4": [957, 1034, 37],
@@ -152,7 +123,7 @@ const scheduleDatabase = {
     },
     "AMHomeroom": {
         "periods": {
-        "Homeroom & PA": [745, 758, 13],
+        "Homeroom": [745, 748, 13],
         "Period 1": [804, 848, 44],
         "Period 2": [854, 938, 44],
         "Period 3": [944, 1028, 44],
@@ -214,7 +185,7 @@ const scheduleDatabase = {
         "periods": {
         "Period 1": [745, 824, 39],
         "Period 2": [830, 909, 44],
-        "Homeroom (Or Assembly)": [915, 1003, 48],
+        "Homeroom/Assembly": [915, 1003, 48],
         "Period 3": [1009, 1048, 39],
         "Period 4": [1054, 1133, 39],
         "Lunch (Pd 5)": [1133, 1218, 45],
@@ -226,7 +197,7 @@ const scheduleDatabase = {
     },
     "ReportCardDay": {
         "periods": {
-        "Period 1 & PA": [745, 832, 47],
+        "Period 1": [745, 832, 47],
         "Period 2": [838, 922, 42],
         "Period 3": [928, 1012, 44],
         "HR/Report Card": [1018, 1028, 10],
@@ -236,11 +207,40 @@ const scheduleDatabase = {
         "Period 7": [1256, 1340, 44],
         "Period 8": [1346, 1430, 44]
         },
-        "alias": "Eagle Time"
+        "alias": "Report Card Day"
+    },
+    "AssemblyAdjusted2": {
+        "periods": {
+        "Period 1": [745, 820, 35],
+        "Period 2": [826, 901, 35],
+        "A1/Pd 3": [907, 1001, 54],
+        "Transition": [1001, 1016, 15],
+        "A2/Pd 3": [1016, 1106, 50],
+        "Lunch (Pd 5)": [1106, 1146, 40],
+        "Period 4": [1152, 1227, 35],
+        "Period 6": [1233, 1308, 35],
+        "Period 7": [1314, 1349, 35],
+        "Period 8": [1355, 1430, 35]
+        },
+        "alias": "Assembly (Dec. 19)"
+    },
+    "AssemblyAdjusted3": {
+        "periods": {
+        "Period 1": [745, 815, 30],
+        "Pd 2/Assembly 1": [821, 941, 120],
+        "Pd 2/Assembly 2": [947, 1107, 120],
+        "Period 3": [1113, 1139, 26],
+        "Lunch (Pd 5)": [1139, 1222, 43],
+        "Period 4": [1228, 1254, 26],
+        "Period 6": [1300, 1326, 26],
+        "Period 7": [1332, 1358, 26],
+        "Period 8": [1404, 1430, 26]
+        },
+        "alias": "Assembly (Dec. 20)"
     },
     "ECAFair": {
         "periods": {
-        "Period 1 & PA": [745, 834, 49],
+        "Period 1": [745, 834, 49],
         "Period 2": [840, 924, 44],
         "Period 3": [930, 1014, 44],
         "Period 4": [1020, 1104, 44],
@@ -259,8 +259,8 @@ const scheduleDatabase = {
     },
     "debug": {
         "periods": {
-        "1 kgyuv": [1714, 1715, 1],
-        "2 vgjhb": [1716, 1717, 1],
+        "1 kgyuv": [2356, 2357, 2],
+        "2 vgjhb": [2358, 2359, 2],
         // "3 iugbh": [1701, 1702, 1],
         // "4 oiukj": [1703, 1704, 1],
         // "5 dyugi": [1705, 1706, 1]
@@ -272,6 +272,7 @@ const scheduleDatabase = {
 /**
  * All known special school days in the 2024-2025 school year.
  * Source: https://www.montgomeryschoolsmd.org//siteassets/district/calendar/2024/2024-calendar.pdf
+ * Alternate source: https://ww2.montgomeryschoolsmd.org/calendar/index.aspx
  * @type {object}
  */
 const calendarDatabase = {
@@ -290,7 +291,6 @@ const calendarDatabase = {
 
     '10/2/2024': ['ECAFair', 'Extracurricular Fair'],
     '10/3/2024': ['None', 'No School'],
-    // '10/4/2024': ['debug', 'Debugging...'],
     '10/8/2024': ['EagleTime', 'Eagle Time', 'IB Group 4 Project'],
     '10/9/2024': ['Regular', 'Regular Schedule', 'IB Group 4 Project'],
     '10/16/2024': ['PSAT', 'PSAT Schedule'],
@@ -324,17 +324,27 @@ const calendarDatabase = {
     '1/7/2025': ['None', 'Snow Day'],
     '1/8/2025': ['None', 'Snow Day'],
     '1/9/2025': ['DelayedOpening', 'Delayed Opening'],
-    '1/20/2025': ['None', 'No School'],
+    '1/20/2025': ['None', 'Inauguration Day', 'Schools and offices closed'],
     '1/21/2025': ['DelayedOpening', 'Delayed Opening'],
     '1/22/2025': ['DelayedOpening', 'Delayed Opening'],
-    '1/29/2025': ['None', 'No School'],
-    '1/30/2025': ['AMHomeroom', 'AM Homeroom'],
+    '1/27/2025': ['Regular', 'Regular Schedule', 'MP2 student schedules finalized by 5 pm'],
+    '1/28/2025': ['EagleTime', 'Eagle Time', 'End of MP2 / Semester 1'],
+    '1/29/2025': ['None', 'No School', 'Grading and Planning for Teachers'],
+    '1/31/2025': ['Regular', 'Regular Schedule', 'MP2 Final grades in by 2 pm!'],
 
-    '2/17/2025': ['None', 'No School'],
-    '2/28/2025': ['EarlyRelease', 'Early Release'],
+    '2/4/2025': ['EagleTime', 'Eagle Time', 'MP2 Report Cards in Synergy'],
+    '2/6/2025': ['ReportCardDay', 'Report Card Distribution', 'MP2 Report Cards Distributed'],
+    '2/17/2025': ['None', 'President\'s Day', 'Schools and offices closed'],
+    '2/28/2025': ['EarlyRelease', 'Early Release', 'MP3 Interims, Final grades in by 5 pm!'],
     
-    '3/31/2025': ['None', 'No School'],
+    '3/7/2025': ['Regular', 'Regular Schedule', 'MP3 Interim Report Cards Mailed'],
+    '3/27/2025': ['EagleTime', 'Eagle Time', 'MP3 student schedules finalized by 5 pm'],
+    '3/28/2025': ['Regular', 'Regular Schedule', 'End of MP3'],
+    '3/31/2025': ['None', 'No School', 'Grading and Planning for Teachers'],
 
+    '4/1/2025': ['EagleTime', 'Eagle Time', 'MP3 Grades in!'],
+    '4/4/2025': ['Regular', 'Regular Schedule', 'MP3 Report Cards in Synergy'],
+    '4/8/2025': ['ReportCardDay', 'Report Card Distribution', 'MP3 Report Cards Distributed'],
     '4/14/2025': ['None', 'Spring Break'],
     '4/15/2025': ['None', 'Spring Break'],
     '4/16/2025': ['None', 'Spring Break'],
@@ -342,16 +352,22 @@ const calendarDatabase = {
     '4/18/2025': ['None', 'Spring Break'],
     '4/21/2025': ['None', 'Spring Break'],
 
-    '5/26/2025': ['None', 'Memorial Day'],
+    '5/2/2025': ['Regular', 'Regular Schedule', 'MP4 Interim Grades in! (Seniors)'],
+    '5/9/2025': ['Regular', 'Regular Schedule', 'MP4 Interim Report Cards Mailed (Seniors) +Itm. Grades in!'],
+    '5/16/2025': ['Regular', 'Regular Schedule', 'MP4 Interim Report Cards Mailed'],
+    '5/26/2025': ['None', 'Memorial Day', 'Schools and offices closed'],
 
-    '6/6/2025': ['None', 'No School'],
-    '6/13/2025': ['Early Release', 'Last Day of School'],
+    '6/6/2025': ['None', 'No School', 'Staff Professional Day'],
+    '6/12/2025': ['EagleTime', 'Eagle Time', 'MP4 last update to student schedules by 5 pm'],
+    '6/13/2025': ['Early Release', 'Last Day of School', 'End of MP4'],
     '6/16/2025': ['None', 'No School'],
-    '6/17/2025': ['None', 'Possible Make-up Day'],
+    '6/17/2025': ['None', 'Possible Make-up Day', 'MP4 Final grades in by 12 pm!'],
     '6/18/2025': ['None', 'Possible Make-up Day'],
-    '6/19/2025': ['None', 'No School'],
+    '6/19/2025': ['None', 'No School', 'Systemwide Closure — Schools and offices closed'],
     '6/20/2025': ['None', 'Possible Make-up Day'],
     '6/23/2025': ['None', 'Possible Make-up Day'],
+    '6/24/2025': ['', '', 'MP4 Report Cards in Synergy'],
+    '6/25/2025': ['', '', 'MP4 Report Cards Distributed'],
 };
 
 /**

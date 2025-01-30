@@ -13,6 +13,9 @@ function initializeMainSchedule() {
   document.addEventListener("visibilitychange", () => {
     if (!document.hidden) {
       updateSchedule();
+      progBarDelay = 1000
+    } else {
+      progBarDelay = 500
     }
   });
 }
@@ -23,7 +26,7 @@ function initializeMainSchedule() {
 function initializeFullScheduleList() {
   // first, duplicate a bunch of tables
   var tableToClone = document.getElementsByClassName("tableWrapper")[0].cloneNode(true);
-  const SCHEDULES_DISPLAYED = 13;
+  const SCHEDULES_DISPLAYED = 16;
 
   for (var i=1; i<=SCHEDULES_DISPLAYED; i++) {
     document.getElementsByClassName("tableWrapper")[0].after(tableToClone);
@@ -38,7 +41,7 @@ function initializeFullScheduleList() {
     var table = tableList[i];
     var scheduleObject = scheduleDB[Object.keys(scheduleDB)[i]];
 
-    switchSchedule({'scheduleName': Object.keys(scheduleDB)[i], 'scheduleAlias': scheduleObject.alias}, table, false);
+    switchSchedule({'scheduleName': Object.keys(scheduleDB)[i], 'scheduleAlias': scheduleObject.alias}, table, false, false);
     updateSchedule(scheduleObject, table);
   }
   
@@ -50,7 +53,7 @@ function initializeFullScheduleList() {
       for (var i=0; i<tableList.length; i++) {
         var table = tableList[i];
         var scheduleObject = scheduleDB[Object.keys(scheduleDB)[i]];
-        switchSchedule({'scheduleName': Object.keys(scheduleDB)[i], 'scheduleAlias': scheduleObject.alias}, table, false);
+        switchSchedule({'scheduleName': Object.keys(scheduleDB)[i], 'scheduleAlias': scheduleObject.alias}, table, false, false);
         updateSchedule(scheduleObject, table);
       }
     }
@@ -59,9 +62,17 @@ function initializeFullScheduleList() {
 
 /**
  * For future-schedules.html
+ * 
+ * async used to pause excecution
+ * until buildCalendar() is finished
  */
-function initializeFutureSchedules() {
-  buildCalendar();
+async function initializeFutureSchedules() {
+  await buildCalendar();
+  // center the calnendar
+  var calendarTableWrapper = document.getElementsByClassName("calendarTableWrapper")[0];
+  calendarTableWrapper.scrollTo({
+    left: ((calendarTableWrapper.scrollWidth - calendarTableWrapper.clientWidth) / 2)
+  });
 }
 
 /**
@@ -101,7 +112,10 @@ function initialize() {
     var wrapper = wrappers[i];
     var table = wrapper.getElementsByTagName("table")[0];
     wrapper.scrollTo({
-      left: ( 2+Math.min(parseInt(getComputedStyle(table).paddingLeft.replace("px",""))+parseInt(getComputedStyle(table).borderLeftWidth.replace("px","")), (wrapper.scrollWidth-wrapper.clientWidth)/2) )
+      left: ( 2
+        + Math.min(parseInt(getComputedStyle(table).paddingLeft.replace("px",""))
+          + parseInt(getComputedStyle(table).borderLeftWidth.replace("px","")),
+        (wrapper.scrollWidth-wrapper.clientWidth) / 2) )
     });
   }
 
