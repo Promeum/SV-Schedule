@@ -330,6 +330,7 @@ const calendarDatabase = {
     '1/27/2025': ['Regular', 'Regular Schedule', 'MP2 student schedules finalized by 5 pm'],
     '1/28/2025': ['EagleTime', 'Eagle Time', 'End of MP2 / Semester 1'],
     '1/29/2025': ['None', 'No School', 'Grading and Planning for Teachers'],
+    '1/30/2025': ['AMHomeroom', 'AM Homeroom'],
     '1/31/2025': ['Regular', 'Regular Schedule', 'MP2 Final grades in by 2 pm!'],
 
     '2/4/2025': ['EagleTime', 'Eagle Time', 'MP2 Report Cards in Synergy'],
