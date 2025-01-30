@@ -1,4 +1,5 @@
 var updateScheduleTimeouts = [];
+var progBarDelay = 1000;
 
 /**
  * 
@@ -8,15 +9,20 @@ var updateScheduleTimeouts = [];
  */
 function updateProgressBar(thisPd, scheduleObject, scheduleTable) {
     var progBar = scheduleTable.rows[thisPd].getElementsByTagName("progress")[0];
+    var title = document.getElementsByTagName("title")[0]
     if (progBar.value >= progBar.max) { // stop and updateSchedule
       updateSchedule(scheduleObject, scheduleTable);
       console.log("finished updating "+scheduleObject.alias);
+      title.innerHTML = 'Ultra Super-Premium SV Schedule - Today\'s Schedule'
     } else {
       progBar.value++;
-  
+      title.innerHTML = String(Math.floor((progBar.max - progBar.value) / 60))
+        + ':' + String(Math.round((progBar.max - progBar.value) % 60)).padStart(2, '0')
+        + ' - Ultra Super-Premium SV Schedule - Today\'s Schedule';
+
       updateScheduleTimeouts.forEach((value) => clearTimeout(value));
       updateScheduleTimeouts.length = 0;
-      updateScheduleTimeouts.push(setTimeout(updateProgressBar, 1000, thisPd, scheduleObject, scheduleTable));
+      updateScheduleTimeouts.push(setTimeout(updateProgressBar, progBarDelay, thisPd, scheduleObject, scheduleTable));
     }
 }
   
@@ -71,7 +77,7 @@ function updateSchedule(scheduleObject = getSchedule(getTodaysCalendar().schedul
  * @param {HTMLTableElement} scheduleTable 
  * @param {boolean} displayWeekendDisclaimer 
  */
-function switchSchedule(calendarResults = getTodaysCalendar(), scheduleTable = document.getElementsByTagName("table")[0], displayWeekendDisclaimer = true) {
+function switchSchedule(calendarResults = getTodaysCalendar(), scheduleTable = document.getElementsByTagName("table")[0], displayWeekendDisclaimer = true, displayDayDescription = true) {
     var scheduleObject = getSchedule(calendarResults.scheduleName);
     var scheduleAlias = calendarResults.scheduleAlias;
 
@@ -100,11 +106,36 @@ function switchSchedule(calendarResults = getTodaysCalendar(), scheduleTable = d
     // set the text/progress bar for all of the rows
     Object.keys(scheduleObject.periods).forEach(
         function(key,i) {
-        scheduleTable.rows[i+1].cells[0].innerHTML = key;
-        scheduleTable.rows[i+1].cells[1].innerHTML = scheduleObject.periods[key].reduce((p,c,i) => {c=(c>=1300)?c%1200:c; return (i<2)?p+c.toString().substring(0,c.toString().length-2)+":"+c.toString().substring(c.toString().length-2)+((i==0)?" - ":" "):((c/100)>=1)?p+"("+c.toString().substring(0,c.toString().length-2)+":"+c.toString().substring(c.toString().length-2)+")":p+"("+c+")";},"");
-        scheduleTable.rows[i+1].cells[2].getElementsByTagName("progress")[0].value = 0;
-        scheduleTable.rows[i+1].cells[2].getElementsByTagName("progress")[0].max = (Math.floor(scheduleObject.periods[key][2]/100)*3600)+(scheduleObject.periods[key][2]%100)*60;
+            scheduleTable.rows[i + 1].cells[0].innerHTML = key;
+            scheduleTable.rows[i + 1].cells[1].innerHTML = scheduleObject.periods[key].reduce(
+                (p, c, i) => {
+                    c = (c >= 1300 && c < 2400) ? c % 1200
+                        : (i != 2 && (c < 100 || c >= 2400)) ? String(c % 1200).padStart(4, '0')
+                        : c;
+                    return (i < 2) ?
+                        p + String(c).substring(0, String(c).length - 2)
+                            + ":" + String(c).substring(String(c).length - 2)
+                            + ((i == 0) ? " - " : " ")
+                        : ((c / 100) >= 1) ?
+                            p + "(" + String(c).substring(0, String(c).length - 2)
+                            + ":" + String(c).substring(String(c).length - 2) + ")"
+                        : p + "(" + String(c).padStart(2, '0') + ")";
+                }
+            , "");
+            scheduleTable.rows[i+1].cells[2].getElementsByTagName("progress")[0].value = 0;
+            scheduleTable.rows[i+1].cells[2].getElementsByTagName("progress")[0].max = (Math.floor(scheduleObject.periods[key][2]/100)*3600)+(scheduleObject.periods[key][2]%100)*60;
         }
     );
-}
+    
+    // add comments
+    if (displayDayDescription) {
+        var comment = calendarResults.extraComments;
+        console.log("comment: "+comment+"\nvalues: "+calendarResults.values);
 
+        if (comment != null) {
+            var pDescription = scheduleTable.getElementsByClassName("flavorContainer")[0];
+            pDescription.textContent = comment
+            pDescription.classList.add('scheduleDayDescription')
+        }
+    }
+}

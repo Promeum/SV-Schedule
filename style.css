@@ -11,16 +11,29 @@ body {
 /* ----------------- top bar ----------------- */
 
 #topNav {
-    height: 40px;
+    height: min-content;
     display: block;
     align-content: center;
-    background-color: #122508;
+    background: linear-gradient(
+        0.26turn,
+        #122508,
+        #042618 12.5%,
+        #0f1f06 31.4%,
+        #2340089e 57.5%,
+        #8f9d002b 85.3%,
+        #122508 106%,
+        #122508
+    );
     border-bottom: 3px solid #fcb529;
     font-weight: 350;
     color: #fcb529;
     text-align: center;
     font-size: 1.98em;
-    overflow: hidden;
+    text-wrap: auto;
+    line-height: 1.09em;
+    padding-inline: 0.8em;
+    padding-bottom: 0.27em;
+    padding-top: 0.12em;
 }
 
 #mainNav {
@@ -34,7 +47,8 @@ body {
 
 #mainNavWithin {
     display: flex;
-    width: fit-content;
+    /* calc value is for total width of tab buttons in nav menu */
+    width: max(100%, calc(240px + 16*(5.1px + 2.4px)));
     background: transparent;
     border: none;
     transform: rotate(180deg);
@@ -65,6 +79,8 @@ nav * {
 nav a {
     height: 35.2px;
     width: 144px;
+    flex-basis: 144px;
+    padding-inline: 0.3em;
     text-align: center;
     background-color: white;
     font: 17px 'Oswald', sans-serif;
@@ -232,6 +248,13 @@ table.scheduleTable p.flavorContainer {
     font-size: 16px;
 }
 
+table.scheduleTable p.scheduleDayDescription {
+    width: 22em;
+    margin-inline: auto;
+    font-style: italic;
+    text-wrap: auto;
+}
+
 /* end of main schedule */
 /* ----------------- calendar ----------------- */
 
@@ -270,6 +293,16 @@ table.calendarTable tBody p {
     font-size: 15px;
 }
 
+table.calendarTable td > br {
+    display: block;
+    content: "";
+}
+
+table.calendarTable p.dayDescription {
+    font-size: 13px;
+    font-style: italic;
+}
+
 table.calendarTable tBody p.dayNum {
     font-size: 16px;
     font-weight: bold;
@@ -296,6 +329,17 @@ table.timerTable h2 {
 
 /* end of timer */
 /* ----------------- etc ----------------- */
+
+noscript {
+    display: block;
+    width: 100%;
+    color: #ffffff;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    background-color: crimson;
+    padding-block: 0.5em;
+}
 
 h1 {
     color: white;
@@ -338,4 +382,39 @@ footer p {
     font-family: 'Trebuchet MS', sans-serif;
     text-wrap: nowrap;
     flex: none;
+}
+
+.qr-button {
+    border-radius: 0px;
+    border-width: 0px;
+    background-color: #122508 !important;
+    color: #ffffff;
+    /* background-color: rgba(0, 0, 0, 0); */
+    bottom: 0px;
+}
+
+.qr-button:hover .qr-button:focus {
+    border-width: 10px;
+    outline-width: 10px;
+    background-color: red;
+}
+
+.qr-button::selection {
+    background: greenyellow;
+    fill: plum;
+}
+
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
 }
