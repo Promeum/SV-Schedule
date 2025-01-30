@@ -152,7 +152,7 @@ const scheduleDatabase = {
     },
     "AMHomeroom": {
         "periods": {
-        "Homeroom & PA": [745, 748, 13],
+        "Homeroom & PA": [745, 758, 13],
         "Period 1": [804, 848, 44],
         "Period 2": [854, 938, 44],
         "Period 3": [944, 1028, 44],
