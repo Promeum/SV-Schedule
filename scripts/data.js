@@ -334,6 +334,7 @@ const calendarDatabase = {
     '1/31/2025': ['Regular', 'Regular Schedule', 'MP2 Final grades in by 2 pm!'],
 
     '2/4/2025': ['EagleTime', 'Eagle Time', 'MP2 Report Cards in Synergy'],
+    '2/5/2025': ['DelayedOpening', 'Delayed Opening'],
     '2/6/2025': ['ReportCardDay', 'Report Card Distribution', 'MP2 Report Cards Distributed'],
     '2/17/2025': ['None', 'President\'s Day', 'Schools and offices closed'],
     '2/28/2025': ['EarlyRelease', 'Early Release', 'MP3 Interims, Final grades in by 5 pm!'],
