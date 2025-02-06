@@ -251,6 +251,20 @@ const scheduleDatabase = {
         },
         "alias": "Extracurricular Fair"
     },
+    "SpecialDelayedOpening": {
+        "periods": {
+        "Period 1": [945, 1015, 30],
+        "Period 2": [1021, 1048, 27],
+        "Period 3": [1054, 1121, 27],
+        "Homeroom": [1127, 1137, 10],
+        "Period 4": [1143, 1210, 27],
+        "Lunch (Pd 5)": [1210, 1251, 41],
+        "Period 6": [1257, 1324, 27],
+        "Period 7": [1330, 1357, 27],
+        "Period 8": [1403, 1430, 27]
+        },
+        "alias": "Delayed Opening"
+    },
     "None": {
         "periods": {
             "This Day": [0, 2400, 2400]
@@ -334,7 +348,7 @@ const calendarDatabase = {
     '1/31/2025': ['Regular', 'Regular Schedule', 'MP2 Final grades in by 2 pm!'],
 
     '2/4/2025': ['EagleTime', 'Eagle Time', 'MP2 Report Cards in Synergy'],
-    '2/6/2025': ['DelayedOpening', 'Delayed Opening', 'MP2 Report Cards Distributed'],
+    '2/6/2025': ['SpecialDelayedOpening', 'Delayed Opening', 'MP2 Report Cards Distributed'],
     '2/17/2025': ['None', 'President\'s Day', 'Schools and offices closed'],
     '2/28/2025': ['EarlyRelease', 'Early Release', 'MP3 Interims, Final grades in by 5 pm!'],
     
