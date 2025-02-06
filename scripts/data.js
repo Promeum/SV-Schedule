@@ -334,7 +334,7 @@ const calendarDatabase = {
     '1/31/2025': ['Regular', 'Regular Schedule', 'MP2 Final grades in by 2 pm!'],
 
     '2/4/2025': ['EagleTime', 'Eagle Time', 'MP2 Report Cards in Synergy'],
-    '2/6/2025': ['DelayedOpening', 'DelayedOpening', 'MP2 Report Cards Distributed'],
+    '2/6/2025': ['DelayedOpening', 'Delayed Opening', 'MP2 Report Cards Distributed'],
     '2/17/2025': ['None', 'President\'s Day', 'Schools and offices closed'],
     '2/28/2025': ['EarlyRelease', 'Early Release', 'MP3 Interims, Final grades in by 5 pm!'],
     
@@ -358,7 +358,7 @@ const calendarDatabase = {
     '5/9/2025': ['Regular', 'Regular Schedule', 'MP4 Interim Report Cards Mailed (Seniors) +Itm. Grades in!'],
     '5/16/2025': ['Regular', 'Regular Schedule', 'MP4 Interim Report Cards Mailed'],
     '5/26/2025': ['None', 'Memorial Day', 'Schools and offices closed'],
-    '5/30/2025': ['Regular', 'Seniors\' Last Day', 'Grad. Ceremonies @ UMBC at 2:00 pm'],
+    '5/30/2025': ['Regular', 'Regular Schedule', 'Seniors\' Last Day — Grad. Ceremonies @ UMBC at 2:00 pm'],
 
     '6/6/2025': ['None', 'No School', 'Staff Professional Day'],
     '6/12/2025': ['EagleTime', 'Eagle Time', 'MP4 last update to student schedules by 5 pm'],
