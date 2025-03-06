@@ -1,10 +1,24 @@
+* {
+    --svhs-gold: #fcb529;
+    --svhs-gold-secondary: darkgoldenrod;
+    --svhs-green: #122508;
+    --svhs-green-secondary: #0a1403;
+    --svhs-green-tertiary: #1a2e05;
+    --table-green: #274e13;
+    --table-red: #350d09;
+    --white-secondary: #dcdcdc;
+
+    --border-width: 3px;
+    --border-radius: 7px;
+}
+
 html {
     scroll-snap-type: none;
 }
 
 body {
     text-align: -webkit-center;
-    background-color: #0a1403;
+    background-color: var(--svhs-green-secondary);
     overflow-x: hidden;
 }
 
@@ -16,17 +30,17 @@ body {
     align-content: center;
     background: linear-gradient(
         0.26turn,
-        #122508,
+        var(--svhs-green),
         #042618 12.5%,
         #0f1f06 31.4%,
         #2340089e 57.5%,
         #8f9d002b 85.3%,
-        #122508 106%,
-        #122508
+        var(--svhs-green) 106%,
+        var(--svhs-green)
     );
-    border-bottom: 3px solid #fcb529;
+    border-bottom: var(--border-width) solid var(--svhs-gold);
     font-weight: 350;
-    color: #fcb529;
+    color: var(--svhs-gold);
     text-align: center;
     font-size: 1.98em;
     text-wrap: auto;
@@ -36,19 +50,19 @@ body {
     padding-top: 0.12em;
 }
 
-#mainNav {
+.mainNav {
     height: 48px;
     position: sticky;
     align-content: end;
-    overflow-x: auto;
-    overflow-y: hidden;
     transform: rotate(180deg);
 }
 
-#mainNavWithin {
+.mainNavWithin {
     display: flex;
-    /* calc value is for total width of tab buttons in nav menu */
-    width: max(100%, calc(240px + 16*(5.1px + 2.4px)));
+    width: 100vw;
+    height: -webkit-fill-available;
+    overflow-x: auto;
+    overflow-y: hidden;
     background: transparent;
     border: none;
     transform: rotate(180deg);
@@ -64,50 +78,99 @@ nav {
 }
 
 nav * {
-    border: 3px solid #dcdcdc;
-    display: inline-block;
+    border: var(--border-width) solid var(--white-secondary);
     height: auto;
     flex-shrink: 1;
     flex-basis: 200px;
     background-color: rgb(230,230,230);
     align-content: center;
     font-family: 'Oswald', sans-serif;
-    color: #fcb529;
+    color: var(--svhs-gold);
     text-wrap: nowrap;
 }
 
-nav a {
-    height: 35.2px;
+#currentPage {
+    border-color: var(--svhs-gold);
+    z-index: 1;
+}
+
+#currentPage div {
+    background: var(--svhs-green);
+    color: var(--white-secondary);
+    font-weight: 450;
+}
+
+.mainNavWithin a {
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc(var(--border-width) - 4px);
+    margin-top: -1rem;
+    height: 3rem;
     width: 144px;
     flex-basis: 144px;
-    padding-inline: 0.3em;
+    padding: 0.2rem;
+    padding-inline: 0.3rem;
     text-align: center;
+    text-wrap: wrap;
     background-color: white;
     font: 17px 'Oswald', sans-serif;
     font-weight: 400;
     color: #000000;
+    background: transparent;
+    backdrop-filter: blur(5px) brightness(0.6);
+    border-width: calc(var(--border-width) - 0px);
+    padding-block-start: 0rem;
+    border-block-start-width: 0rem;
+    border-color: var(--svhs-gold-secondary);
+    transition-duration: 0.15s;
 }
 
-#currentPage {
-    background-color: #dcdcdc;
-}
-
-nav a:first-of-type {
-    border-bottom-left-radius: 20px;
+.mainNavWithin a:first-of-type {
+    border-bottom-left-radius: var(--border-radius);
     margin-left: auto;
 }
 
-nav a:last-of-type {
-    border-bottom-right-radius: 20px;
+.mainNavWithin a:last-of-type {
+    border-bottom-right-radius: var(--border-radius);
     margin-right: auto;
 }
 
-nav a:hover, nav a:focus {
-    animation: 600ms ease-in-out 0s infinite alternate both running navButton;
+.mainNavWithin a:hover, nav a:focus {
+    animation: 600ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s infinite alternate both running navButton;
     animation-composition: add;
     text-decoration-line: none;
-    background-color: #dcdcdc;
     font-weight: 450;
+    border-color: var(--svhs-gold);
+    z-index: 2;
+}
+
+.mainNavWithin a:hover div, .mainNavWithin a:focus div {
+    background: var(--svhs-green-tertiary);
+    color: var(--white-secondary);
+}
+
+.mainNavWithin div:first-child {
+    height: calc(1rem + 1px);
+    padding: 0%;
+    margin-block-end: -1px;
+}
+
+.mainNavWithin div {
+    width: -webkit-fill-available;
+    height: min-content;
+    color: black;
+    background: var(--white-secondary);
+    padding-inline: 0.3rem;
+    padding-block-end: 0.15rem;
+    border: none;
+}
+
+.mainNavWithin a:first-of-type div:last-of-type {
+    border-bottom-left-radius: calc(var(--border-radius) - 6px);
+}
+
+.mainNavWithin a:last-of-type div:last-of-type {
+    border-bottom-right-radius: calc(var(--border-radius) - 6px);
 }
 
 @keyframes navButton {
@@ -164,14 +227,18 @@ main * {
 /* ----------------- tables ----------------- */
 
 table {
+    position: relative;
     width: max-content;
-    border: 3px solid #fcb529;
+    border: var(--border-width) solid var(--svhs-gold-secondary);
+    border-radius: var(--border-radius);
     padding: 10px;
     font:
         32px Trebuchet MS,
         sans-serif;
     font-weight: bold;
     color: #ffffff;
+    z-index: -1;
+    backdrop-filter: blur(5px) brightness(0.6);
 }
 
 table * {
@@ -224,10 +291,10 @@ table.scheduleTable td:nth-child(-n+2) {
 }
 
 table.scheduleTable thead > tr {
-    background-color: #274e13;
+    background-color: var(--table-green);
 }
 table.scheduleTable tfoot > tr {
-    background-color: #274e13;
+    background-color: var(--table-green);
 }
 
 .progressCell {
@@ -237,7 +304,7 @@ table.scheduleTable tfoot > tr {
 table.scheduleTable progress {
     border-radius: 0;
     color: rgb(0,0,0);
-    background-color: #274e13;
+    background-color: var(--table-green);
     color: #ffffff;
     height: 20px;
 }
@@ -263,7 +330,7 @@ table.scheduleTable p.scheduleDayDescription {
 }
 
 table.calendarTable thead > tr {
-    background-color: #350d09;
+    background-color: var(--table-red);
 }
 
 table.calendarTable tbody tr:first-child {
@@ -284,7 +351,7 @@ table.calendarTable td {
 }
 
 table.calendarTable td:nth-child(6n+1) {
-    background-color: #dcdcdc;
+    background-color: var(--white-secondary);
 }
 
 table.calendarTable tBody p {
@@ -306,6 +373,42 @@ table.calendarTable p.dayDescription {
 table.calendarTable tBody p.dayNum {
     font-size: 16px;
     font-weight: bold;
+}
+
+button.monthButton {
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out;
+    font: 13px Trebuchet MS, sans-serif;
+    font-weight: bold;
+    background: var(--white-secondary);
+    border-width: var(--border-width);
+    border-radius: calc(var(--border-radius) - 3px);
+    border-width: var(--border-width);
+    border-color: var(--svhs-gold-secondary);
+}
+
+button.monthButton:hover, button.monthButton:focus {
+    transition-duration: 0.1s;
+    font-weight: bolder;
+    background: var(--svhs-green-tertiary);
+    border-radius: 0px;
+    color: var(--white-secondary);
+    cursor: pointer;
+    border-radius: calc(var(--border-radius) - 3px);
+    border-width: var(--border-width);
+    border-color: var(--svhs-gold);
+}
+
+button.monthButton:active {
+    transition-duration: 0.1s;
+    font-weight: bolder;
+    background: var(--svhs-green);
+    border-radius: 0px;
+    color: var(--white-secondary);
+    cursor: pointer;
+    border-radius: calc(var(--border-radius) - 3px);
+    border-width: var(--border-width);
+    border-color: var(--svhs-gold);
 }
 
 /* end of calendar */
@@ -353,7 +456,7 @@ h1 {
 }
 
 hr {
-    background-color: #fcb529;
+    background-color: var(--svhs-gold);
     overflow: hidden;
     height: 4px;
     border: none;
@@ -366,7 +469,7 @@ hr {
 footer {
     display: inline-flex;
     height: 25px;
-    background-color: #122508;
+    background-color: var(--svhs-green);
     align-items: center;
     padding-inline: 10px;
     justify-content: space-between;
@@ -374,8 +477,8 @@ footer {
     position: fixed;
     transform: translateX(-50%);
     bottom: 0px;
-    border-bottom: 3px solid #fcb529;
-    color: #dcdcdc;
+    border-bottom: var(--border-width) solid var(--svhs-gold);
+    color: var(--white-secondary);
 }
 
 footer p {
@@ -387,7 +490,7 @@ footer p {
 .qr-button {
     border-radius: 0px;
     border-width: 0px;
-    background-color: #122508 !important;
+    background-color: var(--svhs-green) !important;
     color: #ffffff;
     /* background-color: rgba(0, 0, 0, 0); */
     bottom: 0px;

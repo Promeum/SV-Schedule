@@ -25,18 +25,31 @@
         </script>
 
         <title>Ultra Super-Premium SV Schedule - Future Schedules</title>
+        <link rel="icon" type="image/x-icon" href="/images/SV-Schedule_Icon.png">
     </head>
 
     <body>
 
         <nav id="topNav">Unofficial Seneca Valley School Schedule</nav>
 
-        <nav id="mainNav">
-            <nav id="mainNavWithin" tabindex="-1">
-                <!-- <a tabindex="0" href="this-period.html">This Period</a> -->
-                <a tabindex="0" href="index.html">Today's Schedule</a>
-                <a tabindex="0" id="currentPage">Future Schedules</a>
-                <a tabindex="0" href="full-schedule-list.html">Full Schedule List</a>
+        <nav class="mainNav">
+            <nav class="mainNavWithin" tabindex="-1">
+                <!-- <a tabindex="0" href="this-period.html">
+                    <div></div>
+                    <div id="tabText">This Period</div>
+                </a> -->
+                <a tabindex="0" href="index.html">
+                    <div></div>
+                    <div id="tabText">Today's Schedule</div>
+                </a>
+                <a tabindex="0" id="currentPage">
+                    <div></div>
+                    <div id="tabText">Future Schedules</div>
+                </a>
+                <a tabindex="0" href="full-schedule-list.html">
+                    <div></div>
+                    <div id="tabText">Full Schedule List</div>
+                </a>
             </nav>
         </nav>
 
@@ -47,7 +60,7 @@
             
             <!-- <p style="color: white; display: block; height: 30px; font-weight: bold; margin-block: 20px; background-color: sienna; font-size: 30px; align-content: center;">Calendar in development!</p> -->
             <div class="calendarSelector" style="margin-top: 10px;">
-                <button id="prevMonth" onclick="prevMonth()">Previous Month</button>
+                <button class="monthButton" id="prevMonth" onclick="prevMonth()">Previous Month</button>
                 <!-- <select name="months" id="monthSelect" onchange="monthSelect()">
                     <option value="7">August</option>
                     <option value="8">September</option>
@@ -61,7 +74,7 @@
                     <option value="4">May</option>
                     <option value="5">June</option>
                 </select> -->
-                <button id="nextMonth" onclick="nextMonth()">Next Month</button>
+                <button class="monthButton" id="nextMonth" onclick="nextMonth()">Next Month</button>
             </div>
 
             <div class="tableWrapper calendarTableWrapper">

@@ -1,13 +1,17 @@
 var updateScheduleTimeouts = [];
 var progBarDelay = 1000;
+var progBarStartTime = -1;
 
 /**
- * 
+ * Updates the progress bar in the table and also the page title
  * @param {Number} thisPd 
  * @param {*} scheduleObject 
  * @param {HTMLTableElement} scheduleTable 
  */
 function updateProgressBar(thisPd, scheduleObject, scheduleTable) {
+    var now = new Date();
+    var currentTime = (now.getHours() * 60) + now.getMinutes() + (now.getSeconds()/60); // in minutes
+    
     var progBar = scheduleTable.rows[thisPd].getElementsByTagName("progress")[0];
     var title = document.getElementsByTagName("title")[0]
     if (progBar.value >= progBar.max) { // stop and updateSchedule
@@ -15,7 +19,8 @@ function updateProgressBar(thisPd, scheduleObject, scheduleTable) {
       console.log("finished updating "+scheduleObject.alias);
       title.innerHTML = 'Ultra Super-Premium SV Schedule - Today\'s Schedule'
     } else {
-      progBar.value++;
+      progBar.value = (currentTime - progBarStartTime) * 60;
+      console.log("start time:\n", progBarStartTime, "\ncurrent time:\n", currentTime, "\ntime elapsed:\n", 60*(currentTime-progBarStartTime), "\nend time:\n", progBarStartTime + progBar.max)
       title.innerHTML = String(Math.floor((progBar.max - progBar.value) / 60))
         + ':' + String(Math.round((progBar.max - progBar.value) % 60)).padStart(2, '0')
         + ' - Ultra Super-Premium SV Schedule - Today\'s Schedule';
@@ -55,6 +60,7 @@ function updateSchedule(scheduleObject = getSchedule(getTodaysCalendar().schedul
         if ( currentTime < endTime && (now.getDay() != 0 && now.getDay() != 6)) {
             if (currentTime >= startTime) { // this is the current period, set background to yellow and fill in progress bar
                 color(row, '#ffd966', '#666666', '#6aa84f', (currentTime - startTime) * 60);
+                progBarStartTime = startTime;
                 updateProgressBar(i, scheduleObject, scheduleTable);
                 currentPeriodReached = true;
             } else if ((i == 1 && startTime - currentTime <= 30) || (i > 1 && !currentPeriodReached)) { // either transistion between periods, or close to start of 1st pd.

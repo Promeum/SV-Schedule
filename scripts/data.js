@@ -1,5 +1,6 @@
 // ------------------------- Databases -------------------------
 
+
 /**
  * All schedules available, may add more
  * @type {object}
@@ -273,15 +274,19 @@ const scheduleDatabase = {
     },
     "debug": {
         "periods": {
-        "1 kgyuv": [2356, 2357, 2],
-        "2 vgjhb": [2358, 2359, 2],
-        // "3 iugbh": [1701, 1702, 1],
-        // "4 oiukj": [1703, 1704, 1],
-        // "5 dyugi": [1705, 1706, 1]
+        "1 kgy6g": [2116, 2118, 2],
+        "2 vgjhb": [2119, 2220, 101],
+        // "3 iugbh": [2101, 2102, 1],
+        // "4 oiukj": [2103, 2104, 1],
+        // "5 dyugi": [2105, 2106, 1],
+        // "6 e5dyt": [2107, 2108, 1],
+        // "7 drtnd": [2109, 2110, 1],
+        // "8 xdfmd": [2111, 2112, 1],
         },
         "alias": "debug"
     }
 }
+
 
 /**
  * All known special school days in the 2024-2025 school year.
@@ -307,7 +312,7 @@ const calendarDatabase = {
     '10/3/2024': ['None', 'No School'],
     '10/8/2024': ['EagleTime', 'Eagle Time', 'IB Group 4 Project'],
     '10/9/2024': ['Regular', 'Regular Schedule', 'IB Group 4 Project'],
-    '10/16/2024': ['PSAT', 'PSAT Schedule'],
+    '10/16/2024': ['PSAT', 'PSAT Testing Day'],
     '10/18/2024': ['None', 'No School'],
     '10/31/2024': ['EagleTime', 'Eagle Time', 'Halloween!'],
 
@@ -354,7 +359,8 @@ const calendarDatabase = {
     '2/28/2025': ['EarlyRelease', 'Early Release', 'MP3 Interims, Final grades in by 5 pm!'],
     
     '3/7/2025': ['Regular', 'Regular Schedule', 'MP3 Interim Report Cards Mailed'],
-    '3/14/2025': ['Regular', 'Regular Schedule', 'Pi Day'],
+    '3/14/2025': ['Regular', 'Regular Schedule', 'Pi Day!'],
+    '3/19/2025': ['PSAT', 'PSAT Testing Day', 'Mock Exams available for seniors'],
     '3/27/2025': ['EagleTime', 'Eagle Time', 'MP3 student schedules finalized by 5 pm'],
     '3/28/2025': ['Regular', 'Regular Schedule', 'End of MP3'],
     '3/31/2025': ['None', 'No School', 'Grading and Planning for Teachers'],
@@ -388,6 +394,7 @@ const calendarDatabase = {
     '6/25/2025': ['', '', 'MP4 Report Cards Distributed'],
 };
 
+
 /**
  * All flavor texts available, may add more
  * @type {string[]}
@@ -413,6 +420,7 @@ const flavorTextDatabase = [
     "This is a dynamic schedule!",
     "\"100% Premium Orange Juice\""
 ];
+
 
 // /**
 //  * Applies fancy toppings to the flavor text!
@@ -464,13 +472,32 @@ const flavorTextDatabase = [
 //   }
 // }
 
+
+// ------------------------- Classes -------------------------
+
+
+// class ScheduleTable {
+//     /**
+//      * 
+//      * @param {Object} scheduleData Take data from data.js
+//      * @param {HTMLTableElement} scheduleElement The reference pointing to the element
+//      */
+//     constructor(scheduleData, scheduleElement) {
+//         this.periods - scheduleData.periods
+//     }
+// }
+
+
 // ------------------------- Useful Methods -------------------------
+
+
 /**
  * Cursed, but useful!
  * @param x {String} The string to be converted
  * @returns {RegExp} The string, properly formatted into RegEx
  */
 function toRegEx(x) {return x.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');} // pure magic.. why regex
+
 
 /**
  * Gets an object representing a schedule.
@@ -479,11 +506,13 @@ function toRegEx(x) {return x.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');} // pure m
  */
 function getSchedule(scheduleName) {return scheduleDatabase[scheduleName];}
 
+
 /**
  * Gets the entire schedule database.
  * @returns {Object} The schedule database.
  */
 function getScheduleDatabase() {return scheduleDatabase;}
+
 
 /**
  * Gets today's schedule, or Monday's schedule if today is the weekend.
@@ -499,6 +528,7 @@ function getTodaysCalendar() {
     }
     return getCalendar(date);
 }
+
 
 /**
  * Gets the schedule for a specific date.
@@ -555,11 +585,13 @@ function getCalendar(date) {
     }
 }
 
+
 /**
  * Gets the list of flavor text.
  * @return {string[]} The list of flavor text.
  */
 function getFlavorText() {return flavorTextDatabase;}
+
 
 // Object.keys(obj); -- returns list
 // for (var k in obj) {obj[k];} -- returns value

@@ -26,7 +26,7 @@ function initializeMainSchedule() {
 function initializeFullScheduleList() {
   // first, duplicate a bunch of tables
   var tableToClone = document.getElementsByClassName("tableWrapper")[0].cloneNode(true);
-  const SCHEDULES_DISPLAYED = 16;
+  const SCHEDULES_DISPLAYED = 15;
 
   for (var i=1; i<=SCHEDULES_DISPLAYED; i++) {
     document.getElementsByClassName("tableWrapper")[0].after(tableToClone);
@@ -101,7 +101,7 @@ function initialize() {
   window.dispatchEvent(new Event("resize"), false, false, true);
 
   // center the navbar
-  var nav = document.getElementById("mainNav");
+  var nav = document.getElementsByClassName("mainNavWithin")[0];
   nav.scrollTo({
     left: ((nav.scrollWidth-nav.clientWidth)/2)
   });
