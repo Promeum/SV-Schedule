@@ -83,7 +83,7 @@ function initializePeriodTimer() {
 }
 
 /**
- * Runs when page is loaded
+ * Runs when any page is loaded
  */
 function initialize() {
   // scroll snap thing
@@ -119,7 +119,7 @@ function initialize() {
     });
   }
 
-  console.log("init finished");
+  // console.log("initialized");
 }
 
 /**

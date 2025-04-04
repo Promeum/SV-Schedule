@@ -14,13 +14,13 @@ function updateProgressBar(thisPd, scheduleObject, scheduleTable) {
     
     var progBar = scheduleTable.rows[thisPd].getElementsByTagName("progress")[0];
     var title = document.getElementsByTagName("title")[0]
-    if (progBar.value >= progBar.max) { // stop and updateSchedule
+    if (progBar.value >= progBar.max) { // stop and updateSchedule when reached end of period
       updateSchedule(scheduleObject, scheduleTable);
-      console.log("finished updating "+scheduleObject.alias);
+    //   console.log("finished updating "+scheduleObject.alias);
       title.innerHTML = 'Ultra Super-Premium SV Schedule - Today\'s Schedule'
     } else {
       progBar.value = (currentTime - progBarStartTime) * 60;
-      console.log("start time:\n", progBarStartTime, "\ncurrent time:\n", currentTime, "\ntime elapsed:\n", 60*(currentTime-progBarStartTime), "\nend time:\n", progBarStartTime + progBar.max)
+    //   console.log("start time:\n", progBarStartTime, "\ncurrent time:\n", currentTime, "\ntime elapsed:\n", 60*(currentTime-progBarStartTime), "\nend time:\n", progBarStartTime + progBar.max / 60)
       title.innerHTML = String(Math.floor((progBar.max - progBar.value) / 60))
         + ':' + String(Math.round((progBar.max - progBar.value) % 60)).padStart(2, '0')
         + ' - Ultra Super-Premium SV Schedule - Today\'s Schedule';
@@ -36,6 +36,15 @@ function updateProgressBar(thisPd, scheduleObject, scheduleTable) {
 */
 function updateSchedule(scheduleObject = getSchedule(getTodaysCalendar().scheduleName), scheduleTable = document.getElementsByTagName("table")[0]) {
     var now = new Date();
+
+    /**
+     * Color one row on the timetable and also set its progress level
+     * @param {HTMLTableRowElement} row 
+     * @param {String} color 
+     * @param {String} primary 
+     * @param {String} secondary 
+     * @param {Number} progressLevel 
+     */
     function color(row, color, primary, secondary, progressLevel) {
         row.style["background-color"] = color;
         row.getElementsByTagName("progress")[0].style["background-color"] = primary;
@@ -43,18 +52,18 @@ function updateSchedule(scheduleObject = getSchedule(getTodaysCalendar().schedul
         row.getElementsByTagName("progress")[0].value = progressLevel;
     }
 
-    // set highlight (background color) & progress bar status on each row
     var rows = scheduleTable.rows;
     var timetable = Object.values(scheduleObject.periods);
     var currentPeriodReached = false;
     var currentTime = (now.getHours() * 60) + now.getMinutes() + (now.getSeconds()/60); // in minutes
 
+    // set highlight (background color) & progress bar status on each row
     for (var i=1; i<rows.length; i++) {
         let row = rows[i];
         let startTime = timetable[i-1][0];
         startTime = (Math.floor(startTime / 100) * 60) + (startTime % 100); // in minutes
         let endTime = timetable[i-1][1];
-        endTime = (Math.floor(endTime / 100) * 60) + (endTime % 100); // in minutes
+        endTime = (Math.floor(endTime / 100) * 60) + (endTime % 100) - 0.5; // in minutes (w/ minus 30 sec. offset, for increased accuracy)
         
         color(row, '#ffffff', '#d9d9d9', '#d9d9d9', (Math.floor(timetable[i-1][2]/100)*3600)+(timetable[i-1][2]%100)*60); // assume period has ended
         if ( currentTime < endTime && (now.getDay() != 0 && now.getDay() != 6)) {
@@ -67,7 +76,7 @@ function updateSchedule(scheduleObject = getSchedule(getTodaysCalendar().schedul
                 color(row, '#e3e3e3', '#d9d9d9', '#d9d9d9', 0); // gray out row
                 var timeDelay = (startTime - currentTime) * 60 * 1000;
                 updateScheduleTimeouts.push(setTimeout(updateSchedule, timeDelay));
-                console.log((startTime - currentTime) * 60 * 1000);
+                // console.log(Math.round((startTime - currentTime) * 60) + ' seconds until next period start');
                 currentPeriodReached = true;
             } else { // period has not started yet
                 color(row, '#ffffff', '#d9d9d9', '#d9d9d9', 0);
@@ -113,6 +122,9 @@ function switchSchedule(calendarResults = getTodaysCalendar(), scheduleTable = d
     Object.keys(scheduleObject.periods).forEach(
         function(key,i) {
             scheduleTable.rows[i + 1].cells[0].innerHTML = key;
+            // the below line formats time like this:
+            // h:mm - h:mm ([h:]mm)
+            // totallyyy baaaasic js!!! optimized for your viewing convenience!!!
             scheduleTable.rows[i + 1].cells[1].innerHTML = scheduleObject.periods[key].reduce(
                 (p, c, i) => {
                     c = (c >= 1300 && c < 2400) ? c % 1200
@@ -128,15 +140,20 @@ function switchSchedule(calendarResults = getTodaysCalendar(), scheduleTable = d
                         : p + "(" + String(c).padStart(2, '0') + ")";
                 }
             , "");
-            scheduleTable.rows[i+1].cells[2].getElementsByTagName("progress")[0].value = 0;
-            scheduleTable.rows[i+1].cells[2].getElementsByTagName("progress")[0].max = (Math.floor(scheduleObject.periods[key][2]/100)*3600)+(scheduleObject.periods[key][2]%100)*60;
+            scheduleTable.rows[i + 1].cells[2].getElementsByTagName("progress")[0].value = 0;
+            scheduleTable.rows[i + 1].cells[2].getElementsByTagName("progress")[0].max = (
+                    Math.floor(scheduleObject.periods[key][2] / 100)
+                     * 3600
+                ) + (scheduleObject.periods[key][2] % 100)
+                 * 60
+                 - 30; // offset by minus 30 sec. for accuracy
         }
     );
     
-    // add comments
+    // add day description under title
     if (displayDayDescription) {
         var comment = calendarResults.extraComments;
-        console.log("comment: "+comment+"\nvalues: "+calendarResults.values);
+        // console.log("comment: "+comment+"\nvalues: "+calendarResults.values);
 
         if (comment != null) {
             var pDescription = scheduleTable.getElementsByClassName("flavorContainer")[0];

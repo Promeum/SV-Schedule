@@ -7,7 +7,7 @@
 function updateTimerProgress(periodName, progBar, timeouts = []) {
     if (progBar.value >= progBar.max) { // stop and updateSchedule
       updateTimer();
-      console.log("updated timer");
+    //   console.log("updated timer");
     } else {
       progBar.value++;
 

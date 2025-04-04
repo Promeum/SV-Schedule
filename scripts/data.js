@@ -275,7 +275,7 @@ const scheduleDatabase = {
     "debug": {
         "periods": {
         "1 kgy6g": [2116, 2118, 2],
-        "2 vgjhb": [2119, 2220, 101],
+        "2 vgjhb": [2121, 2122, 1],
         // "3 iugbh": [2101, 2102, 1],
         // "4 oiukj": [2103, 2104, 1],
         // "5 dyugi": [2105, 2106, 1],
@@ -368,18 +368,81 @@ const calendarDatabase = {
     '4/1/2025': ['EagleTime', 'Eagle Time', 'MP3 Grades in!'],
     '4/4/2025': ['Regular', 'Regular Schedule', 'MP3 Report Cards in Synergy'],
     '4/8/2025': ['ReportCardDay', 'Report Card Distribution', 'MP3 Report Cards Distributed'],
+    '4/10/2025': ['AssemblyAdjusted', 'Health Fair', 'Three rotations to be held during 3rd period'],
+    '4/11/2025': ['PepRally', 'Pep Rally', '"Battle of the Grades"'],
     '4/14/2025': ['None', 'Spring Break'],
     '4/15/2025': ['None', 'Spring Break'],
     '4/16/2025': ['None', 'Spring Break'],
     '4/17/2025': ['None', 'Spring Break'],
     '4/18/2025': ['None', 'Spring Break'],
     '4/21/2025': ['None', 'Spring Break'],
+    '4/29/2025': ['EagleTime', 'Eagle Time',
+        'Tests for IB Physics, IB Sports',
+        'IB Physics paper 1 (Afternoon)\nIB Sports paper 1 & 3 (Afternoon)'
+    ],
+    '4/30/2025': ['Regular', 'Regular Schedule',
+        'Tests for IB Business, IB Physics, IB Sports',
+        'IB Physics paper 2 (Morning)\nIB Sports paper 2 (Morning)\nIB Business paper 1 (Afternoon)'
+    ],
 
-    '5/2/2025': ['Regular', 'Regular Schedule', 'MP4 Interim Grades in! (Seniors)'],
-    '5/9/2025': ['Regular', 'Regular Schedule', 'MP4 Interim Report Cards Mailed (Seniors) +Itm. Grades in!'],
-    '5/16/2025': ['Regular', 'Regular Schedule', 'MP4 Interim Report Cards Mailed'],
+    '5/2/2025': ['Regular', 'Regular Schedule',
+        'Tests for IB Business, IB ESS',
+        'IB Business paper 2 (Morning)\nIB ESS paper 1 (Afternoon)\nMP4 Interim Grades in for Seniors!'
+    ],
+        
+    '5/5/2025': ['Regular', 'Regular Schedule',
+        'Tests for AP Biology, IB ESS, IB History',
+        'AP Biology Test (8:00 am)\nIB ESS paper 2 (Morning)\nIB History paper 1 & 2 (Afternoon)'
+    ],
+    '5/6/2025': ['EagleTime', 'Eagle Time',
+        'Tests for AP Gov, IB History',
+        'AP Chemistry Test (8:00 am)\nIB History paper 3 (Morning)\nAP Gov Test (12:00 pm)'
+    ],
+    '5/7/2025': ['Regular', 'Regular Schedule',
+        'Tests for AP Java, IB Psychology',
+        'AP Java Test (12:00 pm)\nIB Psychology paper 1 (Afternoon)'
+    ],
+    '5/8/2025': ['EagleTime', 'Eagle Time',
+        'Tests for IB Psychology, AP Statistics, IB Lit., IB Lang. Lit.',
+        'AP Statistics Test (8:00 am)\nIB Psychology paper 2 (Morning)\nIB Lit. paper 1 (Afternoon)\nIB Lang. Lit. paper 1 (Afternoon)'
+    ],
+    '5/9/2025': ['Regular', 'Regular Schedule',
+        'Tests for APUSH, IB Lit., IB Lang. Lit.',
+        'APUSH test (8:00 am)\nIB Lit. paper 2 (Morning)\nIB Lang. Lit. paper 2 (Morning)\nInterim Grades In\nMP4 Interim Report Cards Mailed (Seniors)'
+    ],
+        
+    '5/12/2025': ['Regular', 'Regular Schedule',
+        'Tests for IB Biology, AP Calculus AB/BC',
+        'AP Calculus AB Test (8:00 am)\nAP Calculus BC Test (8:00 am)\nIB Biology paper 1 (Afternoon)'
+    ],
+    '5/13/2025': ['EagleTime', 'Eagle Time',
+        'AP Precalculus Test (8:00 am)\nIB Biology paper 2 (Morning)'
+    ],
+    '5/14/2025': ['Regular', 'Regular Schedule',
+        'IB Spanish paper 1 & 2 (Afternoon)'
+    ],
+    '5/15/2025': ['EagleTime', 'Eagle Time',
+        'Tests for APCSP, IB Calc, IB Stat, IB Spanish',
+        'IB Spanish paper 2 (Morning)\nAPCSP Test (12:00 pm)\nIB Analysis & Approaches paper 1 (Afternoon)\nIB Applications & Interpretations paper 1 (Afternoon)'
+    ],
+    '5/16/2025': ['Regular', 'Regular Schedule',
+        'Tests for IB Chemistry, IB Calc, IB Stat',
+        'IB Analysis & Approaches paper 2 (Morning)\nIB Applications & Interpretations paper 2 (Morning)\nIB Chemistry paper 1 (Afternoon)\nMP4 Interim Report Cards Mailed'
+    ],
+
+    '5/19/2025': ['Regular', 'Regular Schedule',
+        'IB Chemistry paper 2 (Morning)'
+    ],
+    '5/20/2025': ['EagleTime', 'Eagle Time',
+        'IB French paper 1 & 2 (Afternoon)'
+    ],
+    '5/21/2025': ['Regular', 'Regular Schedule',
+        'Tests for IB Calc, IB Stat, IB French',
+        'IB French paper 2 (Morning)\nIB Analysis & Approaches paper 3 (Afternoon)\nIB Applications & Interpretations paper 3 (Afternoon)'
+    ],
+        
     '5/26/2025': ['None', 'Memorial Day', 'Schools and offices closed'],
-    '5/30/2025': ['Regular', 'Regular Schedule', 'Seniors\' Last Day — Grad. Ceremonies @ UMBC at 2:00 pm'],
+    '5/30/2025': ['Regular', 'Regular Schedule', 'Seniors\' Last Day', 'Graduation Ceremonies @ UMBC at 2:00 pm'],
 
     '6/6/2025': ['None', 'No School', 'Staff Professional Day'],
     '6/12/2025': ['EagleTime', 'Eagle Time', 'MP4 last update to student schedules by 5 pm'],
@@ -544,6 +607,7 @@ function getCalendar(date) {
     var scheduleName;
     var scheduleAlias;
     var extraComments;
+    var extraExtraComments;
 
     // Assume a normal week
     switch (searchDate.getDay()) {
@@ -567,20 +631,33 @@ function getCalendar(date) {
     // Override normal week if today is special
     let specialSchedule = calendarDatabase[(searchDate.getMonth()+1) + "/" + searchDate.getDate() + "/" + searchDate.getFullYear()];
     if (specialSchedule != null) {
-        console.log("scheduleName: "+specialSchedule[0]+", scheduleAlias: "+specialSchedule[1]+", date to be accessed: "+((searchDate.getMonth()+1) + "/" + searchDate.getDate() + "/" + searchDate.getFullYear()));
+
+        // console.log(
+        //     "scheduleName: "+specialSchedule[0]
+        //     + ", scheduleAlias: "+specialSchedule[1]
+        //     + ", date to be accessed: "
+        //     + (
+        //         (searchDate.getMonth()+1)
+        //         + "/" + searchDate.getDate()
+        //         + "/" + searchDate.getFullYear()
+        //     )
+        // );
+        
         scheduleName = specialSchedule[0];
         scheduleAlias = specialSchedule[1];
-        if (specialSchedule.length > 2)
+        if (specialSchedule.length > 2 && specialSchedule[2] != '')
             extraComments = specialSchedule[2];
+        if (specialSchedule.length > 3 && specialSchedule[3] != '')
+            extraExtraComments = specialSchedule[3];
     }
 
     var dayRGB = [0,0,0] // placeholder
     
-    // return [scheduleName, scheduleAlias, extraComments];
     return {
         'scheduleName': scheduleName,
         'scheduleAlias': scheduleAlias,
         'extraComments': extraComments,
+        'extraExtraComments': extraExtraComments,
         'dayRGB': dayRGB
     }
 }

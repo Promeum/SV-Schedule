@@ -55,6 +55,7 @@ body {
     position: sticky;
     align-content: end;
     transform: rotate(180deg);
+    z-index: 5;
 }
 
 .mainNavWithin {
@@ -91,7 +92,10 @@ nav * {
 
 #currentPage {
     border-color: var(--svhs-gold);
-    z-index: 1;
+    z-index: 2;
+    &:hover {
+        z-index: 3;
+    }
 }
 
 #currentPage div {
@@ -141,7 +145,7 @@ nav * {
     text-decoration-line: none;
     font-weight: 450;
     border-color: var(--svhs-gold);
-    z-index: 2;
+    z-index: 3;
 }
 
 .mainNavWithin a:hover div, .mainNavWithin a:focus div {
@@ -237,7 +241,6 @@ table {
         sans-serif;
     font-weight: bold;
     color: #ffffff;
-    z-index: -1;
     backdrop-filter: blur(5px) brightness(0.6);
 }
 
@@ -251,7 +254,7 @@ table.scheduleTable p.tableTitle, table.calendarTable p.tableTitle, table.timerT
 }
 
 tr {
-    background-color: rgb(255 255 255);
+    background-color: rgb(160 160 160);
 }
 
 th {
@@ -270,6 +273,7 @@ td {
 
 .tableWrapper {
     overflow-x: auto;
+    overflow-y: visible;
     margin: 15px;
 }
 
@@ -284,7 +288,6 @@ table.scheduleTable {
 table.scheduleTable td {
     align-items: start;
 }
-
 
 table.scheduleTable td:nth-child(-n+2) {
     padding: 4px;
@@ -333,13 +336,13 @@ table.calendarTable thead > tr {
     background-color: var(--table-red);
 }
 
-table.calendarTable tbody tr:first-child {
-    background-color: #e3e3e3;
-}
-
 table.calendarTable tbody th {
     font-size: 16px;
     color: #000000;
+}
+
+table.calendarTable tbody tr:first-child {
+    background-color: #e3e3e3;
 }
 
 table.calendarTable td {
@@ -348,6 +351,18 @@ table.calendarTable td {
     padding: 4px;
     text-align: left;
     align-content: start;
+    text-overflow: ellipsis;
+}
+
+table.calendarTable td:hover, table.calendarTable td:focus {
+    transition-duration: 0.1s;
+    cursor: pointer;
+    background-color: var(--svhs-gold) !important;
+    border-width: var(--border-width);
+    padding-top: calc(4px - var(--border-width));
+    padding-left: calc(3px - var(--border-width));
+    border-color: var(--svhs-gold-secondary);
+    /* border-radius: var(--border-radius); */
 }
 
 table.calendarTable td:nth-child(6n+1) {
@@ -373,6 +388,45 @@ table.calendarTable p.dayDescription {
 table.calendarTable tBody p.dayNum {
     font-size: 16px;
     font-weight: bold;
+}
+
+table.calendarTable p.dayPopupHint {
+    position: relative;
+    height: 6px;
+    top: -0.4em;
+    padding-block-start: 0px;
+    text-align: end;
+    font-size: 0.8em;
+    font-style: italic;
+    font-weight: bold;
+    color: var(--svhs-green-secondary);
+}
+
+table.calendarTable div.dayPopup {
+    position: absolute;
+    color: var(--white-secondary);
+    font-weight: normal;
+    background-color: var(--svhs-green-tertiary);
+    /* filter: drop-shadow(0 0 0.25rem #fcb529) drop-shadow(0 0 1.5rem #a6790680) drop-shadow(0 0 9.75rem #634a0940); */
+    /* backdrop-filter: blur(0.5px) brightness(0.6) drop-shadow(2px 4px 6px black); */
+    filter: drop-shadow(0 0 0.25rem #000000) drop-shadow(0 0 1.5rem #00000080) drop-shadow(0 0 5rem #000000);
+    border-width: 3px;
+    border-radius: var(--border-radius);
+    border-color: var(--svhs-gold-secondary);
+    border-collapse: separate;
+    border-style: solid;
+    padding-block: 0.3em;
+    padding-inline: 0.5em;
+    z-index: 1;
+}
+
+table.calendarTable div.dayPopup hr {
+    background-color: var(--svhs-gold-secondary);
+    overflow: hidden;
+    height: 2px;
+    border: none;
+    padding: 0px;
+    margin-bottom: 3px;
 }
 
 button.monthButton {
@@ -455,14 +509,6 @@ h1 {
     visibility: hidden;
 }
 
-hr {
-    background-color: var(--svhs-gold);
-    overflow: hidden;
-    height: 4px;
-    border: none;
-    margin: unset;
-}
-
 /* end of etc */
 /* ----------------- footer ----------------- */
 
@@ -479,6 +525,7 @@ footer {
     bottom: 0px;
     border-bottom: var(--border-width) solid var(--svhs-gold);
     color: var(--white-secondary);
+    z-index: 10;
 }
 
 footer p {
@@ -516,7 +563,7 @@ footer p {
     border-radius: 6px;
     padding: 8px 0;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     bottom: 125%;
     left: 50%;
     margin-left: -80px;
