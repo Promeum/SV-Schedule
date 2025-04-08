@@ -223,6 +223,10 @@ main {
     align-items: center;
 }
 
+main.todaysSchedule {
+    display: block;
+}
+
 main * {
     flex: auto;
 }
@@ -251,6 +255,10 @@ table * {
 table.scheduleTable p.tableTitle, table.calendarTable p.tableTitle, table.timerTable p.tableTitle {
     margin-block: 4px;
     font-size: 35px;
+}
+
+div.todaysSchedule {
+    width: auto;
 }
 
 tr {
@@ -466,6 +474,115 @@ button.monthButton:active {
 }
 
 /* end of calendar */
+/* ----------------- sources ----------------- */
+
+div.sourceBox {
+    margin: 1.6rem;
+    font: 1em 'Open Sans', sans-serif;
+    font-weight: bold;
+    text-align: left;
+    position: relative;
+    /* width: min-content; */
+    width: 40%;
+    border: var(--border-width) solid var(--svhs-gold-secondary);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    font:
+        32px Trebuchet MS,
+        sans-serif;
+    font-weight: bold;
+    color: black;
+    backdrop-filter: blur(5px) brightness(0.6);
+}
+
+div.sourceBox * {
+    text-align: left;
+    word-break: break-word;
+}
+
+div.sourceBoxInner {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    background-color: var(--white-secondary);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(160 160 160);
+}
+
+div.sourceBoxText {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+  
+div.sourceBoxText * {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+  
+div.sourceBoxText .sourceBoxImg {
+    max-width: fit-content;
+    min-width: 0%;
+    max-height: 4rem;
+    align-self: center;
+    margin-right: 0.8rem;
+}
+  
+div.sourceBox a.sourceBoxTitle {
+    background-color: unset;
+    width: fit-content;
+    height: unset;
+    padding-block: 0px;
+    margin-bottom: 0.5rem;
+    color: rgb(5, 39, 96);
+    font-family: 'Trebuchet MS';
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 3rem;
+    text-decoration: underline dashed;
+    &:hover {
+        text-decoration: unset;
+        text-decoration: underline dotted;
+        color: #15c;
+    }
+}
+
+div.sourceBox p, div.sourceBox a {
+    width: fit-content;
+    white-space: pre-line;
+    color: var(--svhs-green-secondary);
+    font-weight: normal;
+}
+  
+.sourceBoxDescription {
+    flex-basis: 100%;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+  
+div.sourceBox a.sourceBoxLink {
+    color: rgb(5, 39, 96);
+    cursor: pointer;
+    text-decoration: underline dashed;
+    font-size: 1.125rem;
+    display: block;
+    &:hover {
+        text-decoration: unset;
+        text-decoration: underline dotted;
+        color: #15c;
+    }
+}
+
+div.sourceBoxRight {
+    display: contents;
+}
+
+/* end of sources */
 /* ----------------- timer ----------------- */
 
 table.timerTable tr:first-of-type {

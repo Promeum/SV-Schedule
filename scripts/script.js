@@ -26,9 +26,9 @@ function initializeMainSchedule() {
 function initializeFullScheduleList() {
   // first, duplicate a bunch of tables
   var tableToClone = document.getElementsByClassName("tableWrapper")[0].cloneNode(true);
-  const SCHEDULES_DISPLAYED = 15;
+  const SCHEDULES_DISPLAYED = 17;
 
-  for (var i=1; i<=SCHEDULES_DISPLAYED; i++) {
+  for (var i=1; i<SCHEDULES_DISPLAYED; i++) {
     document.getElementsByClassName("tableWrapper")[0].after(tableToClone);
     tableToClone = document.getElementsByClassName("tableWrapper")[0].cloneNode(true);
   }

@@ -95,30 +95,31 @@ const scheduleDatabase = {
     },
     "AssemblyAdjusted": {
         "periods": {
-        "Period 1": [745, 817, 32],
-        "Period 2": [823, 900, 37],
-        "A1/Pd 3": [906, 936, 30],
-        "A2/Pd 3": [942, 1012, 30],
-        "A3/Pd 3": [1018, 1048, 30],
-        "Period 4": [1054, 1141, 47],
-        "Lunch (Pd 5)": [1141, 1221, 40],
-        "Period 6": [1227, 1304, 37],
-        "Period 7": [1310, 1347, 37],
-        "Period 8": [1353, 1430, 37]
+        "Period 1": [745, 823, 38],
+        "Period 2": [829, 907, 38],
+        "A1/Pd 3": [913, 943, 30],
+        "A2/Pd 3": [949, 1019, 30],
+        "A3/Pd 3": [1025, 1055, 30],
+        "Lunch (Pd 5)": [1055, 1134, 39],
+        "Period 4": [1140, 1218, 38],
+        "Period 6": [1224, 1302, 38],
+        "Period 7": [1308, 1346, 38],
+        "Period 8": [1352, 1430, 38]
         },
-        "alias": "Assembly (Adjusted)"
+        "alias": "Health Fair (Apr. 10)"
     },
     "PepRally": {
         "periods": {
-        "Period 1": [745, 825, 40],
-        "Period 2": [831, 908, 37],
-        "Period 3": [914, 951, 37],
-        "Period 4": [957, 1034, 37],
-        "Lunch (Pd 5)": [1034, 1118, 40],
-        "Period 6": [1124, 1201, 37],
-        "Period 7": [1207, 1244, 37],
-        "Period 8": [1250, 1327, 37],
-        "Pep Rally": [1327, 1430, 63]
+        "Period 1": [745, 820, 35],
+        "Period 2": [826, 901, 35],
+        "A1/Pd 3": [907, 1001, 54],
+        "Transition": [1001, 1016, 15],
+        "A2/Pd 3": [1016, 1106, 50],
+        "Lunch (Pd 5)": [1106, 1146, 40],
+        "Period 4": [1152, 1227, 35],
+        "Period 6": [1233, 1308, 35],
+        "Period 7": [1314, 1349, 35],
+        "Period 8": [1355, 1430, 35],
         },
         "alias": "Pep Rally"
     },
@@ -209,6 +210,21 @@ const scheduleDatabase = {
         "Period 8": [1346, 1430, 44]
         },
         "alias": "Report Card Day"
+    },
+    "ReportCardDayET": {
+        "periods": {
+        "Period 1": [745, 828, 43],
+        "Period 2": [834, 915, 41],
+        "Period 3": [921, 1002, 41],
+        "Eagle Time": [1002, 1026, 24],
+        "Period 4": [1032, 1113, 41],
+        "Lunch (Pd 5)": [1113, 1153, 40],
+        "Period 6": [1159, 1240, 41],
+        "Period 7": [1246, 1327, 41],
+        "Period 8": [1333, 1414, 41],
+        "HR/Report Card": [1420, 1430, 10]
+        },
+        "alias": "Report Cards + Eagle Time"
     },
     "AssemblyAdjusted2": {
         "periods": {
@@ -369,7 +385,7 @@ const calendarDatabase = {
     '4/4/2025': ['Regular', 'Regular Schedule', 'MP3 Report Cards in Synergy'],
     '4/8/2025': ['ReportCardDay', 'Report Card Distribution', 'MP3 Report Cards Distributed'],
     '4/10/2025': ['AssemblyAdjusted', 'Health Fair', 'Three rotations to be held during 3rd period'],
-    '4/11/2025': ['PepRally', 'Pep Rally', '"Battle of the Grades"'],
+    '4/11/2025': ['PepRally', 'Pep Rally', '"Clash of the Classes"', 'Deadline to complete and verify 75 SSL Hours Completed (for Senior Graduation)'],
     '4/14/2025': ['None', 'Spring Break'],
     '4/15/2025': ['None', 'Spring Break'],
     '4/16/2025': ['None', 'Spring Break'],
@@ -392,23 +408,23 @@ const calendarDatabase = {
         
     '5/5/2025': ['Regular', 'Regular Schedule',
         'Tests for AP Biology, IB ESS, IB History',
-        'AP Biology Test (8:00 am)\nIB ESS paper 2 (Morning)\nIB History paper 1 & 2 (Afternoon)'
+        'AP Biology Test (8:00 am)\nIB ESS paper 2 (Morning)\nIB History paper 1 & 2 (Afternoon)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
     ],
     '5/6/2025': ['EagleTime', 'Eagle Time',
         'Tests for AP Gov, IB History',
-        'AP Chemistry Test (8:00 am)\nIB History paper 3 (Morning)\nAP Gov Test (12:00 pm)'
+        'AP Chemistry Test (8:00 am)\nIB History paper 3 (Morning)\nAP Gov Test (12:00 pm)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
     ],
     '5/7/2025': ['Regular', 'Regular Schedule',
         'Tests for AP Java, IB Psychology',
-        'AP Java Test (12:00 pm)\nIB Psychology paper 1 (Afternoon)'
+        'AP Java Test (12:00 pm)\nIB Psychology paper 1 (Afternoon)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
     ],
     '5/8/2025': ['EagleTime', 'Eagle Time',
         'Tests for IB Psychology, AP Statistics, IB Lit., IB Lang. Lit.',
-        'AP Statistics Test (8:00 am)\nIB Psychology paper 2 (Morning)\nIB Lit. paper 1 (Afternoon)\nIB Lang. Lit. paper 1 (Afternoon)'
+        'AP Statistics Test (8:00 am)\nIB Psychology paper 2 (Morning)\nIB Lit. paper 1 (Afternoon)\nIB Lang. Lit. paper 1 (Afternoon)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
     ],
     '5/9/2025': ['Regular', 'Regular Schedule',
         'Tests for APUSH, IB Lit., IB Lang. Lit.',
-        'APUSH test (8:00 am)\nIB Lit. paper 2 (Morning)\nIB Lang. Lit. paper 2 (Morning)\nInterim Grades In\nMP4 Interim Report Cards Mailed (Seniors)'
+        'APUSH test (8:00 am)\nIB Lit. paper 2 (Morning)\nIB Lang. Lit. paper 2 (Morning)\nInterim Grades In\nMP4 Interim Report Cards Mailed (Seniors)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
     ],
         
     '5/12/2025': ['Regular', 'Regular Schedule',
@@ -427,7 +443,7 @@ const calendarDatabase = {
     ],
     '5/16/2025': ['Regular', 'Regular Schedule',
         'Tests for IB Chemistry, IB Calc, IB Stat',
-        'IB Analysis & Approaches paper 2 (Morning)\nIB Applications & Interpretations paper 2 (Morning)\nIB Chemistry paper 1 (Afternoon)\nMP4 Interim Report Cards Mailed'
+        'IB Analysis & Approaches paper 2 (Morning)\nIB Applications & Interpretations paper 2 (Morning)\nIB Chemistry paper 1 (Afternoon)\nMP4 Interim Report Cards Mailed\nDeadline For All Classwork (Seniors in Project GRAD Only)'
     ],
 
     '5/19/2025': ['Regular', 'Regular Schedule',
@@ -440,9 +456,11 @@ const calendarDatabase = {
         'Tests for IB Calc, IB Stat, IB French',
         'IB French paper 2 (Morning)\nIB Analysis & Approaches paper 3 (Afternoon)\nIB Applications & Interpretations paper 3 (Afternoon)'
     ],
-        
+    
+    '5/23/2025': ['Regular', 'Regular Schedule', 'Seniors\' Last Day', 'Deadline for All Classwork (Seniors)'],
     '5/26/2025': ['None', 'Memorial Day', 'Schools and offices closed'],
-    '5/30/2025': ['Regular', 'Regular Schedule', 'Seniors\' Last Day', 'Graduation Ceremonies @ UMBC at 2:00 pm'],
+    '5/29/2025': ['EagleTime', 'Eagle Time', 'Graduation Rehearsal @ 7:45 am'],
+    '5/30/2025': ['Regular', 'Regular Schedule', 'Graduation Ceremonies @ UMBC at 2 pm'],
 
     '6/6/2025': ['None', 'No School', 'Staff Professional Day'],
     '6/12/2025': ['EagleTime', 'Eagle Time', 'MP4 last update to student schedules by 5 pm'],

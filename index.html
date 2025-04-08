@@ -25,7 +25,9 @@
         </script>
         
         <title>Ultra Super-Premium SV Schedule - Today's Schedule</title>
-        <link rel="icon" type="image/x-icon" href="/images/SV-Schedule_Icon.ico">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <link rel="icon" type="image/icon" href="/images/favicon.ico">
+        <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     </head>
 
     <body>
@@ -44,20 +46,24 @@
                 </a>
                 <a tabindex="0" href="future-schedules.html">
                     <div></div>
-                    <div id="tabText">Future Schedules</div>
+                    <div id="tabText">Schedule Calendar</div>
                 </a>
                 <a tabindex="0" href="full-schedule-list.html">
                     <div></div>
                     <div id="tabText">Full Schedule List</div>
                 </a>
+                <a tabindex="0" href="sources.html">
+                    <div></div>
+                    <div id="tabText">Informative Links</div>
+                </a>
             </nav>
         </nav>
 
-        <main>
+        <main class="todaysSchedule">
 
             <noscript>You need to enable JavaScript to view the full site.</noscript>
 
-            <div class="tableWrapper scheduleTableWrapper">
+            <div class="tableWrapper scheduleTableWrapper todaysSchedule">
                 <table class="scheduleTable">
                     <thead>
                         <th colspan="3">
@@ -68,10 +74,14 @@
                     <tr>
                         <td>Period</td>
                         <td>Time</td>
-                        <td class="progressCell"><progress id="p1" value="0.5" max="1" /></td>
+                        <td class="progressCell"><progress id="p1" value="0.5" max="1"></td>
                     </tr>
                 </table>
             </div>
+<!-- 
+            <div class="tableWrapper countdownTableWrapper" style="color: antiquewhite; background-color: blueviolet;">
+                esy5thrdyytf
+            </div> -->
 
         </main>
             
