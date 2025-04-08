@@ -383,7 +383,7 @@ const calendarDatabase = {
 
     '4/1/2025': ['EagleTime', 'Eagle Time', 'MP3 Grades in!'],
     '4/4/2025': ['Regular', 'Regular Schedule', 'MP3 Report Cards in Synergy'],
-    '4/8/2025': ['ReportCardDay', 'Report Card Distribution', 'MP3 Report Cards Distributed'],
+    '4/8/2025': ['ReportCardDayET', 'Report Card Distribution', 'MP3 Report Cards Distributed'],
     '4/10/2025': ['AssemblyAdjusted', 'Health Fair', 'Three rotations to be held during 3rd period'],
     '4/11/2025': ['PepRally', 'Pep Rally', '"Clash of the Classes"', 'Deadline to complete and verify 75 SSL Hours Completed (for Senior Graduation)'],
     '4/14/2025': ['None', 'Spring Break'],
