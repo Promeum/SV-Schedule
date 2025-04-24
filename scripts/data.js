@@ -383,7 +383,7 @@ const calendarDatabase = {
 
     '4/1/2025': ['EagleTime', 'Eagle Time', 'MP3 Grades in!'],
     '4/4/2025': ['Regular', 'Regular Schedule', 'MP3 Report Cards in Synergy'],
-    '4/8/2025': ['ReportCardDay', 'Report Card Distribution', 'MP3 Report Cards Distributed'],
+    '4/8/2025': ['ReportCardDayET', 'Report Card Distribution', 'MP3 Report Cards Distributed'],
     '4/10/2025': ['AssemblyAdjusted', 'Health Fair', 'Three rotations to be held during 3rd period'],
     '4/11/2025': ['PepRally', 'Pep Rally', '"Clash of the Classes"', 'Deadline to complete and verify 75 SSL Hours Completed (for Senior Graduation)'],
     '4/14/2025': ['None', 'Spring Break'],
@@ -393,68 +393,72 @@ const calendarDatabase = {
     '4/18/2025': ['None', 'Spring Break'],
     '4/21/2025': ['None', 'Spring Break'],
     '4/29/2025': ['EagleTime', 'Eagle Time',
-        'Tests for IB Physics, IB Sports',
-        'IB Physics paper 1 (Afternoon)\nIB Sports paper 1 & 3 (Afternoon)'
+        'Tests for IB Physics, IB SEHS',
+        'IB Physics paper 1 (12:00 pm)\nIB SEHS paper 1 & 3 (12:00 pm)'
     ],
     '4/30/2025': ['Regular', 'Regular Schedule',
-        'Tests for IB Business, IB Physics, IB Sports',
-        'IB Physics paper 2 (Morning)\nIB Sports paper 2 (Morning)\nIB Business paper 1 (Afternoon)'
+        'Tests for IB Business, IB Physics, IB SEHS',
+        'IB Physics paper 2 (8:00 am)\nIB SEHS paper 2 (8:00 am)\nIB Business paper 1 (& 3, HL only) (12:00 pm)'
     ],
 
     '5/2/2025': ['Regular', 'Regular Schedule',
         'Tests for IB Business, IB ESS',
-        'IB Business paper 2 (Morning)\nIB ESS paper 1 (Afternoon)\nMP4 Interim Grades in for Seniors!'
+        'IB Business paper 2 (8:00 am)\nIB ESS paper 1 (12:00 pm)\nMP4 Interim Grades in for Seniors!'
     ],
         
     '5/5/2025': ['Regular', 'Regular Schedule',
-        'Tests for AP Biology, IB ESS, IB History',
-        'AP Biology Test (8:00 am)\nIB ESS paper 2 (Morning)\nIB History paper 1 & 2 (Afternoon)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
+        'Tests for IB ESS, IB History',
+        'IB ESS paper 2 (8:00 am)\nIB History paper 1 & 2 (12:00 pm)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
     ],
     '5/6/2025': ['EagleTime', 'Eagle Time',
         'Tests for AP Gov, IB History',
-        'AP Chemistry Test (8:00 am)\nIB History paper 3 (Morning)\nAP Gov Test (12:00 pm)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
+        'IB History paper 3 (8:00 am)\nAP Gov Test (12:00 pm)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
     ],
     '5/7/2025': ['Regular', 'Regular Schedule',
         'Tests for AP Java, IB Psychology',
-        'AP Java Test (12:00 pm)\nIB Psychology paper 1 (Afternoon)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
+        'AP Java Test (12:00 pm)\nIB Psychology paper 1 (12:00 pm)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
     ],
     '5/8/2025': ['EagleTime', 'Eagle Time',
-        'Tests for IB Psychology, AP Statistics, IB Lit., IB Lang. Lit.',
-        'AP Statistics Test (8:00 am)\nIB Psychology paper 2 (Morning)\nIB Lit. paper 1 (Afternoon)\nIB Lang. Lit. paper 1 (Afternoon)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
+        'Tests for AP African Amer. Studies, IB Psychology, AP Stat, IB Lit., IB Lang. Lit.',
+        'AP African American Studies Test (8:00 am)\nAP Statistics Test (8:00 am)\nIB Psychology paper 2 (8:00 am)\nIB Lit. paper 1 (12:00 pm)\nIB Lang. Lit. paper 1 (12:00 pm)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
     ],
     '5/9/2025': ['Regular', 'Regular Schedule',
-        'Tests for APUSH, IB Lit., IB Lang. Lit.',
-        'APUSH test (8:00 am)\nIB Lit. paper 2 (Morning)\nIB Lang. Lit. paper 2 (Morning)\nInterim Grades In\nMP4 Interim Report Cards Mailed (Seniors)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
+        'Tests for APUSH, IB Lit., IB Lang. Lit., IB Geography, IB Soc Cult.',
+        'APUSH test (8:00 am)\nIB Lit. paper 2 (8:00 am)\nIB Lang. Lit. paper 2 (8:00 am)\nIB Geography paper 1 (12:00 pm)\nIB Societies and Cultures paper 1 (12:00 pm)\nInterim Grades In\nMP4 Interim Report Cards Mailed (Seniors)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
     ],
         
     '5/12/2025': ['Regular', 'Regular Schedule',
-        'Tests for IB Biology, AP Calculus AB/BC',
-        'AP Calculus AB Test (8:00 am)\nAP Calculus BC Test (8:00 am)\nIB Biology paper 1 (Afternoon)'
+        'Tests for IB Biology, AP Calc AB/BC, IB Geography, IB Soc Cult.',
+        'AP Calculus AB Test (8:00 am)\nAP Calculus BC Test (8:00 am)\nIB Geography paper 2 (8:00 am)\nIB Societies and Cultures paper 2 (8:00 am)\nIB Biology paper 1 (12:00 pm)'
     ],
     '5/13/2025': ['EagleTime', 'Eagle Time',
-        'AP Precalculus Test (8:00 am)\nIB Biology paper 2 (Morning)'
+        'Tests for IB Biology, IB Economics, AP Precalculus',
+        'AP Precalculus Test (8:00 am)\nIB Biology paper 2 (8:00 am)\nIB Economics paper 2 (12:00 pm)'
     ],
     '5/14/2025': ['Regular', 'Regular Schedule',
-        'IB Spanish paper 1 & 2 (Afternoon)'
+        'Tests for IB Economics, IB Spanish',
+        'IB Economics paper 2 (8:00 am)\nIB Spanish paper 1 & 2 (12:00 pm)'
     ],
     '5/15/2025': ['EagleTime', 'Eagle Time',
         'Tests for APCSP, IB Calc, IB Stat, IB Spanish',
-        'IB Spanish paper 2 (Morning)\nAPCSP Test (12:00 pm)\nIB Analysis & Approaches paper 1 (Afternoon)\nIB Applications & Interpretations paper 1 (Afternoon)'
+        'IB Spanish paper 2 (8:00 am)\nAPCSP Test (12:00 pm)\nIB Analysis & Approaches paper 1 (12:00 pm)\nIB Applications & Interpretations paper 1 (12:00 pm)'
     ],
     '5/16/2025': ['Regular', 'Regular Schedule',
-        'Tests for IB Chemistry, IB Calc, IB Stat',
-        'IB Analysis & Approaches paper 2 (Morning)\nIB Applications & Interpretations paper 2 (Morning)\nIB Chemistry paper 1 (Afternoon)\nMP4 Interim Report Cards Mailed\nDeadline For All Classwork (Seniors in Project GRAD Only)'
+        'Tests for IB Chemistry, IB Calc, AP Psychology, IB Stat',
+        'IB Analysis & Approaches paper 2 (8:00 am)\nIB Applications & Interpretations paper 2 (8:00 am)\nAP Psychology Test (12:00 pm)\nIB Chemistry paper 1 (12:00 pm)\nMP4 Interim Report Cards Mailed\nDeadline For All Classwork (Seniors in Project GRAD Only)'
     ],
 
     '5/19/2025': ['Regular', 'Regular Schedule',
-        'IB Chemistry paper 2 (Morning)'
+        'Tests for IB Chemistry, IB Global Politics',
+        'IB Chemistry paper 2 (8:00 am)\nIB Global Politics paper 1 (12:00 pm)'
     ],
     '5/20/2025': ['EagleTime', 'Eagle Time',
-        'IB French paper 1 & 2 (Afternoon)'
+        'Tests for IB French, IB Global Politics',
+        'IB Global Politics paper 2 (8:00 am)\nIB French paper 1 & 2 (12:00 pm)'
     ],
     '5/21/2025': ['Regular', 'Regular Schedule',
         'Tests for IB Calc, IB Stat, IB French',
-        'IB French paper 2 (Morning)\nIB Analysis & Approaches paper 3 (Afternoon)\nIB Applications & Interpretations paper 3 (Afternoon)'
+        'IB French paper 2 (8:00 am)\nIB Analysis & Approaches paper 3 (12:00 pm)\nIB Applications & Interpretations paper 3 (12:00 pm)'
     ],
     
     '5/23/2025': ['Regular', 'Regular Schedule', 'Seniors\' Last Day', 'Deadline for All Classwork (Seniors)'],

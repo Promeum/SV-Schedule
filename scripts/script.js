@@ -10,12 +10,16 @@ function initializeMainSchedule() {
   switchSchedule();
   updateSchedule();
 
+  // updateAllCountdowns();
+
   document.addEventListener("visibilitychange", () => {
     if (!document.hidden) {
       updateSchedule();
-      progBarDelay = 1000
+      progBarDelay = 1000;
+      // countdownDelay = 1000;
     } else {
-      progBarDelay = 500
+      progBarDelay = 500;
+      // countdownDelay = 60000;
     }
   });
 }
@@ -108,9 +112,10 @@ function initialize() {
   
   // scroll the tableWrappers so it is not weird
   var wrappers = document.getElementsByClassName("tableWrapper");
+  
   for (var i=0; i<wrappers.length; i++) {
     var wrapper = wrappers[i];
-    var table = wrapper.getElementsByTagName("table")[0];
+    var table = wrapper.children[0];
     wrapper.scrollTo({
       left: ( 2
         + Math.min(parseInt(getComputedStyle(table).paddingLeft.replace("px",""))

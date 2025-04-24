@@ -333,6 +333,39 @@ table.scheduleTable p.scheduleDayDescription {
     text-wrap: auto;
 }
 
+div.countdownUnitContainer {
+    display: flex;
+    align-content: center;
+}
+
+div.countdownUnitContainer span {
+    word-break: keep-all;
+}
+
+div.countdownUnitTimeContainer {
+    flex-shrink: 10;
+    flex-grow: 1;
+    display: flex;
+    width: fit-content;
+    min-width: min-content;
+}
+
+div.countdownUnit {
+    display: flex;
+    flex-wrap: wrap;
+    padding-inline: 0.2rem;
+}
+
+div.countdownUnit span {
+    text-align: center;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    align-items: center;
+    &:nth-child(2) {
+        font-size: 16px;
+    }
+}
+
 /* end of main schedule */
 /* ----------------- calendar ----------------- */
 
@@ -557,7 +590,7 @@ div.sourceBox p, div.sourceBox a {
     color: var(--svhs-green-secondary);
     font-weight: normal;
 }
-  
+
 .sourceBoxDescription {
     flex-basis: 100%;
     margin: 0;
