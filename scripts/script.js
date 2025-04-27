@@ -10,16 +10,16 @@ function initializeMainSchedule() {
   switchSchedule();
   updateSchedule();
 
-  // updateAllCountdowns();
+  updateAllCountdowns();
 
   document.addEventListener("visibilitychange", () => {
     if (!document.hidden) {
       updateSchedule();
       progBarDelay = 1000;
-      // countdownDelay = 1000;
+      countdownDelay = 1000;
     } else {
       progBarDelay = 500;
-      // countdownDelay = 60000;
+      countdownDelay = 60000;
     }
   });
 }
