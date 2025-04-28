@@ -254,7 +254,9 @@ table * {
 
 table.scheduleTable p.tableTitle, table.calendarTable p.tableTitle, table.timerTable p.tableTitle {
     font-family: 'Oswald';
-    margin-block: 4px;
+    letter-spacing: 1px;
+    margin-block-start: 0px;
+    margin-block-end: 4px;
     font-size: 35px;
 }
 
@@ -575,9 +577,9 @@ div.sourceBox a.sourceBoxTitle {
     padding-block: 0px;
     margin-bottom: 0.5rem;
     color: rgb(5, 39, 96);
-    font-family: 'Trebuchet MS';
+    font-family: 'Oswald';
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 3rem;
     text-decoration: underline dashed;
     &:hover {
