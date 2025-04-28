@@ -253,6 +253,7 @@ table * {
 }
 
 table.scheduleTable p.tableTitle, table.calendarTable p.tableTitle, table.timerTable p.tableTitle {
+    font-family: 'Oswald';
     margin-block: 4px;
     font-size: 35px;
 }
@@ -544,6 +545,8 @@ div.sourceBoxInner {
 }
 
 div.sourceBoxText {
+    font-family: 'Oswald';
+    font-weight: normal;
     display: flex;
     flex-wrap: wrap;
     flex-basis: 100%;
