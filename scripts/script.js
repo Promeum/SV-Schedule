@@ -6,7 +6,12 @@
 /**
  * For index.html
  */
-function initializeMainSchedule() {  
+function initializeMainSchedule() {
+
+  // await fetchJSON(new URL('../scripts/calendarData.json', document.URL));
+  // await fetchJSON(new URL('../scripts/scheduleData.json', document.URL));
+
+
   switchSchedule();
   updateSchedule();
 
@@ -22,6 +27,25 @@ function initializeMainSchedule() {
       countdownDelay = 60000;
     }
   });
+}
+
+/**
+ * 
+ * @param {URL} url The URL to fetch the JSON file from.
+ */
+async function fetchJSON(url) {
+  try {
+    const JsonResponse = await fetch(url);
+    
+    if (!JsonResponse.ok)
+      throw new Error(`Response status: ${JsonResponse.status}`);
+
+    const jsonJson = await JsonResponse.json();
+    return jsonJson;
+
+  } catch (error) {
+    console.error(error.message);
+  }
 }
 
 /**

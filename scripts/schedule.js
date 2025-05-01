@@ -30,7 +30,8 @@ function updateProgressBar(thisPd, scheduleObject, scheduleTable) {
       updateScheduleTimeouts.push(setTimeout(updateProgressBar, progBarDelay, thisPd, scheduleObject, scheduleTable));
     }
 }
-  
+
+
 /**
  * Highlights the row on the dynamic schedule correspondent with the current time
 */
@@ -85,6 +86,7 @@ function updateSchedule(scheduleObject = getSchedule(getTodaysCalendar().schedul
         }
     }
 }
+
 
 /**
  * Switches out the schedule in the table for a different one, depending on settings within the document

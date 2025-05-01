@@ -254,10 +254,11 @@ table * {
 
 table.scheduleTable p.tableTitle, table.calendarTable p.tableTitle, table.timerTable p.tableTitle {
     font-family: 'Oswald';
+    font-size: 35px;
     letter-spacing: 1px;
     margin-block-start: 0px;
     margin-block-end: 4px;
-    font-size: 35px;
+    white-space: pre-line;
 }
 
 div.todaysSchedule {
@@ -587,6 +588,10 @@ div.sourceBox a.sourceBoxTitle {
         text-decoration: underline dotted;
         color: #15c;
     }
+}
+
+div.sourceBox.countdownBox .sourceBoxTitle {
+    margin-top: -0.4rem;
 }
 
 div.sourceBox p, div.sourceBox a {

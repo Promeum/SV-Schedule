@@ -1,3 +1,9 @@
+/**
+ * @type {Number} The year the school year started.
+ * @example schoolYearStarted = 2024; // The 2024-2025 school year
+ */
+const schoolYearStarted = 2024;
+
 var selectedMonth = new Date().getMonth();
 var selectedYear = new Date().getFullYear();
 
@@ -24,7 +30,7 @@ function nextMonth() {
 
 function monthSelect() {
 	selectedMonth = document.getElementById("monthSelect").value;
-	selectedYear = (selectedMonth < 6) ? 2025 : 2024;
+	selectedYear = (selectedMonth < 6) ? schoolYearStarted + 1 : schoolYearStarted;
 	buildCalendar(undefined, selectedMonth, selectedYear);
 	onSelect();
 }
@@ -42,6 +48,7 @@ function onSelect() {
  */
 function buildCalendar(calendarTable = document.getElementsByClassName("calendarTable")[0], month = new Date().getMonth(), year = new Date().getFullYear()) {
 	const now = new Date();
+	// set variables
 	var lastDayOfMonth = new Date(year, month + 1, 0); // last day of month
 	var firstDayOfMonth = new Date(lastDayOfMonth);
 	firstDayOfMonth.setDate(1);
@@ -148,6 +155,12 @@ function buildCalendar(calendarTable = document.getElementsByClassName("calendar
 			case "MAP-M Testing":
 			case "MAP-R Testing":
 				dayRGB = [239, 163, 180];
+				break;
+			case "MCAP A":
+				dayRGB = [176, 230, 232];
+				break;
+			case "MCAP B":
+				dayRGB = [176, 232, 185];
 				break;
 			case "No School":
 			case "Winter Break":
