@@ -146,7 +146,7 @@ const scheduleDatabase = {
         "Period 3": [1304, 1344, 40],
         "Period 4": [1350, 1430, 40]
         },
-        "alias": "Morning Testing (1-2-3-4)"
+        "alias": "MCAP A\nMorning Testing (1-2-3-4)"
     },
     "MorningTesting_1678": {
         "periods": {
@@ -157,7 +157,7 @@ const scheduleDatabase = {
         "Period 7": [1304, 1344, 40],
         "Period 8": [1350, 1430, 40],
         },
-        "alias": "Morning Testing (1-6-7-8)"
+        "alias": "MCAP B\nMorning Testing (1-6-7-8)"
     },
     "PSAT": {
         "periods": {
@@ -311,172 +311,172 @@ const scheduleDatabase = {
  * @type {object}
  */
 const calendarDatabase = {
-    '8/26/2024': ['AMHomeroom', 'First Day of School'],
+    "8/26/2024": ["AMHomeroom", "First Day of School"],
 
-    '9/2/2024': ['None', 'No School'],
-    '9/3/2024': ['SpecialHomeroom1', 'Special Homeroom'],
-    '9/4/2024': ['SpecialHomeroom1', 'Special Homeroom'],
-    '9/5/2024': ['SpecialHomeroom1', 'Special Homeroom'],
-    '9/6/2024': ['SpecialHomeroom1', 'Special Homeroom'],
+    "9/2/2024": ["None", "No School"],
+    "9/3/2024": ["SpecialHomeroom1", "Special Homeroom"],
+    "9/4/2024": ["SpecialHomeroom1", "Special Homeroom"],
+    "9/5/2024": ["SpecialHomeroom1", "Special Homeroom"],
+    "9/6/2024": ["SpecialHomeroom1", "Special Homeroom"],
 
-    '9/20/2024': ['PepRally', 'Pep Rally'],
-    '9/25/2024': ['MAPTesting', 'MAP-M Testing'],
-    '9/26/2024': ['MAPTesting', 'MAP-R Testing'],
-    '9/27/2024': ['EarlyRelease', 'Early Release'],
+    "9/20/2024": ["PepRally", "Pep Rally"],
+    "9/25/2024": ["MAPTesting", "MAP-M Testing"],
+    "9/26/2024": ["MAPTesting", "MAP-R Testing"],
+    "9/27/2024": ["EarlyRelease", "Early Release"],
 
-    '10/2/2024': ['ECAFair', 'Extracurricular Fair'],
-    '10/3/2024': ['None', 'No School'],
-    '10/8/2024': ['EagleTime', 'Eagle Time', 'IB Group 4 Project'],
-    '10/9/2024': ['Regular', 'Regular Schedule', 'IB Group 4 Project'],
-    '10/16/2024': ['PSAT', 'PSAT Testing Day'],
-    '10/18/2024': ['None', 'No School'],
-    '10/31/2024': ['EagleTime', 'Eagle Time', 'Halloween!'],
+    "10/2/2024": ["ECAFair", "Extracurricular Fair"],
+    "10/3/2024": ["None", "No School"],
+    "10/8/2024": ["EagleTime", "Eagle Time", "IB Group 4 Project"],
+    "10/9/2024": ["Regular", "Regular Schedule", "IB Group 4 Project"],
+    "10/16/2024": ["PSAT", "PSAT Testing Day"],
+    "10/18/2024": ["None", "No School"],
+    "10/31/2024": ["EagleTime", "Eagle Time", "Halloween!"],
 
-    '11/4/2024': ['None', 'No School'],
-    '11/5/2024': ['None', 'No School'],
-    '11/6/2024': ['EagleTime', 'Safety Day'],
-    '11/13/2024': ['ReportCardDay', 'Report Card Distribution'],
+    "11/4/2024": ["None", "No School"],
+    "11/5/2024": ["None", "No School"],
+    "11/6/2024": ["EagleTime", "Safety Day"],
+    "11/13/2024": ["ReportCardDay", "Report Card Distribution"],
 
-    '11/25/2024': ['EarlyReleaseAlt_1234', 'Early Release'],
-    '11/26/2024': ['EarlyReleaseAlt_1678', 'Early Release'],
-    '11/27/2024': ['None', 'No School'],
-    '11/28/2024': ['None', 'No School'],
-    '11/29/2024': ['None', 'No School'],
+    "11/25/2024": ["EarlyReleaseAlt_1234", "Early Release"],
+    "11/26/2024": ["EarlyReleaseAlt_1678", "Early Release"],
+    "11/27/2024": ["None", "No School"],
+    "11/28/2024": ["None", "No School"],
+    "11/29/2024": ["None", "No School"],
     
-    '12/4/2024': ['AssemblyAdjusted', 'Assembly (Adjusted)'],
-    '12/19/2024': ['AssemblyAdjusted2', 'Assembly (Adjusted)'],
-    '12/20/2024': ['AssemblyAdjusted3', 'Winter Concert'],
-    '12/23/2024': ['None', 'Winter Break'],
-    '12/24/2024': ['None', 'Christmas Eve'],
-    '12/25/2024': ['None', 'Christmas Day'],
-    '12/26/2024': ['None', 'Winter Break'],
-    '12/27/2024': ['None', 'Winter Break'],
-    '12/30/2024': ['None', 'Winter Break'],
-    '12/31/2024': ['None', 'New Year\'s Eve'],
+    "12/4/2024": ["AssemblyAdjusted", "Assembly (Adjusted)"],
+    "12/19/2024": ["AssemblyAdjusted2", "Assembly (Adjusted)"],
+    "12/20/2024": ["AssemblyAdjusted3", "Winter Concert"],
+    "12/23/2024": ["None", "Winter Break"],
+    "12/24/2024": ["None", "Christmas Eve"],
+    "12/25/2024": ["None", "Christmas Day"],
+    "12/26/2024": ["None", "Winter Break"],
+    "12/27/2024": ["None", "Winter Break"],
+    "12/30/2024": ["None", "Winter Break"],
+    "12/31/2024": ["None", "New Year\'s Eve"],
 
-    '1/1/2025': ['None', 'New Year\'s Day'],
-    '1/6/2025': ['None', 'Snow Day'],
-    '1/7/2025': ['None', 'Snow Day'],
-    '1/8/2025': ['None', 'Snow Day'],
-    '1/9/2025': ['DelayedOpening', 'Delayed Opening'],
-    '1/20/2025': ['None', 'Inauguration Day', 'Schools and offices closed'],
-    '1/21/2025': ['DelayedOpening', 'Delayed Opening'],
-    '1/22/2025': ['DelayedOpening', 'Delayed Opening'],
-    '1/27/2025': ['Regular', 'Regular Schedule', 'MP2 student schedules finalized by 5 pm'],
-    '1/28/2025': ['EagleTime', 'Eagle Time', 'End of MP2 / Semester 1'],
-    '1/29/2025': ['None', 'No School', 'Grading and Planning for Teachers'],
-    '1/30/2025': ['AMHomeroom', 'AM Homeroom'],
-    '1/31/2025': ['Regular', 'Regular Schedule', 'MP2 Final grades in by 2 pm!'],
+    "1/1/2025": ["None", "New Year\'s Day"],
+    "1/6/2025": ["None", "Snow Day"],
+    "1/7/2025": ["None", "Snow Day"],
+    "1/8/2025": ["None", "Snow Day"],
+    "1/9/2025": ["DelayedOpening", "Delayed Opening"],
+    "1/20/2025": ["None", "Inauguration Day", "Schools and offices closed"],
+    "1/21/2025": ["DelayedOpening", "Delayed Opening"],
+    "1/22/2025": ["DelayedOpening", "Delayed Opening"],
+    "1/27/2025": ["Regular", "Regular Schedule", "MP2 student schedules finalized by 5 pm"],
+    "1/28/2025": ["EagleTime", "Eagle Time", "End of MP2 / Semester 1"],
+    "1/29/2025": ["None", "No School", "Grading and Planning for Teachers"],
+    "1/30/2025": ["AMHomeroom", "AM Homeroom"],
+    "1/31/2025": ["Regular", "Regular Schedule", "MP2 Final grades in by 2 pm!"],
 
-    '2/4/2025': ['EagleTime', 'Eagle Time', 'MP2 Report Cards in Synergy'],
-    '2/6/2025': ['SpecialDelayedOpening', 'Delayed Opening', 'MP2 Report Cards Distributed'],
-    '2/12/2025': ['None', 'Snow Day'],
-    '2/17/2025': ['None', 'President\'s Day', 'Schools and offices closed'],
-    '2/28/2025': ['EarlyRelease', 'Early Release', 'MP3 Interims, Final grades in by 5 pm!'],
+    "2/4/2025": ["EagleTime", "Eagle Time", "MP2 Report Cards in Synergy"],
+    "2/6/2025": ["SpecialDelayedOpening", "Delayed Opening", "MP2 Report Cards Distributed"],
+    "2/12/2025": ["None", "Snow Day"],
+    "2/17/2025": ["None", "President\'s Day", "Schools and offices closed"],
+    "2/28/2025": ["EarlyRelease", "Early Release", "MP3 Interims, Final grades in by 5 pm!"],
     
-    '3/7/2025': ['Regular', 'Regular Schedule', 'MP3 Interim Report Cards Mailed'],
-    '3/14/2025': ['Regular', 'Regular Schedule', 'Pi Day!'],
-    '3/19/2025': ['PSAT', 'PSAT Testing Day', 'Mock Exams available for seniors'],
-    '3/27/2025': ['EagleTime', 'Eagle Time', 'MP3 student schedules finalized by 5 pm'],
-    '3/28/2025': ['Regular', 'Regular Schedule', 'End of MP3'],
-    '3/31/2025': ['None', 'No School', 'Grading and Planning for Teachers'],
+    "3/7/2025": ["Regular", "Regular Schedule", "MP3 Interim Report Cards Mailed"],
+    "3/14/2025": ["Regular", "Regular Schedule", "Pi Day!"],
+    "3/19/2025": ["PSAT", "PSAT Testing Day", "Mock Exams available for seniors"],
+    "3/27/2025": ["EagleTime", "Eagle Time", "MP3 student schedules finalized by 5 pm"],
+    "3/28/2025": ["Regular", "Regular Schedule", "End of MP3"],
+    "3/31/2025": ["None", "No School", "Grading and Planning for Teachers"],
 
-    '4/1/2025': ['EagleTime', 'Eagle Time', 'MP3 Grades in!'],
-    '4/4/2025': ['Regular', 'Regular Schedule', 'MP3 Report Cards in Synergy'],
-    '4/8/2025': ['ReportCardDayET', 'Report Card Distribution', 'MP3 Report Cards Distributed'],
-    '4/10/2025': ['AssemblyAdjusted', 'Health Fair', 'Three rotations to be held during 3rd period'],
-    '4/11/2025': ['PepRally', 'Pep Rally', '"Clash of the Classes"', 'Deadline to complete and verify 75 SSL Hours Completed (for Senior Graduation)'],
-    '4/14/2025': ['None', 'Spring Break'],
-    '4/15/2025': ['None', 'Spring Break'],
-    '4/16/2025': ['None', 'Spring Break'],
-    '4/17/2025': ['None', 'Spring Break'],
-    '4/18/2025': ['None', 'Spring Break'],
-    '4/21/2025': ['None', 'Spring Break'],
-    '4/29/2025': ['EagleTime', 'Eagle Time',
-        'Tests for IB Physics, IB SEHS',
-        'IB Physics paper 1 (12:00 pm)\nIB SEHS paper 1 & 3 (12:00 pm)'
+    "4/1/2025": ["EagleTime", "Eagle Time", "MP3 Grades in!"],
+    "4/4/2025": ["Regular", "Regular Schedule", "MP3 Report Cards in Synergy"],
+    "4/8/2025": ["ReportCardDayET", "Report Card Distribution", "MP3 Report Cards Distributed"],
+    "4/10/2025": ["AssemblyAdjusted", "Health Fair", "Three rotations to be held during 3rd period"],
+    "4/11/2025": ["PepRally", "Pep Rally", "\"Clash of the Classes\"", "Deadline to complete and verify 75 SSL Hours Completed (for Senior Graduation)"],
+    "4/14/2025": ["None", "Spring Break"],
+    "4/15/2025": ["None", "Spring Break"],
+    "4/16/2025": ["None", "Spring Break"],
+    "4/17/2025": ["None", "Spring Break"],
+    "4/18/2025": ["None", "Spring Break"],
+    "4/21/2025": ["None", "Spring Break"],
+    "4/29/2025": ["EagleTime", "Eagle Time",
+        "Tests for IB Physics, IB SEHS",
+        "IB Physics paper 1 (12:00 pm)\nIB SEHS paper 1 & 3 (12:00 pm)"
     ],
-    '4/30/2025': ['Regular', 'Regular Schedule',
-        'Tests for IB Business, IB Physics, IB SEHS',
-        'IB Physics paper 2 (8:00 am)\nIB SEHS paper 2 (8:00 am)\nIB Business paper 1 (& 3, HL only) (12:00 pm)'
+    "4/30/2025": ["Regular", "Regular Schedule",
+        "Tests for IB Business, IB Physics, IB SEHS",
+        "IB Physics paper 2 (8:00 am)\nIB SEHS paper 2 (8:00 am)\nIB Business paper 1 (& 3, HL only) (12:00 pm)"
     ],
 
-    '5/2/2025': ['Regular', 'Regular Schedule',
-        'Tests for IB Business, IB ESS',
-        'IB Business paper 2 (8:00 am)\nIB ESS paper 1 (12:00 pm)\nMP4 Interim Grades in for Seniors!'
+    "5/2/2025": ["Regular", "Regular Schedule",
+        "Tests for IB Business, IB ESS",
+        "IB Business paper 2 (8:00 am)\nIB ESS paper 1 (12:00 pm)\nMP4 Interim Grades in for Seniors!"
     ],
         
-    '5/5/2025': ['Regular', 'Regular Schedule',
-        'Tests for IB ESS, IB History',
-        'IB ESS paper 2 (8:00 am)\nIB History paper 1 & 2 (12:00 pm)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
+    "5/5/2025": ["MorningTesting_1234", "MCAP A",
+        "Tests for IB ESS, IB History",
+        "IB ESS paper 2 (8:00 am)\nIB History paper 1 & 2 (12:00 pm)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)"
     ],
-    '5/6/2025': ['EagleTime', 'Eagle Time',
-        'Tests for AP Gov, IB History',
-        'IB History paper 3 (8:00 am)\nAP Gov Test (12:00 pm)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
+    "5/6/2025": ["MorningTesting_1678", "MCAP B",
+        "Tests for AP Gov, IB History",
+        "IB History paper 3 (8:00 am)\nAP Gov Test (12:00 pm)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)"
     ],
-    '5/7/2025': ['Regular', 'Regular Schedule',
-        'Tests for AP Java, IB Psychology',
-        'AP Java Test (12:00 pm)\nIB Psychology paper 1 (12:00 pm)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
+    "5/7/2025": ["MorningTesting_1234", "MCAP A",
+        "Tests for AP Java, IB Psychology",
+        "AP Java Test (12:00 pm)\nIB Psychology paper 1 (12:00 pm)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)"
     ],
-    '5/8/2025': ['EagleTime', 'Eagle Time',
-        'Tests for AP African Amer. Studies, IB Psychology, AP Stat, IB Lit., IB Lang. Lit.',
-        'AP African American Studies Test (8:00 am)\nAP Statistics Test (8:00 am)\nIB Psychology paper 2 (8:00 am)\nIB Lit. paper 1 (12:00 pm)\nIB Lang. Lit. paper 1 (12:00 pm)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
+    "5/8/2025": ["MorningTesting_1678", "MCAP B",
+        "Tests for AP African Amer. Studies, IB Psychology, AP Stat, IB Lit., IB Lang. Lit.",
+        "AP African American Studies Test (8:00 am)\nAP Statistics Test (8:00 am)\nIB Psychology paper 2 (8:00 am)\nIB Lit. paper 1 (12:00 pm)\nIB Lang. Lit. paper 1 (12:00 pm)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)"
     ],
-    '5/9/2025': ['Regular', 'Regular Schedule',
-        'Tests for APUSH, IB Lit., IB Lang. Lit., IB Geography, IB Soc Cult.',
-        'APUSH test (8:00 am)\nIB Lit. paper 2 (8:00 am)\nIB Lang. Lit. paper 2 (8:00 am)\nIB Geography paper 1 (12:00 pm)\nIB Societies and Cultures paper 1 (12:00 pm)\nInterim Grades In\nMP4 Interim Report Cards Mailed (Seniors)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)'
+    "5/9/2025": ["MorningTesting_1234", "MCAP A",
+        "Tests for APUSH, IB Lit., IB Lang. Lit., IB Geography, IB Soc Cult.",
+        "APUSH test (8:00 am)\nIB Lit. paper 2 (8:00 am)\nIB Lang. Lit. paper 2 (8:00 am)\nIB Geography paper 1 (12:00 pm)\nIB Societies and Cultures paper 1 (12:00 pm)\nInterim Grades In\nMP4 Interim Report Cards Mailed (Seniors)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)"
     ],
         
-    '5/12/2025': ['Regular', 'Regular Schedule',
-        'Tests for IB Biology, AP Calc AB/BC, IB Geography, IB Soc Cult.',
-        'AP Calculus AB Test (8:00 am)\nAP Calculus BC Test (8:00 am)\nIB Geography paper 2 (8:00 am)\nIB Societies and Cultures paper 2 (8:00 am)\nIB Biology paper 1 (12:00 pm)'
+    "5/12/2025": ["Regular", "Regular Schedule",
+        "Tests for IB Biology, AP Calc AB/BC, IB Geography, IB Soc Cult.",
+        "AP Calculus AB Test (8:00 am)\nAP Calculus BC Test (8:00 am)\nIB Geography paper 2 (8:00 am)\nIB Societies and Cultures paper 2 (8:00 am)\nIB Biology paper 1 (12:00 pm)"
     ],
-    '5/13/2025': ['EagleTime', 'Eagle Time',
-        'Tests for IB Biology, IB Economics, AP Precalculus',
-        'AP Precalculus Test (8:00 am)\nIB Biology paper 2 (8:00 am)\nIB Economics paper 2 (12:00 pm)'
+    "5/13/2025": ["EagleTime", "Eagle Time",
+        "Tests for IB Biology, IB Economics, AP Precalculus",
+        "AP Precalculus Test (8:00 am)\nIB Biology paper 2 (8:00 am)\nIB Economics paper 2 (12:00 pm)"
     ],
-    '5/14/2025': ['Regular', 'Regular Schedule',
-        'Tests for IB Economics, IB Spanish',
-        'IB Economics paper 2 (8:00 am)\nIB Spanish paper 1 & 2 (12:00 pm)'
+    "5/14/2025": ["Regular", "Regular Schedule",
+        "Tests for IB Economics, IB Spanish",
+        "IB Economics paper 2 (8:00 am)\nIB Spanish paper 1 & 2 (12:00 pm)"
     ],
-    '5/15/2025': ['EagleTime', 'Eagle Time',
-        'Tests for APCSP, IB Calc, IB Stat, IB Spanish',
-        'IB Spanish paper 2 (8:00 am)\nAPCSP Test (12:00 pm)\nIB Analysis & Approaches paper 1 (12:00 pm)\nIB Applications & Interpretations paper 1 (12:00 pm)'
+    "5/15/2025": ["EagleTime", "Eagle Time",
+        "Tests for APCSP, IB Calc, IB Stat, IB Spanish",
+        "IB Spanish paper 2 (8:00 am)\nAPCSP Test (12:00 pm)\nIB Analysis & Approaches paper 1 (12:00 pm)\nIB Applications & Interpretations paper 1 (12:00 pm)"
     ],
-    '5/16/2025': ['Regular', 'Regular Schedule',
-        'Tests for IB Chemistry, IB Calc, AP Psychology, IB Stat',
-        'IB Analysis & Approaches paper 2 (8:00 am)\nIB Applications & Interpretations paper 2 (8:00 am)\nAP Psychology Test (12:00 pm)\nIB Chemistry paper 1 (12:00 pm)\nMP4 Interim Report Cards Mailed\nDeadline For All Classwork (Seniors in Project GRAD Only)'
+    "5/16/2025": ["Regular", "Regular Schedule",
+        "Tests for IB Chemistry, IB Calc, AP Psychology, IB Stat",
+        "IB Analysis & Approaches paper 2 (8:00 am)\nIB Applications & Interpretations paper 2 (8:00 am)\nAP Psychology Test (12:00 pm)\nIB Chemistry paper 1 (12:00 pm)\nMP4 Interim Report Cards Mailed\nDeadline For All Classwork (Seniors in Project GRAD Only)"
     ],
 
-    '5/19/2025': ['Regular', 'Regular Schedule',
-        'Tests for IB Chemistry, IB Global Politics',
-        'IB Chemistry paper 2 (8:00 am)\nIB Global Politics paper 1 (12:00 pm)'
+    "5/19/2025": ["Regular", "Regular Schedule",
+        "Tests for IB Chemistry, IB Global Politics",
+        "IB Chemistry paper 2 (8:00 am)\nIB Global Politics paper 1 (12:00 pm)"
     ],
-    '5/20/2025': ['EagleTime', 'Eagle Time',
-        'Tests for IB French, IB Global Politics',
-        'IB Global Politics paper 2 (8:00 am)\nIB French paper 1 & 2 (12:00 pm)'
+    "5/20/2025": ["EagleTime", "Eagle Time",
+        "Tests for IB French, IB Global Politics",
+        "IB Global Politics paper 2 (8:00 am)\nIB French paper 1 & 2 (12:00 pm)"
     ],
-    '5/21/2025': ['Regular', 'Regular Schedule',
-        'Tests for IB Calc, IB Stat, IB French',
-        'IB French paper 2 (8:00 am)\nIB Analysis & Approaches paper 3 (12:00 pm)\nIB Applications & Interpretations paper 3 (12:00 pm)'
+    "5/21/2025": ["Regular", "Regular Schedule",
+        "Tests for IB Calc, IB Stat, IB French",
+        "IB French paper 2 (8:00 am)\nIB Analysis & Approaches paper 3 (12:00 pm)\nIB Applications & Interpretations paper 3 (12:00 pm)"
     ],
     
-    '5/23/2025': ['Regular', 'Regular Schedule', 'Seniors\' Last Day', 'Deadline for All Classwork (Seniors)'],
-    '5/26/2025': ['None', 'Memorial Day', 'Schools and offices closed'],
-    '5/29/2025': ['EagleTime', 'Eagle Time', 'Graduation Rehearsal @ 7:45 am'],
-    '5/30/2025': ['Regular', 'Regular Schedule', 'Graduation Ceremonies @ UMBC at 2 pm'],
+    "5/23/2025": ["Regular", "Regular Schedule", "Seniors\' Last Day", "Deadline for All Classwork (Seniors)"],
+    "5/26/2025": ["None", "Memorial Day", "Schools and offices closed"],
+    "5/29/2025": ["EagleTime", "Eagle Time", "Graduation Rehearsal @ 7:45 am"],
+    "5/30/2025": ["Regular", "Regular Schedule", "Graduation Ceremonies @ UMBC at 2 pm"],
 
-    '6/6/2025': ['None', 'No School', 'Staff Professional Day'],
-    '6/12/2025': ['EagleTime', 'Eagle Time', 'MP4 last update to student schedules by 5 pm'],
-    '6/13/2025': ['EarlyRelease', 'Early Release'],
-    '6/16/2025': ['EarlyRelease', 'Early Release'],
-    '6/17/2025': ['EarlyRelease', 'Last Day of School', 'Early Release\nEnd of MP4'],
-    '6/18/2025': ['None', 'Possible Make-up Day', 'MP4 Final grades in by 12 pm!'],
-    '6/19/2025': ['None', 'No School', 'Systemwide Closure — Schools and offices closed'],
-    '6/20/2025': ['None', 'Possible Make-up Day'],
-    '6/23/2025': ['None', 'Possible Make-up Day'],
-    '6/24/2025': ['', '', 'MP4 Report Cards in Synergy'],
-    '6/25/2025': ['', '', 'MP4 Report Cards Distributed'],
+    "6/6/2025": ["None", "No School", "Staff Professional Day"],
+    "6/12/2025": ["EagleTime", "Eagle Time", "MP4 last update to student schedules by 5 pm"],
+    "6/13/2025": ["EarlyRelease", "Early Release"],
+    "6/16/2025": ["EarlyRelease", "Early Release"],
+    "6/17/2025": ["EarlyRelease", "Last Day of School", "Early Release\nEnd of MP4"],
+    "6/18/2025": ["None", "Possible Make-up Day", "MP4 Final grades in by 12 pm!"],
+    "6/19/2025": ["None", "No School", "Systemwide Closure — Schools and offices closed"],
+    "6/20/2025": ["None", "Possible Make-up Day"],
+    "6/23/2025": ["None", "Possible Make-up Day"],
+    "6/24/2025": ["", "", "MP4 Report Cards in Synergy"],
+    "6/25/2025": ["", "", "MP4 Report Cards Distributed"]
 };
 
 
@@ -583,20 +583,42 @@ const flavorTextDatabase = [
  */
 function toRegEx(x) {return x.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');} // pure magic.. why regex
 
+/**
+ * @type {JSON}
+ */
+var scheduleDataJSON;
 
 /**
  * Gets an object representing a schedule.
  * @param scheduleName {String} The name of the schedule to be returned.
  * @returns {Object} The schedule to be returned.
  */
-function getSchedule(scheduleName) {return scheduleDatabase[scheduleName];}
-
+function getSchedule(scheduleName) {
+    return scheduleDatabase[scheduleName];
+    // while (scheduleDataJSON == undefined) {}
+    // return await getScheduleDatabase()[scheduleName];
+}
 
 /**
  * Gets the entire schedule database.
  * @returns {Object} The schedule database.
  */
-function getScheduleDatabase() {return scheduleDatabase;}
+function getScheduleDatabase() {
+    return scheduleDatabase;
+    // if (scheduleDataJSON == undefined){
+    //     throw new Error("scheduleDatabase not initialized!");
+    // }
+    // return scheduleDataJSON;
+}
+
+async function initializeGetScheduleDatabase() {
+    scheduleDataJSON = await fetchJSON(new URL('../scripts/scheduleData.json', document.URL));
+    if (scheduleDataJSON == undefined) {
+        return new Error("scheduleDatabase not initialized!");
+    } else {
+        return scheduleDataJSON;
+    }
+}
 
 
 /**

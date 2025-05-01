@@ -1,0 +1,297 @@
+{
+    "Regular": {
+        "periods": {
+        "Period 1": [745, 836, 51],
+        "Period 2": [842, 928, 46],
+        "Period 3": [934, 1020, 46],
+        "Period 4": [1026, 1112, 46],
+        "Lunch (Pd 5)": [1112, 1154, 42],
+        "Period 6": [1200, 1246, 46],
+        "Period 7": [1252, 1338, 46],
+        "Period 8": [1344, 1430, 46]
+        },
+        "alias": "Regular Schedule"
+    },
+    "EagleTime": {
+        "periods": {
+        "Period 1": [745, 830, 45],
+        "Period 2": [836, 918, 42],
+        "Period 3": [924, 1006, 42],
+        "Eagle Time": [1006, 1036, 30],
+        "Period 4": [1042, 1124, 42],
+        "Lunch (Pd 5)": [1124, 1206, 42],
+        "Period 6": [1212, 1254, 42],
+        "Period 7": [1300, 1342, 42],
+        "Period 8": [1348, 1430, 42]
+        },
+        "alias": "Eagle Time"
+    },
+    "EarlyRelease": {
+        "periods": {
+        "Period 1": [745, 814, 29],
+        "Period 2": [820, 846, 26],
+        "Period 3": [852, 918, 26],
+        "Period 4": [924, 950, 26],
+        "Period 6": [956, 1022, 26],
+        "Period 7": [1028, 1054, 26],
+        "Period 8": [1100, 1126, 26],
+        "Lunch (Pd 5)": [1126, 1200, 34]
+        },
+        "alias": "Early Release"
+    },
+    "EarlyReleaseAlt_1234": {
+        "periods": {
+        "Period 1": [745, 817, 32],
+        "Period 2": [823, 918, 55],
+        "Period 3": [924, 1019, 55],
+        "Period 4": [1025, 1120, 55],
+        "Lunch (Pd 5)": [1120, 1200, 40]
+        },
+        "alias": "Early Release"
+    },
+    "EarlyReleaseAlt_1678": {
+        "periods": {
+        "Period 1": [745, 817, 32],
+        "Period 6": [823, 918, 55],
+        "Period 7": [924, 1019, 55],
+        "Period 8": [1025, 1120, 55],
+        "Lunch (Pd 5)": [1120, 1200, 40]
+        },
+        "alias": "Early Release"
+    },
+    "DelayedOpening": {
+        "periods": {
+        "Period 1": [945, 1017, 32],
+        "Period 2": [1023, 1052, 29],
+        "Period 3": [1058, 1127, 29],
+        "Period 4": [1133, 1202, 29],
+        "Lunch (Pd 5)": [1202, 1244, 42],
+        "Period 6": [1250, 1319, 29],
+        "Period 7": [1325, 1354, 29],
+        "Period 8": [1400, 1430, 30]
+        },
+        "alias": "Delayed Opening"
+    },
+    "Assembly": {
+        "periods": {
+        "Period 1": [745, 820, 35],
+        "Period 2": [826, 901, 35],
+        "A1/Pd 3 & SVTV": [907, 1007, 60],
+        "A2/Pd 3 & SVTV": [1007, 1107, 60],
+        "Period 4": [1113, 1148, 35],
+        "Lunch (Pd 5)": [1148, 1228, 40],
+        "Period 6": [1234, 1309, 35],
+        "Period 7": [1315, 1350, 35],
+        "Period 8": [1356, 1430, 35]
+        },
+        "alias": "Assembly Schedule"
+    },
+    "AssemblyAdjusted": {
+        "periods": {
+        "Period 1": [745, 823, 38],
+        "Period 2": [829, 907, 38],
+        "A1/Pd 3": [913, 943, 30],
+        "A2/Pd 3": [949, 1019, 30],
+        "A3/Pd 3": [1025, 1055, 30],
+        "Lunch (Pd 5)": [1055, 1134, 39],
+        "Period 4": [1140, 1218, 38],
+        "Period 6": [1224, 1302, 38],
+        "Period 7": [1308, 1346, 38],
+        "Period 8": [1352, 1430, 38]
+        },
+        "alias": "Health Fair (Apr. 10)"
+    },
+    "PepRally": {
+        "periods": {
+        "Period 1": [745, 820, 35],
+        "Period 2": [826, 901, 35],
+        "A1/Pd 3": [907, 1001, 54],
+        "Transition": [1001, 1016, 15],
+        "A2/Pd 3": [1016, 1106, 50],
+        "Lunch (Pd 5)": [1106, 1146, 40],
+        "Period 4": [1152, 1227, 35],
+        "Period 6": [1233, 1308, 35],
+        "Period 7": [1314, 1349, 35],
+        "Period 8": [1355, 1430, 35]
+        },
+        "alias": "Pep Rally"
+    },
+    "AMHomeroom": {
+        "periods": {
+        "Homeroom": [745, 758, 13],
+        "Period 1": [804, 848, 44],
+        "Period 2": [854, 938, 44],
+        "Period 3": [944, 1028, 44],
+        "Period 4": [1034, 1118, 44],
+        "Lunch (Pd 5)": [1118, 1200, 42],
+        "Period 6": [1206, 1250, 44],
+        "Period 7": [1256, 1340, 44],
+        "Period 8": [1346, 1430, 44]
+        },
+        "alias": "AM Homeroom"
+    },
+    "MorningTesting_1234": {
+        "periods": {
+        "Testing": [745, 1100, 315],
+        "Lunch": [1100, 1141, 41],
+        "Period 1": [1147, 1212, 25],
+        "Period 2": [1218, 1258, 40],
+        "Period 3": [1304, 1344, 40],
+        "Period 4": [1350, 1430, 40]
+        },
+        "alias": "Morning Testing (1-2-3-4)"
+    },
+    "MorningTesting_1678": {
+        "periods": {
+        "Testing": [745, 1100, 315],
+        "Lunch": [1100, 1141, 41],
+        "Period 1": [1147, 1212, 25],
+        "Period 6": [1218, 1258, 40],
+        "Period 7": [1304, 1344, 40],
+        "Period 8": [1350, 1430, 40]
+        },
+        "alias": "Morning Testing (1-6-7-8)"
+    },
+    "PSAT": {
+        "periods": {
+        "Testing": [745, 1145, 400],
+        "Lunch": [1145, 1227, 42],
+        "Period 6": [1233, 1308, 35],
+        "Period 7": [1314, 1349, 35],
+        "Period 8": [1355, 1430, 35]
+        },
+        "alias": "PSAT Schedule"
+    },
+    "MAPTesting": {
+        "periods": {
+        "Testing": [745, 935, 150],
+        "Period 1": [945, 1017, 32],
+        "Period 2": [1023, 1052, 29],
+        "Period 3": [1058, 1127, 29],
+        "Period 4": [1133, 1202, 29],
+        "Lunch": [1202, 1244, 42],
+        "Period 6": [1250, 1319, 29],
+        "Period 7": [1325, 1354, 29],
+        "Period 8": [1400, 1430, 29]
+        },
+        "alias": "MAP Testing"
+    },
+    "SpecialHomeroom1": {
+        "periods": {
+        "Period 1": [745, 824, 39],
+        "Period 2": [830, 909, 44],
+        "Homeroom/Assembly": [915, 1003, 48],
+        "Period 3": [1009, 1048, 39],
+        "Period 4": [1054, 1133, 39],
+        "Lunch (Pd 5)": [1133, 1218, 45],
+        "Period 6": [1224, 1303, 39],
+        "Period 7": [1309, 1345, 39],
+        "Period 8": [1351, 1430, 39]
+        },
+        "alias": "Special Homeroom"
+    },
+    "ReportCardDay": {
+        "periods": {
+        "Period 1": [745, 832, 47],
+        "Period 2": [838, 922, 42],
+        "Period 3": [928, 1012, 44],
+        "HR/Report Card": [1018, 1028, 10],
+        "Period 4": [1034, 1118, 44],
+        "Lunch (Pd 5)": [1118, 1200, 42],
+        "Period 6": [1206, 1250, 44],
+        "Period 7": [1256, 1340, 44],
+        "Period 8": [1346, 1430, 44]
+        },
+        "alias": "Report Card Day"
+    },
+    "ReportCardDayET": {
+        "periods": {
+        "Period 1": [745, 828, 43],
+        "Period 2": [834, 915, 41],
+        "Period 3": [921, 1002, 41],
+        "Eagle Time": [1002, 1026, 24],
+        "Period 4": [1032, 1113, 41],
+        "Lunch (Pd 5)": [1113, 1153, 40],
+        "Period 6": [1159, 1240, 41],
+        "Period 7": [1246, 1327, 41],
+        "Period 8": [1333, 1414, 41],
+        "HR/Report Card": [1420, 1430, 10]
+        },
+        "alias": "Report Cards + Eagle Time"
+    },
+    "AssemblyAdjusted2": {
+        "periods": {
+        "Period 1": [745, 820, 35],
+        "Period 2": [826, 901, 35],
+        "A1/Pd 3": [907, 1001, 54],
+        "Transition": [1001, 1016, 15],
+        "A2/Pd 3": [1016, 1106, 50],
+        "Lunch (Pd 5)": [1106, 1146, 40],
+        "Period 4": [1152, 1227, 35],
+        "Period 6": [1233, 1308, 35],
+        "Period 7": [1314, 1349, 35],
+        "Period 8": [1355, 1430, 35]
+        },
+        "alias": "Assembly (Dec. 19)"
+    },
+    "AssemblyAdjusted3": {
+        "periods": {
+        "Period 1": [745, 815, 30],
+        "Pd 2/Assembly 1": [821, 941, 120],
+        "Pd 2/Assembly 2": [947, 1107, 120],
+        "Period 3": [1113, 1139, 26],
+        "Lunch (Pd 5)": [1139, 1222, 43],
+        "Period 4": [1228, 1254, 26],
+        "Period 6": [1300, 1326, 26],
+        "Period 7": [1332, 1358, 26],
+        "Period 8": [1404, 1430, 26]
+        },
+        "alias": "Assembly (Dec. 20)"
+    },
+    "ECAFair": {
+        "periods": {
+        "Period 1": [745, 834, 49],
+        "Period 2": [840, 924, 44],
+        "Period 3": [930, 1014, 44],
+        "Period 4": [1020, 1104, 44],
+        "Lunch & ECA Fair": [1104, 1158, 54],
+        "Period 6": [1204, 1248, 44],
+        "Period 7": [1254, 1338, 44],
+        "Period 8": [1344, 1430, 44]
+        },
+        "alias": "Extracurricular Fair"
+    },
+    "SpecialDelayedOpening": {
+        "periods": {
+        "Period 1": [945, 1015, 30],
+        "Period 2": [1021, 1048, 27],
+        "Period 3": [1054, 1121, 27],
+        "Homeroom": [1127, 1137, 10],
+        "Period 4": [1143, 1210, 27],
+        "Lunch (Pd 5)": [1210, 1251, 41],
+        "Period 6": [1257, 1324, 27],
+        "Period 7": [1330, 1357, 27],
+        "Period 8": [1403, 1430, 27]
+        },
+        "alias": "Delayed Opening"
+    },
+    "None": {
+        "periods": {
+            "This Day": [0, 2400, 2400]
+        },
+        "alias": "No School"
+    },
+    "debug": {
+        "periods": {
+        "1 kgy6g": [2116, 2118, 2],
+        "2 vgjhb": [2121, 2122, 1],
+        "3 iugbh": [2101, 2102, 1],
+        "4 oiukj": [2103, 2104, 1],
+        "5 dyugi": [2105, 2106, 1],
+        "6 e5dyt": [2107, 2108, 1],
+        "7 drtnd": [2109, 2110, 1],
+        "8 xdfmd": [2111, 2112, 1]
+        },
+        "alias": "debug"
+    }
+}
