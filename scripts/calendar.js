@@ -162,6 +162,12 @@ function buildCalendar(calendarTable = document.getElementsByClassName("calendar
 			case "MCAP B":
 				dayRGB = [176, 232, 185];
 				break;
+			case "Block A":
+				dayRGB = [170, 224, 255];
+				break;
+			case "Block B":
+				dayRGB = [158, 248, 206];
+				break;
 			case "No School":
 			case "Winter Break":
 			case "Christmas Eve":

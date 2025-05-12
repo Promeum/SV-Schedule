@@ -19,12 +19,13 @@ function initializeMainSchedule() {
 
   document.addEventListener("visibilitychange", () => {
     if (!document.hidden) {
-      updateSchedule();
       progBarDelay = 1000;
       countdownDelay = 1000;
+      updateSchedule();
+      updateAllCountdowns();
     } else {
-      progBarDelay = 500;
-      countdownDelay = 60000;
+      progBarDelay = 500; // the browser doubles the delay, counteract this to ensure tab title is accurate
+      countdownDelay = 30000; // countdowns not visible when tab not visible, pause countdowns
     }
   });
 }
@@ -54,7 +55,7 @@ async function fetchJSON(url) {
 function initializeFullScheduleList() {
   // first, duplicate a bunch of tables
   var tableToClone = document.getElementsByClassName("tableWrapper")[0].cloneNode(true);
-  const SCHEDULES_DISPLAYED = 17;
+  const SCHEDULES_DISPLAYED = 19;
 
   for (var i=1; i<SCHEDULES_DISPLAYED; i++) {
     document.getElementsByClassName("tableWrapper")[0].after(tableToClone);

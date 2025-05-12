@@ -159,6 +159,26 @@ const scheduleDatabase = {
         },
         "alias": "MCAP B\nMorning Testing (1-6-7-8)"
     },
+    "SpecialBlockA": {
+        "periods": {
+        "Period 1": [746, 911, 125],
+        "Period 3": [917, 1042, 125],
+        "Lunch": [1042, 1128, 46],
+        "Period 6": [1134, 1259, 125],
+        "Period 7": [1305, 1430, 125],
+        },
+        "alias": "Special Schedule:\nBlock A"
+    },
+    "SpecialBlockB": {
+        "periods": {
+        "Period 2": [746, 911, 125],
+        "Period 4": [917, 1042, 125],
+        "Lunch": [1042, 1128, 46],
+        "Period 7": [1134, 1259, 125],
+        "Period 8": [1305, 1430, 125],
+        },
+        "alias": "Special Schedule:\nBlock B"
+    },
     "PSAT": {
         "periods": {
         "Testing": [745, 1145, 400],
@@ -224,7 +244,7 @@ const scheduleDatabase = {
         "Period 8": [1333, 1414, 41],
         "HR/Report Card": [1420, 1430, 10]
         },
-        "alias": "Report Cards + Eagle Time"
+        "alias": "Report Card Day\n(Eagle Time)"
     },
     "AssemblyAdjusted2": {
         "periods": {
@@ -427,19 +447,19 @@ const calendarDatabase = {
         "APUSH test (8:00 am)\nIB Lit. paper 2 (8:00 am)\nIB Lang. Lit. paper 2 (8:00 am)\nIB Geography paper 1 (12:00 pm)\nIB Societies and Cultures paper 1 (12:00 pm)\nInterim Grades In\nMP4 Interim Report Cards Mailed (Seniors)\nMCAP Testing May 5-9 (for Seniors, if not taken yet)"
     ],
         
-    "5/12/2025": ["Regular", "Regular Schedule",
+    "5/12/2025": ["SpecialBlockA", "Block A",
         "Tests for IB Biology, AP Calc AB/BC, IB Geography, IB Soc Cult.",
         "AP Calculus AB Test (8:00 am)\nAP Calculus BC Test (8:00 am)\nIB Geography paper 2 (8:00 am)\nIB Societies and Cultures paper 2 (8:00 am)\nIB Biology paper 1 (12:00 pm)"
     ],
-    "5/13/2025": ["EagleTime", "Eagle Time",
+    "5/13/2025": ["SpecialBlockB", "Block B",
         "Tests for IB Biology, IB Economics, AP Precalculus",
         "AP Precalculus Test (8:00 am)\nIB Biology paper 2 (8:00 am)\nIB Economics paper 2 (12:00 pm)"
     ],
-    "5/14/2025": ["Regular", "Regular Schedule",
+    "5/14/2025": ["SpecialBlockA", "Block A",
         "Tests for IB Economics, IB Spanish",
         "IB Economics paper 2 (8:00 am)\nIB Spanish paper 1 & 2 (12:00 pm)"
     ],
-    "5/15/2025": ["EagleTime", "Eagle Time",
+    "5/15/2025": ["SpecialBlockB", "Block B",
         "Tests for APCSP, IB Calc, IB Stat, IB Spanish",
         "IB Spanish paper 2 (8:00 am)\nAPCSP Test (12:00 pm)\nIB Analysis & Approaches paper 1 (12:00 pm)\nIB Applications & Interpretations paper 1 (12:00 pm)"
     ],
