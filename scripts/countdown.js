@@ -9,6 +9,7 @@ var countdownStartTime = -1;
  */
 function updateCountdown(countdownHTML, now = new Date()) {
     var endDate = new Date(countdownHTML.dataset.endDate);
+    // console.log(endDate)
 
     var countdownUnitElements = {
         "days": countdownHTML.getElementsByClassName("countdownUnitDays")[0],
@@ -22,8 +23,8 @@ function updateCountdown(countdownHTML, now = new Date()) {
 
     var dateIterator = new Date(now);
 
-    var daysDifference = 0;
-    var schoolDaysDifference = 0;
+    var daysDifference = 1;
+    var schoolDaysDifference = 1;
     var hoursDifference = 0;
     var minutesDifference = 0;
     var secondsDifference = 0;
@@ -31,24 +32,81 @@ function updateCountdown(countdownHTML, now = new Date()) {
     if (now < endDate) {
 
         // date: daysDifference, schoolDaysDifference
+// console.log("#####################################################################################")
+        // while (
+        //     dateIterator.getMonth() < endDate.getMonth()
+        //     || (
+        //         dateIterator.getDate() < endDate.getDate()
+        //         && (
+        //             dateIterator.getTime() + (24 * 3600 * 1000)
+        //             < endDate.getTime()
+        //         )
+        //     )
+        // ) {
 
         while (
-            dateIterator.getMonth() < endDate.getMonth()
-            || (
-                dateIterator.getDate() < endDate.getDate()
-                && (
                     dateIterator.getTime() + (24 * 3600 * 1000)
                     < endDate.getTime()
-                )
-            )
+                
         ) {
             daysDifference++;
+            // console.log(getCalendar(dateIterator).scheduleName, "date: ", dateIterator.getDate())
 
             if (!['None', null].includes(getCalendar(dateIterator).scheduleName))
                 schoolDaysDifference++;
 
             dateIterator.setDate(dateIterator.getDate() + 1);
         }
+
+
+
+        // dateIterator = new Date(now);
+
+        // while (
+        //     dateIterator.getMonth() < endDate.getMonth()
+        //     || (
+        //         (dateIterator.getMonth() == endDate.getMonth())
+        //         && (dateIterator.getDate() <= endDate.getDate())
+        //     )
+        // ) {
+        //     dateIterator.setDate(dateIterator.getDate() + 1);
+        //     daysDifference++;
+            
+        //     if (
+        //         !['None', null].includes(getCalendar(dateIterator).scheduleName)
+        //         && (
+        //             (new Date(now)).getTime() < new Date(dateIterator).setHours(7, 45)
+        //         )
+        //     )
+        //         schoolDaysDifference++;
+        // }
+
+        // (
+        //     (dateIterator.getMonth() == endDate.getMonth())
+        //     && (dateIterator.getDate() == endDate.getDate())
+        //     && (dateIterator.getHours() < endDate.getHours())
+        // ) {
+
+        // }
+
+        // (
+        //     (dateIterator.getMonth() == endDate.getMonth())
+        //     && (dateIterator.getDate() == endDate.getDate())
+        //     && (dateIterator.getHours() == endDate.getHours())
+        //     && (dateIterator.getMinutes() < endDate.getMinutes())
+        // ) {
+
+        // }
+
+        // (
+        //     (dateIterator.getMonth() == endDate.getMonth())
+        //     && (dateIterator.getDate() == endDate.getDate())
+        //     && (dateIterator.getHours() == endDate.getHours())
+        //     && (dateIterator.getMinutes() == endDate.getMinutes())
+        //     && (dateIterator.getSeconds() < endDate.getSeconds())
+        // ) {
+
+        // }
 
         // time: hoursDifference, minutesDifference, secondsDifference
 
@@ -64,6 +122,8 @@ function updateCountdown(countdownHTML, now = new Date()) {
         // console.log(secondsDifference,'secs')
 
     } else {
+        daysDifference = 0;
+        schoolDaysDifference = 0;
         countdownHTML.parentElement.style.background = "linear-gradient(180deg, #e9ca92 20%, #e3836e 49%, #c08323 50%, #ffb13e 53%, #e66465 95%)";
     }
 

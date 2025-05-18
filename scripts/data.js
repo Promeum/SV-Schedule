@@ -1,5 +1,10 @@
 // ------------------------- Databases -------------------------
 
+// import Time from "./modules/time.js";
+// import Calendar from "./modules/calendar.js";
+// import TimeCalendar from "./modules/timecalendar.js";
+// console.log("sfrgrs");
+// console.log(new TimeCalendar(new Time(), new Calendar()).asJSDate());
 
 /**
  * All schedules available, may add more
@@ -603,10 +608,10 @@ const flavorTextDatabase = [
  */
 function toRegEx(x) {return x.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');} // pure magic.. why regex
 
-/**
- * @type {JSON}
- */
-var scheduleDataJSON;
+// /**
+//  * @type {JSON}
+//  */
+// var scheduleDataJSON;
 
 /**
  * Gets an object representing a schedule.
@@ -631,14 +636,14 @@ function getScheduleDatabase() {
     // return scheduleDataJSON;
 }
 
-async function initializeGetScheduleDatabase() {
-    scheduleDataJSON = await fetchJSON(new URL('../scripts/scheduleData.json', document.URL));
-    if (scheduleDataJSON == undefined) {
-        return new Error("scheduleDatabase not initialized!");
-    } else {
-        return scheduleDataJSON;
-    }
-}
+// async function initializeGetScheduleDatabase() {
+//     scheduleDataJSON = await fetchJSON(new URL('../scripts/scheduleData.json', document.URL));
+//     if (scheduleDataJSON == undefined) {
+//         return new Error("scheduleDatabase not initialized!");
+//     } else {
+//         return scheduleDataJSON;
+//     }
+// }
 
 
 /**
@@ -686,6 +691,7 @@ function getCalendar(date) {
         scheduleAlias = getSchedule(scheduleName).alias;
 
     // Handle summer
+    // TODO: Please Fix School Year Start And End Dates!!
     if (searchDate < new Date(2024, 7, 25) || searchDate > new Date(2025, 5, 23)) {
         scheduleName = null;
         scheduleAlias = "";
@@ -732,8 +738,3 @@ function getCalendar(date) {
  * @return {string[]} The list of flavor text.
  */
 function getFlavorText() {return flavorTextDatabase;}
-
-
-// Object.keys(obj); -- returns list
-// for (var k in obj) {obj[k];} -- returns value
-// Object.keys(obj)[2]; -- 3rd key
