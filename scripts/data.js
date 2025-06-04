@@ -293,6 +293,20 @@ const scheduleDatabase = {
         },
         "alias": "Extracurricular Fair"
     },
+    "ConcertSchedule": {
+        "periods": {
+        "Period 1": [745, 825, 40],
+        "Period 2": [831, 906, 35],
+        "Period 3": [912, 947, 35],
+        "Pd 4/Assembly 1": [953, 1053, 60],
+        "Pd 4/Assembly 2": [1053, 1153, 60],
+        "Lunch (Pd 5)": [1153, 1234, 41],
+        "Period 6": [1240, 1310, 30],
+        "Period 7": [1316, 1350, 34],
+        "Period 8": [1356, 1430, 34]
+        },
+        "alias": "Concert (Jun. 4)"
+    },
     "SpecialDelayedOpening": {
         "periods": {
         "Period 1": [945, 1015, 30],
@@ -491,6 +505,7 @@ const calendarDatabase = {
     "5/29/2025": ["EagleTime", "Eagle Time", "Graduation Rehearsal @ 7:45 am"],
     "5/30/2025": ["Regular", "Regular Schedule", "Graduation Ceremonies @ UMBC at 2 pm"],
 
+    "6/5/2025": ["ConcertSchedule", "Concert Schedule"],
     "6/6/2025": ["None", "No School", "Staff Professional Day"],
     "6/12/2025": ["EagleTime", "Eagle Time", "MP4 last update to student schedules by 5 pm"],
     "6/13/2025": ["EarlyRelease", "Early Release"],
