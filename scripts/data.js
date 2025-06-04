@@ -301,8 +301,8 @@ const scheduleDatabase = {
         "Pd 4/Assembly 1": [953, 1053, 60],
         "Pd 4/Assembly 2": [1053, 1153, 60],
         "Lunch (Pd 5)": [1153, 1234, 41],
-        "Period 6": [1240, 1310, 30],
-        "Period 7": [1316, 1350, 34],
+        "Period 6": [1234, 1309, 35],
+        "Period 7": [1315, 1350, 35],
         "Period 8": [1356, 1430, 34]
         },
         "alias": "Concert (Jun. 4)"
