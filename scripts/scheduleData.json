@@ -261,6 +261,20 @@
         },
         "alias": "Extracurricular Fair"
     },
+    "ConcertSchedule": {
+        "periods": {
+        "Period 1": [745, 825, 40],
+        "Period 2": [831, 906, 35],
+        "Period 3": [912, 947, 35],
+        "Pd 4/Assembly 1": [953, 1053, 60],
+        "Pd 4/Assembly 2": [1053, 1153, 60],
+        "Lunch (Pd 5)": [1153, 1234, 41],
+        "Period 6": [1223, 1309, 35],
+        "Period 7": [1315, 1350, 35],
+        "Period 8": [1356, 1430, 35]
+        },
+        "alias": "Concert (Jun. 4)"
+    },
     "SpecialDelayedOpening": {
         "periods": {
         "Period 1": [945, 1015, 30],
