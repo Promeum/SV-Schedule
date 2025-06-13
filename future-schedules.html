@@ -14,15 +14,8 @@
 
         <link rel="stylesheet" href="style.css" />
 
-        <script src="scripts/data.js"></script>
-        <script src="scripts/script.js" type="text/javascript"></script>
-        <script src="scripts/calendar.js" type="text/javascript"></script>
-        <script>
-            window.addEventListener('load', function() {
-                initializeFutureSchedules();
-                initialize();
-            });
-        </script>
+        <script src="scripts/databases.js" type="module"></script>
+        <script src="scripts/future-schedules.js" type="module"></script>
 
         <title>Ultra Super-Premium SV Schedule - Future Schedules</title>
         <link rel="icon" type="image/x-icon" href="images/favicon.ico">
@@ -66,21 +59,10 @@
             
             <!-- <p style="color: white; display: block; height: 30px; font-weight: bold; margin-block: 20px; background-color: sienna; font-size: 30px; align-content: center;">Calendar in development!</p> -->
             <div class="calendarSelector" style="margin-top: 10px;">
-                <button class="monthButton" id="prevMonth" onclick="prevMonth()">Previous Month</button>
-                <!-- <select name="months" id="monthSelect" onchange="monthSelect()">
-                    <option value="7">August</option>
-                    <option value="8">September</option>
-                    <option value="9">October</option>
-                    <option value="10">November</option>
-                    <option value="11">December</option>
-                    <option value="0">January</option>
-                    <option value="1">Febuary</option>
-                    <option value="2">March</option>
-                    <option value="3">April</option>
-                    <option value="4">May</option>
-                    <option value="5">June</option>
-                </select> -->
-                <button class="monthButton" id="nextMonth" onclick="nextMonth()">Next Month</button>
+                <button class="monthButton" id="prevMonth">Previous Month</button>
+                <select id="monthSelect">
+                </select>
+                <button class="monthButton" id="nextMonth">Next Month</button>
             </div>
 
             <div class="tableWrapper calendarTableWrapper">
@@ -91,7 +73,7 @@
                         </th>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="weekNames">
                             <th>Sunday</th>
                             <th>Monday</th>
                             <th>Tuesday</th>
@@ -100,7 +82,7 @@
                             <th>Friday</th>
                             <th>Saturday</th>
                         </tr>
-                        <tr>
+                        <tr class="dayCellRow">
                             <td>
                                 <p class="dayNum">day</p>
                             </td>

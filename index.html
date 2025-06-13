@@ -14,19 +14,8 @@
         
         <link rel="stylesheet" href="style.css" />
 
-        <!-- <script src="scripts/modules/time.js" type="module"></script>
-        <script src="scripts/modules/calendar.js" type="module"></script>
-        <script src="scripts/modules/timecalendar.js" type="module"></script> -->
-        <script src="scripts/data.js" type="text/javascript"></script>
-        <script src="scripts/script.js" type="text/javascript"></script>
-        <script src="scripts/schedule.js" type="text/javascript"></script>
-        <script src="scripts/countdown.js" type="text/javascript"></script>
-        <script>
-            window.addEventListener('load', function() {
-                initializeMainSchedule();
-                initialize();
-            });
-        </script>
+        <script src="scripts/databases.js" type="module"></script>
+        <script src="scripts/index.js" type="module"></script>
         
         <title>Ultra Super-Premium SV Schedule - Today's Schedule</title>
         <link rel="icon" type="image/x-icon" href="images/favicon.ico">
@@ -76,8 +65,8 @@
                         </th>
                     </thead>
                     <tr>
-                        <td>Period</td>
-                        <td>Time</td>
+                        <td class="periodTextCell">Period</td>
+                        <td class="timeTextCell">Time</td>
                         <td class="progressCell"><progress id="p1" value="0.5" max="1"></td>
                     </tr>
                 </table>
@@ -85,31 +74,31 @@
 
             <div class="tableWrapper">
                 <div class="sourceBox countdownBox" style="min-width: min-content; margin-inline: 0;">
-                    <div class="sourceBoxInner" style="background: #f9f8cd;">
+                    <div class="sourceBoxInner countdownBase" style="background: #f9f8cd;">
                         <div class="sourceBoxText sourceBoxTitle">
                             End of School for Seniors
                         </div>
                         <div class="countdownUnitContainer" data-end-date="May 23, 2025 14:30:00">
                             <div class="countdownUnit countdownUnitDays">
-                                <span>---</span>
-                                <span>days</span>
+                                <span class="unitValue">---</span>
+                                <span class="unitName">days</span>
                             </div>
                             <div class="countdownUnit countdownUnitSchoolDays">
-                                <span>---</span>
-                                <span>school days</span>
+                                <span class="unitValue">---</span>
+                                <span class="unitName">school days</span>
                             </div>
                             <div class="countdownUnitTimeContainer">
                                 <div class="countdownUnit countdownUnitHours">
-                                    <span>---</span>
-                                    <span>hours</span>
+                                    <span class="unitValue">---</span>
+                                    <span class="unitName">hours</span>
                                 </div>
                                 <div class="countdownUnit countdownUnitMinutes">
-                                    <span>---</span>
-                                    <span>minutes</span>
+                                    <span class="unitValue">---</span>
+                                    <span class="unitName">minutes</span>
                                 </div>
                                 <div class="countdownUnit countdownUnitSeconds">
-                                    <span>---</span>
-                                    <span>seconds</span>
+                                    <span class="unitValue">---</span>
+                                    <span class="unitName">seconds</span>
                                 </div>
                             </div>
                         </div>
@@ -119,31 +108,31 @@
 
             <div class="tableWrapper">
                 <div class="sourceBox countdownBox" style="min-width: min-content; margin-inline: 0;">
-                    <div class="sourceBoxInner" style="background: #e1dce5;">
+                    <div class="sourceBoxInner countdownBase" style="background: #e1dce5;">
                         <div class="sourceBoxText sourceBoxTitle">
                             End of School for All Students
                         </div>
                         <div class="countdownUnitContainer" data-end-date="June 17, 2025 12:00:00">
                             <div class="countdownUnit countdownUnitDays">
-                                <span>---</span>
-                                <span>days</span>
+                                <span class="unitValue">---</span>
+                                <span class="unitName">days</span>
                             </div>
                             <div class="countdownUnit countdownUnitSchoolDays">
-                                <span>---</span>
-                                <span>school days</span>
+                                <span class="unitValue">---</span>
+                                <span class="unitName">school days</span>
                             </div>
                             <div class="countdownUnitTimeContainer">
                                 <div class="countdownUnit countdownUnitHours">
-                                    <span>---</span>
-                                    <span>hours</span>
+                                    <span class="unitValue">---</span>
+                                    <span class="unitName">hours</span>
                                 </div>
                                 <div class="countdownUnit countdownUnitMinutes">
-                                    <span>---</span>
-                                    <span>minutes</span>
+                                    <span class="unitValue">---</span>
+                                    <span class="unitName">minutes</span>
                                 </div>
                                 <div class="countdownUnit countdownUnitSeconds">
-                                    <span>---</span>
-                                    <span>seconds</span>
+                                    <span class="unitValue">---</span>
+                                    <span class="unitName">seconds</span>
                                 </div>
                             </div>
                         </div>

@@ -266,7 +266,8 @@ div.todaysSchedule {
 }
 
 tr {
-    background-color: rgb(160 160 160);
+    /* background-color: rgb(160 160 160); */
+    background-color: rgb(200 200 200);
 }
 
 th {
@@ -474,7 +475,8 @@ table.calendarTable div.dayPopup hr {
     margin-bottom: 3px;
 }
 
-button.monthButton {
+button.monthButton, select#monthSelect {
+    width: 7.5rem;
     transition-duration: 0.1s;
     transition-timing-function: ease-out;
     font: 13px Trebuchet MS, sans-serif;
@@ -482,11 +484,15 @@ button.monthButton {
     background: var(--white-secondary);
     border-width: var(--border-width);
     border-radius: calc(var(--border-radius) - 3px);
-    border-width: var(--border-width);
     border-color: var(--svhs-gold-secondary);
 }
 
-button.monthButton:hover, button.monthButton:focus {
+select#monthSelect {
+    width: 5.5rem;
+    padding: 0;
+}
+
+button.monthButton:hover, button.monthButton:focus, select#monthSelect:hover, select#monthSelect:focus {
     transition-duration: 0.1s;
     font-weight: bolder;
     background: var(--svhs-green-tertiary);
@@ -498,7 +504,7 @@ button.monthButton:hover, button.monthButton:focus {
     border-color: var(--svhs-gold);
 }
 
-button.monthButton:active {
+button.monthButton:active, select#monthSelect:active {
     transition-duration: 0.1s;
     font-weight: bolder;
     background: var(--svhs-green);
@@ -508,6 +514,12 @@ button.monthButton:active {
     border-radius: calc(var(--border-radius) - 3px);
     border-width: var(--border-width);
     border-color: var(--svhs-gold);
+}
+
+select#monthSelect option:checked {
+    background-color: var(--svhs-gold);
+    color: var(--svhs-green-secondary);
+    font-weight: bold;
 }
 
 /* end of calendar */

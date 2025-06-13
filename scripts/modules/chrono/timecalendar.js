@@ -30,7 +30,7 @@ export class TimeCalendar extends Chrono {
      * @param {Number} milliseconds
      * @return {TimeCalendar}
      */
-    static TimeCalendar(year, month, date, hours, minutes, seconds, milliseconds) {
+    static TimeCalendar(year = 0, month = 0, date = 0, hours = 0, minutes = 0, seconds = 0, milliseconds = 0) {
         return new TimeCalendar(
             super.Chrono(year, month, date, hours, minutes, seconds, milliseconds)
         );
@@ -74,6 +74,17 @@ export class TimeCalendar extends Chrono {
      */
     subtract(other) {
         return new TimeCalendar(super.subtract(other));
+    }
+
+
+    /**
+     * Subtract a TimeCalendar from another TimeCalendar.
+     * Returns the difference in milliseconds.
+     * @param {TimeCalendar} other 
+     * @return {Number}
+     */
+    difference(other) {
+        return super.difference(other);
     }
 
 

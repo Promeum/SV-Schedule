@@ -13,9 +13,9 @@ export class Time extends Chrono {
      * @param {Date} date A builtin Javascript Date object.
      */
     constructor(date = new Date()) {
-        var newDate = date;
-        newDate.setFullYear(0, 0, 0);
-        super(newDate);
+        var newChrono = new Chrono(date);
+        newChrono.setFullYear(0, 0, 0);
+        super(newChrono);
     }
 
 
@@ -27,7 +27,7 @@ export class Time extends Chrono {
      * @param {Number} milliseconds
      * @return {Time}
      */
-    static Time(hours, minutes, seconds, milliseconds) {
+    static Time(hours = 0, minutes = 0, seconds = 0, milliseconds = 0) {
         return new Time(super.Chrono(0, 0, 0, hours, minutes, seconds, milliseconds));
     }
 
@@ -35,14 +35,29 @@ export class Time extends Chrono {
     getFullYear() { return 0; }
     getMonth() { return 0; }
     getDate() { return 0; }
-    getDay() { return 0; }
-    getWeekday() { throw new TypeError(`${this.constructor.name} is not a function`) }
+    getDay() { throw new TypeError(`Function getDay() cannot be called on object of type Time`); }
+    getWeekday() { throw new TypeError(`Function getWeekday() cannot be called on object of type Time`); }
 
 
     getHours() { return this._getUnit(super.getHours); }
     getMinutes() { return this._getUnit(super.getMinutes); }
     getSeconds() { return this._getUnit(super.getSeconds); }
     getMilliseconds() { return this._getUnit(super.getMilliseconds); }
+
+
+    setFullYear() { throw new TypeError(`Function setFullYear() cannot be called on object of type Time`); }
+    setMonth() { throw new TypeError(`Function setMonth() cannot be called on object of type Time`); }
+    setDate() { throw new TypeError(`Function setDate() cannot be called on object of type Time`); }
+
+
+    incrementFullYear() { throw new TypeError(`Function incrementFullYear() cannot be called on object of type Time`); }
+    incrementMonth() { throw new TypeError(`Function incrementMonth() cannot be called on object of type Time`); }
+    incrementDate() { throw new TypeError(`Function incrementDate() cannot be called on object of type Time`); }
+
+
+    withFullYear() { throw new TypeError(`Function withFullYear() cannot be called on object of type Time`); }
+    withMonth() { throw new TypeError(`Function withMonth() cannot be called on object of type Time`); }
+    withDate() { throw new TypeError(`Function withDate() cannot be called on object of type Time`); }
 
 
     /**
@@ -62,6 +77,17 @@ export class Time extends Chrono {
      */
     subtract(other) {
         return new Time(super.subtract(other));
+    }
+
+
+    /**
+     * Subtract a Time from another Time.
+     * Returns the difference in milliseconds.
+     * @param {Time} other 
+     * @return {Number}
+     */
+    difference(other) {
+        return super.difference(other);
     }
 
 
@@ -88,5 +114,8 @@ export class Time extends Chrono {
 
         return `${hh}:${mm}:${ss}`;
     }
+
+
+    
 
 }
