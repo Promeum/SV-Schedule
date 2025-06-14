@@ -12,20 +12,15 @@ export class Initialize {
      * Runs when any page is loaded
      */
     static initialize() {
-
         // scroll snap thing with the titlebar
         window.addEventListener("resize", function (e) {
-            if (Initialize.#checkOverflowY(document.getElementsByTagName("html")[0])) {
-                window.addEventListener("scroll", function (e) { // scroll if user not past title bar
-                    document.documentElement.style.scrollSnapType = (window.scrollY < 40) ? "y mandatory" : "none";
-                });
-            } else {
-                this.window.removeEventListener("resize", function (e) { });
-                document.documentElement.style.scrollSnapType = "none";
-            }
+            window.addEventListener("scroll", function (e) { // scroll if user not past title bar
+                var bottomOfTopNav = document.querySelector("#topNav").getBoundingClientRect().bottom;
+                document.documentElement.style.scrollSnapType = (bottomOfTopNav > 0) ? "y mandatory" : "none";
+            });
         });
 
-        window.dispatchEvent(new Event("resize"), false, false, true);
+        window.dispatchEvent(new Event("resize"));
 
         // center the navbar
         var nav = document.getElementsByClassName("mainNavWithin")[0];
@@ -45,20 +40,11 @@ export class Initialize {
                         parseInt(getComputedStyle(table).paddingLeft.replace("px", ""))
                         + parseInt(getComputedStyle(table).borderLeftWidth.replace("px", "")),
                         (wrapper.scrollWidth - wrapper.clientWidth) / 2
-                ))
+                    )
+                )
             });
         }
 
-        // console.log("initialized");
-    }
-
-
-    /**
-     * Determines if the passed element is overflowing its bounds vertically.
-     * @param {HTMLElement} element An HTMLElement.
-     */
-    static #checkOverflowY(element) {
-        return element.clientHeight < element.scrollHeight;
     }
 
 

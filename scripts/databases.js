@@ -16,7 +16,8 @@ export class Databases {
      * @constant
      */
     static get SCHOOL_YEAR_START_CALENDAR() {
-        return Calendar.Calendar(2024, 7, 26); // Calendar.Calendar(2025, 7, 26);
+        return Calendar.Calendar(2024, 7, 26);
+        // return Calendar.Calendar(2025, 7, 26);
     }
     
     /**
@@ -25,7 +26,8 @@ export class Databases {
      * @constant
      */
     static get SCHOOL_YEAR_END_CALENDAR() {
-        return Calendar.Calendar(2025, 5, 17); // Calendar.Calendar(2026, 5, 17);
+        return Calendar.Calendar(2025, 5, 17);
+        // return Calendar.Calendar(2026, 5, 17);
     }
 
 
@@ -344,9 +346,7 @@ export class Databases {
 
 
     /**
-     * All known special school days in the 2024-2025 school year.
-     * Source: https://www.montgomeryschoolsmd.org//siteassets/district/calendar/2024/2024-calendar.pdf
-     * Alternate source: https://ww2.montgomeryschoolsmd.org/calendar/index.aspx
+     * All known special school days in the 2025-2026 school year.
      * @type {object}
      */
     static #calendarDatabase = {
@@ -359,8 +359,6 @@ export class Databases {
                 - alias and color will be set to defaults (see getDay() and
                     #scheduleDatabase) if not explicitly defined here.
         */
-
-        // TODO: add all the things in the 2026-2027 school year.
 
         "6/5/2025": {
             "bellScheduleId": "ConcertSchedule",
@@ -423,7 +421,365 @@ export class Databases {
             "alias": "",
             "color": "rgb(255, 255, 255)",
             "comments": "MP4 Report Cards Distributed",
-        }
+        },
+        
+
+
+        "8/18/2025": {
+            "bellScheduleId": "None",
+            "alias": "Preservice Day",
+            "color": "rgb(255, 240, 151)",
+            "comments": "Professional day for teachers",
+        },
+        "8/19/2025": {
+            "bellScheduleId": "None",
+            "alias": "Preservice Day",
+            "color": "rgb(255, 240, 151)",
+            "comments": "Professional day for teachers",
+        },
+        "8/20/2025": {
+            "bellScheduleId": "None",
+            "alias": "Preservice Day",
+            "color": "rgb(255, 240, 151)",
+            "comments": "Professional day for teachers",
+        },
+        "8/21/2025": {
+            "bellScheduleId": "None",
+            "alias": "Preservice Day",
+            "color": "rgb(255, 240, 151)",
+            "comments": "Professional day for teachers",
+        },
+        "8/22/2025": {
+            "bellScheduleId": "None",
+            "alias": "Preservice Day",
+            "color": "rgb(255, 240, 151)",
+            "comments": "Professional day for teachers",
+        },
+
+        "8/25/2025": {
+            "bellScheduleId": "None",
+            "alias": "Student Transition Day",
+            "color": "rgb(221, 192, 220)",
+            "extraComments": "Non-instructional full day for students entering Grade 9\nand students new to a school or MCPS",
+        },
+        "8/26/2025": {
+            "bellScheduleId": "EagleTime",
+            "alias": "First Day of School",
+            "color": "rgb(132, 232, 180)",
+        },
+
+
+        "9/1/2025": {
+            "bellScheduleId": "None",
+            "alias": "Labor Day",
+            "comments": "Schools and offices closed",
+            "color": "rgb(166, 194, 229)",
+        },
+
+        "9/23/2025": {
+            "bellScheduleId": "None",
+            "alias": "Non-Instructional",
+            "comments": "No school for students and teachers",
+        },
+        "9/26/2025": {
+            "bellScheduleId": "EarlyRelease",
+            "comments": "Early release day for students",
+        },
+
+        
+        "10/2/2025": {
+            "bellScheduleId": "None",
+            "alias": "Non-Instructional",
+            "comments": "No school for students and teachers",
+        },
+
+        "10/17/2025": {
+            "bellScheduleId": "None",
+            "alias": "Professional Development",
+            "color": "rgb(165, 182, 249)",
+            "comments": "No school for students",
+            "extraComments": "Designated Make-up Day"
+        },
+
+        "10/20/2025": {
+            "bellScheduleId": "None",
+            "alias": "Non-Instructional",
+            "comments": "No school for students and teachers",
+        },
+
+        "10/31/2025": {
+            "bellScheduleId": "Regular",
+            "color": "rgb(249, 197, 65)",
+            "comments": "Happy Halloween!\nEnd of Q1",
+        },
+        
+
+        "11/3/2025": {
+            "bellScheduleId": "None",
+            "alias": "Professional Development",
+            "color": "rgb(165, 182, 249)",
+            "comments": "Grading/Planning for end of term",
+            "extraComments": "Designated Make-up Day"
+        },
+        
+        "11/11/2025": {
+            "bellScheduleId": "EagleTime",
+            "comments": "Veterans' Day",
+        },
+
+        "11/24/2025": {
+            "bellScheduleId": "EarlyRelease",
+        },
+        "11/25/2025": {
+            "bellScheduleId": "EarlyRelease",
+        },
+        "11/26/2025": {
+            "bellScheduleId": "None",
+            "alias": "Systemwide Closure",
+            "comments": "Thanksgiving Break",
+        },
+        "11/27/2025": {
+            "bellScheduleId": "None",
+            "alias": "Holidays",
+            "comments": "Happy Thanksgiving!",
+        },
+        "11/28/2025": {
+            "bellScheduleId": "None",
+            "alias": "Holidays",
+            "comments": "Thanksgiving Break",
+        },
+
+        
+        "12/24/2025": {
+            "bellScheduleId": "None",
+            "alias": "Holidays",
+            "comments": "Merry Christmas Eve!",
+        },
+        "12/25/2025": {
+            "bellScheduleId": "None",
+            "alias": "Holidays",
+            "color": "rgb(225, 199, 15)",
+            "comments": "Merry Christmas!",
+        },
+        "12/26/2025": {
+            "bellScheduleId": "None",
+            "alias": "Non-Instructional",
+            "comments": "Happy Boxing Day!",
+        },
+        
+        "12/29/2025": {
+            "bellScheduleId": "None",
+            "alias": "Non-Instructional",
+            "comments": "Winter Break",
+        },
+        "12/30/2025": {
+            "bellScheduleId": "None",
+            "alias": "Systemwide Closure",
+            "comments": "Winter Break",
+        },
+        "12/31/2025": {
+            "bellScheduleId": "None",
+            "alias": "Systemwide Closure",
+            "color": "rgb(252, 227, 52)",
+            "comments": "Happy New Years' Eve!",
+        },
+
+        
+        "1/1/2026": {
+            "bellScheduleId": "None",
+            "alias": "Holidays",
+            "color": "rgb(252, 227, 52)",
+            "comments": "Happy New Year!",
+        },
+        "1/2/2026": {
+            "bellScheduleId": "None",
+            "alias": "Non-Instructional",
+            "comments": "Winter Break",
+        },
+        
+        "1/19/2026": {
+            "bellScheduleId": "None",
+            "alias": "Holidays",
+            "comments": "Dr. Martin Luther King Jr. Day",
+        },
+        "1/23/2026": {
+            "bellScheduleId": "Regular",
+            "comments": "End of Q2",
+        },
+        
+        "1/26/2026": {
+            "bellScheduleId": "None",
+            "alias": "Professional Development",
+            "color": "rgb(165, 182, 249)",
+            "comments": "Grading/Planning for end of term",
+            "extraComments": "Designated Make-up Day"
+        },
+        
+
+        "2/14/2026": {
+            "bellScheduleId": "None",
+            "alias": "",
+            "color": "rgb(220, 220, 220)",
+            "comments": "Valentine's Day",
+        },
+        
+        "2/16/2026": {
+            "bellScheduleId": "None",
+            "alias": "Holidays",
+            "comments": "Presidents' Day",
+        },
+        "2/17/2026": {
+            "bellScheduleId": "None",
+            "alias": "Non-Instructional",
+            "comments": "Chinese New Year",
+            "extraComments": "No school for students and teachers",
+        },
+        "2/18/2026": {
+            "bellScheduleId": "Regular",
+            "comments": "Ramadan begins\nAsh Wednesday",
+        },
+        
+        "2/27/2026": {
+            "bellScheduleId": "EarlyRelease",
+        },
+        
+        
+        "3/17/2026": {
+            "bellScheduleId": "EagleTime",
+            "comments": "St. Partick's Day",
+        },
+        "3/18/2026": {
+            "bellScheduleId": "Regular",
+            "comments": "Ramadan ends",
+        },
+        
+        "3/20/2026": {
+            "bellScheduleId": "None",
+            "alias": "Professional Development",
+            "color": "rgb(165, 182, 249)",
+            "comments": "Grading/Planning for end of term",
+            "extraComments": "Designated Make-up Day"
+        },
+        
+        "3/30/2026": {
+            "bellScheduleId": "None",
+            "alias": "Non-Instructional",
+            "comments": "Happy start of spring break!",
+        },
+        "3/31/2026": {
+            "bellScheduleId": "None",
+            "alias": "Non-Instructional",
+            "comments": "Spring Break",
+        },
+
+        
+        "4/1/2026": {
+            "bellScheduleId": "None",
+            "alias": "Systemwide Closure",
+            "color": "rgb(243, 180, 232)",
+            "comments": "Happy April Fools!\nSpring Break",
+        },
+        "4/2/2026": {
+            "bellScheduleId": "None",
+            "alias": "Systemwide Closure",
+            "comments": "Spring Break\nPassover",
+        },
+        "4/3/2026": {
+            "bellScheduleId": "None",
+            "alias": "Holidays",
+            "comments": "Spring Break",
+        },
+        
+        "4/5/2026": {
+            "bellScheduleId": "None",
+            "alias": "",
+            "color": "rgb(220, 220, 220)",
+            "comments": "Easter Sunday",
+        },
+        "4/6/2026": {
+            "bellScheduleId": "None",
+            "alias": "Holidays",
+            "comments": "End of spring break",
+        },
+
+        "4/14/2026": {
+            "bellScheduleId": "EagleTime",
+            "comments": "End of Q3",
+        },
+        "4/15/2026": {
+            "bellScheduleId": "None",
+            "alias": "Professional Development",
+            "color": "rgb(165, 182, 249)",
+            "comments": "Grading/Planning for end of term",
+            "extraComments": "Designated Make-up Day"
+        },
+
+        
+        "5/5/2026": {
+            "bellScheduleId": "EagleTime",
+            "comments": "Cinco de Mayo",
+        },
+
+        "5/25/2026": {
+            "bellScheduleId": "None",
+            "alias": "Holidays",
+            "comments": "Memorial Day",
+        },
+        "5/27/2026": {
+            "bellScheduleId": "None",
+            "alias": "Non-Instructional",
+            "comments": "No school for students and teachers",
+        },
+
+        
+        "6/17/2026": {
+            "bellScheduleId": "EarlyRelease",
+            "alias": "Last Day of School",
+            "comments": "Early Release\nEnd of MP4",
+            "color": "rgb(132, 232, 180)",
+        },
+        "6/18/2026": {
+            "bellScheduleId": "None",
+            "alias": "Professional Development",
+            "color": "rgb(165, 182, 249)",
+            "comments": "Grading/Planning for end of term",
+            "extraComments": "Designated Make-up Day"
+        },
+        "6/19/2026": {
+            "bellScheduleId": "None",
+            "alias": "Systemwide Closure",
+        },
+        
+        "6/22/2026": {
+            "bellScheduleId": "None",
+            "alias": "",
+            "color": "rgb(227, 239, 255)",
+            "comments": "Designated Make-up Day",
+        },
+        "6/23/2026": {
+            "bellScheduleId": "None",
+            "alias": "",
+            "color": "rgb(227, 239, 255)",
+            "comments": "Designated Make-up Day",
+        },
+        "6/24/2026": {
+            "bellScheduleId": "None",
+            "alias": "",
+            "color": "rgb(227, 239, 255)",
+            "comments": "Designated Make-up Day",
+        },
+        "6/25/2026": {
+            "bellScheduleId": "None",
+            "alias": "",
+            "color": "rgb(227, 239, 255)",
+            "comments": "Designated Make-up Day",
+        },
+        "6/26/2026": {
+            "bellScheduleId": "None",
+            "alias": "",
+            "color": "rgb(227, 239, 255)",
+            "comments": "Designated Make-up Day",
+        },
     };
 
 

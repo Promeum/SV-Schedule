@@ -1,6 +1,6 @@
 import { Calendar } from "./modules/chrono/calendar.js";
-import { Databases } from "./databases.js";
 import { CalendarTableHTML } from "./modules/calendarTableHTML.js";
+import { Databases } from "./databases.js";
 import { Initialize } from "./initialize.js";
 
 
@@ -56,7 +56,7 @@ window.addEventListener('load', function() {
     calendarTable.selectMonth(new Calendar());
 	
 	// center the calendar
-	var calendarTableWrapper = document.getElementsByClassName("calendarTableWrapper")[0];
+	var calendarTableWrapper = document.querySelector(".calendarTableWrapper");
 	calendarTableWrapper.scrollTo({
 		left: ((calendarTableWrapper.scrollWidth - calendarTableWrapper.clientWidth) / 2)
 	});
