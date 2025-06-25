@@ -16,8 +16,7 @@ export class Databases {
      * @constant
      */
     static get SCHOOL_YEAR_START_CALENDAR() {
-        return Calendar.Calendar(2024, 7, 26);
-        // return Calendar.Calendar(2025, 7, 26);
+        return Calendar.Calendar(2025, 7, 26);
     }
     
     /**
@@ -26,8 +25,7 @@ export class Databases {
      * @constant
      */
     static get SCHOOL_YEAR_END_CALENDAR() {
-        return Calendar.Calendar(2025, 5, 17);
-        // return Calendar.Calendar(2026, 5, 17);
+        return Calendar.Calendar(2026, 5, 17);
     }
 
 
