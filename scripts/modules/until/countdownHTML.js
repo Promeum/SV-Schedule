@@ -79,7 +79,6 @@ export class CountdownHTML extends Until {
      */
     updateAllUnits() {
         var TimeCalendarDifference = this.end.subtract(new TimeCalendar());
-        this.updateUnit("countdownUnitDays", TimeCalendarDifference.getDate());
         this.updateUnit("countdownUnitHours", TimeCalendarDifference.getHours());
         this.updateUnit("countdownUnitMinutes", TimeCalendarDifference.getMinutes());
         this.updateUnit("countdownUnitSeconds", TimeCalendarDifference.getSeconds());
@@ -90,14 +89,17 @@ export class CountdownHTML extends Until {
         // 'Days' increment at the time set at the 'this.end' TimeCalendar
 
         var schoolDayDifference = 0;
+        var dayDifference = 0;
         var chronoIterator = new Calendar();
 
         while (chronoIterator.lessThan(new Calendar(this.end))) {
             if (Databases.getDay(new Calendar(chronoIterator)).id != "None")
                 schoolDayDifference++;
+            dayDifference++;
             chronoIterator.incrementDate(1);
         }
         
+        this.updateUnit("countdownUnitDays", dayDifference);
         this.updateUnit("countdownUnitSchoolDays", schoolDayDifference);
     }
 
