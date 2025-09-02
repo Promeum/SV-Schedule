@@ -829,12 +829,12 @@ export class Databases {
         
         // Otherwise, assume a normal week
         switch (schoolday.getDay()) {
-            case 1: case 3: case 5: // Regular on Mondays, Wednesdays, and Fridays
+            case 1: case 2: case 4: case 5: // Regular on Mondays, Wednesdays, and Fridays
                 return new Day(
                     schoolday,
                     Databases.getSchedule("Regular")
                 );
-            case 2: case 4: // Eagle Time on Tuesdays and Thursdays
+            case 3: // Eagle Time on Tuesdays and Thursdays
                 return new Day(
                     schoolday,
                     Databases.getSchedule("EagleTime")
