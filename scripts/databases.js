@@ -546,8 +546,17 @@ export class Databases {
             "alias": "Holidays",
             "comments": "Thanksgiving Break",
         },
+        "12/19/2025": {
+            "bellScheduleId": "PepRally",
+            "alias": "",
+            "comments": "Pep Rally",
+        },
 
-        
+        "12/23/2025": {
+            "bellScheduleId": "None",
+            "alias": "Holidays",
+            "comments": "Happy Festivus!",
+        },
         "12/24/2025": {
             "bellScheduleId": "None",
             "alias": "Holidays",
