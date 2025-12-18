@@ -553,7 +553,7 @@ export class Databases {
         },
 
         "12/23/2025": {
-            "bellScheduleId": "None",
+            "bellScheduleId": "Regular",
             "alias": "Holidays",
             "comments": "Happy Festivus!",
         },
