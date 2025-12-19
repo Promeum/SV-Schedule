@@ -554,7 +554,7 @@ export class Databases {
 
         "12/23/2025": {
             "bellScheduleId": "Regular",
-            "alias": "Holidays",
+            "alias": "",
             "comments": "Happy Festivus!",
         },
         "12/24/2025": {
