@@ -320,7 +320,23 @@ export class Databases {
                 new Period("Homeroom", Time.Time(22, 27), Time.Time(22, 39)),
                 new Period("Period 4", Time.Time(22, 43), Time.Time(23, 10)),
             ]
-        )
+        ),
+        "ConcertScheduleAlt": new BellSchedule(
+            "ConcertScheduleAlt",
+            "Concert (Dec. 22, 2025)",
+            "rgb(212, 179, 212)",
+            [
+            new Period("Period 1", Time.Time(7, 45), Time.Time(8, 15)),
+            new Period("Pd 2/Assembly 1", Time.Time(8, 21), Time.Time(9, 41)),
+            new Period("Pd 2/Assembly 2", Time.Time(9, 47), Time.Time(11, 7)),
+            new Period("Period 3", Time.Time(11, 13), Time.Time(11, 39)),
+            new Period("Lunch", Time.Time(11, 39), Time.Time(12, 22)),
+            new Period("Period 4", Time.Time(12, 28), Time.Time(12, 54)),
+            new Period("Period 6", Time.Time(13, 0), Time.Time(13, 26)),
+            new Period("Period 7", Time.Time(13, 32), Time.Time(13, 58)),
+            new Period("Period 8", Time.Time(14, 4), Time.Time(14, 30)),
+            ]
+        ),
     }
 
 
@@ -553,8 +569,8 @@ export class Databases {
         },
 
         "12/23/2025": {
-            "bellScheduleId": "Regular",
-            "alias": "",
+            "bellScheduleId": "ConcertScheduleAlt",
+            "alias": "Concert Schedule",
             "comments": "Happy Festivus!",
         },
         "12/24/2025": {
